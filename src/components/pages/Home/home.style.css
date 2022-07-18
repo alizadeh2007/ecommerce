@@ -1,0 +1,30 @@
+.downoadApp{
+    width: 100%;
+    height: 2.5rem;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: inset 5px -1px 5px 1px rgba(14, 14, 14, 0.115)  ;
+}
+.icons{
+    color: #F86565!important;
+    font-size: 1.8rem!important;
+    cursor: pointer;
+}
+.icons:hover{
+    color: rgb(111, 162, 40)!important;
+}
+.fontStyle{
+    font-size: 1.4rem!important;
+    color:rgba(3, 3, 3, 0.854)!important;
+    cursor: pointer;
+}
+.fontStyleProduct{
+    font-weight: bold!important;
+}
+.fontStyleSeeAll{
+    text-decoration: underline;
+}

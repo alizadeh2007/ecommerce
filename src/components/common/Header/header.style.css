@@ -1,0 +1,131 @@
+.topNav {
+  width: 100%;
+  height: 10rem;
+}
+.ShoppingCartOutlinedIcon {
+  color: #fff !important;
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+.ShoppingCartOutlinedIcon:hover {
+  color: #f6bd32 !important;
+}
+.PersonIcon {
+  color: #fff !important;
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+.PersonIcon:hover {
+  color: #f6bd32 !important;
+}
+.bgHeaderMiddle {
+  width: 100%;
+  display: flex;
+  height: 7.5rem;
+  background-color: #2485b8;
+  justify-content: center;
+}
+.styleHeader {
+  width: 100%;
+  height: 3rem;
+  background-color: #2485b8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 6rem;
+  gap: 0.5rem;
+  border-bottom: 0.2rem solid rgba(255, 255, 255, 0.24);
+}
+.input {
+  width: 30rem;
+  height: 3rem;
+  text-align: end;
+  padding-right: 1rem;
+  border: 0.1rem solid #f6bf3200 !important;
+  font-family: "Shabnam", sans-serif !important;
+}
+
+.magIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: #f6bd32 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff !important;
+  cursor: pointer;
+}
+.magIcon:active {
+  color: rgba(255, 255, 255, 0.746) !important;
+  background-color: #ffc83e !important;
+}
+.SearchOutlinedIcon {
+  font-size: 2rem !important;
+}
+.search {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10%;
+}
+.styleLinks {
+  color: rgba(255, 255, 255, 0.958) !important;
+  font-size: 1.4rem !important;
+  font-family: "Shabnam", sans-serif !important;
+}
+.styleLinks:hover {
+  color: #f6bd32 !important;
+  cursor: pointer;
+  font-family: "Shabnam", sans-serif !important;
+}
+
+.styleLinksParent {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: .5rem;
+  font-family: "Shabnam", sans-serif !important;
+  font-size: 1.4rem !important;
+}
+.bgHeaderFinallyParent {
+  width: 100%;
+  height: 4.8rem;
+  background-color: #444540;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-family: "Shabnam", sans-serif !important;
+}
+.TitleFinally {
+  font-weight: lighter !important;
+  color: #f6bd32 !important;
+  font-size: 1.4rem !important;
+  font-family: "Shabnam", sans-serif !important;
+}
+.bgHeaderFinally {
+  font-size: 1.4rem !important;
+  color: rgba(255, 255, 255, 0.746) !important;
+  font-family: "Shabnam", sans-serif !important;
+}
+.bgHeaderFinally:hover {
+  font-size: 1.4rem !important;
+  color: #f6bd32 !important;
+  font-family: "Shabnam", sans-serif !important;
+  cursor: pointer;
+}
+.categoryBoxStyles {
+  height: 100%;
+  width: 10%;
+  background-color: #f6bd32 !important;
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem;
+  cursor: pointer;
+}
+.textCategoryBoxStyles {
+  font-size: 1.4rem !important;
+}
