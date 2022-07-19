@@ -1,0 +1,44 @@
+.footer {
+  margin-top: 4rem;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.214);
+  display: flex;
+  gap: 5rem;
+  padding-top: 2rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+.fontStyles {
+  font-size: 1.6rem !important;
+  cursor: pointer;
+}
+.fontStylesTitle{
+  font-size: 1.6rem !important;
+
+}
+.fontStylesParent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+}
+.footerstyleforinput {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+.footerstyleforinputregistration {
+  width: 4rem;
+  height: 4rem;
+  background-color: #eeb21b;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.footerstyleforinputregistration:hover {
+  background-color: #e8bd51;
+}
+.footerstyleforinputregistration:active {
+    background-color: #eac974;
+  }

@@ -1,0 +1,13 @@
+.ContactUs{
+    width: 100%;
+    height: 20vh;
+    background-color: #595A54;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ContactUsfont{
+    font-size: 2.4rem!important;
+    font-weight: bold!important;
+    color: rgba(240, 248, 255, 0.939)!important;
+}

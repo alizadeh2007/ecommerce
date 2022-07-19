@@ -1,0 +1,50 @@
+.login {
+  background-color: #efefef;
+  z-index: 1000;
+  padding: 1rem;
+}
+.loginbutton {
+  position: absolute !important;
+}
+.fontLoginStyles {
+  font-size: 1.6rem !important;
+  display: flex;
+  justify-content: flex-end;
+}
+.loginbuttonStyles {
+  width: 31.6rem !important;
+  height: 4.8rem !important;
+  border-radius: 0.7rem !important;
+  background-color: #fd6e5e !important;
+  color: #fff !important;
+  font-size: 2.4rem !important;
+}
+.loginRegesterFont {
+  font-size: 2.4rem !important;
+  font-weight: bold !important;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.1rem solid #3232323e;
+}
+.inputLoginStyles {
+  width: 90%;
+  height: 4rem !important;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  padding-right: 1rem;
+}
+.inputLoginStylesParent {
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+}
+.fontLoginStylesadd {
+  border-bottom: 0.2rem solid #fd6e5e;
+  color: rgb(235, 86, 0);
+  cursor: pointer;
+  font-weight: bold !important;
+}
+.closeIcon {
+  cursor: pointer !important;
+}
