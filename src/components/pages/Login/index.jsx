@@ -6,6 +6,8 @@ import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import { Checkbox } from "@mui/material";
 import "./login.style.css";
+import { useSelector, useDispatch } from "react-redux";
+import { changeType, changeTypeConditions } from "../../../redux/slice/slice";
 const style = {
   position: "absolute",
   top: "50%",
@@ -19,25 +21,26 @@ const style = {
 };
 
 export default function BasicModal() {
+  const conditionButton = function () {
+    disPatch(changeTypeConditions(true));
+  };
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
+  const disPatch = useDispatch();
+  const handleClose = function () {
+    disPatch(changeType(false));
+  };
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+  const { closeLogIn } = useSelector((state) => state.closeLogIn);
   return (
     <div>
-      <Button className="loginbutton" onClick={handleOpen}>
-        ورود
-      </Button>
       <Modal
-        open={open}
+        open={closeLogIn}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box className="login" sx={style}>
-          <CloseIcon  onClick={handleClose} className="closeIcon"></CloseIcon>
+          <CloseIcon onClick={handleClose} className="closeIcon"></CloseIcon>
           <Typography
             className="loginRegesterFont"
             id="modal-modal-title"
@@ -47,33 +50,35 @@ export default function BasicModal() {
             ورود/ثبت نام
           </Typography>
           <Box display="flex" padding="1rem" flexDirection="column" gap="2rem">
-          <Typography className="fontLoginStyles">
-            برای ورود، شماره موبایل یا ایمیل خود را وارد کنید
-          </Typography>
-          <Box
-            className="inputLoginStylesParent"
-            display="flex"
-            justifyContent="center"
-          >
-            <input
-              className="inputLoginStyles"
-              placeholder="ایمیل یا شماره تماس"
-            />
-          </Box>
-          <Box display="flex" justifyContent="flex-end" gap=".3rem">
             <Typography className="fontLoginStyles">
-              را مطالعه کرده ام و می‌پذیرم 
+              برای ورود، شماره موبایل یا ایمیل خود را وارد کنید
             </Typography>
-          <Typography className="fontLoginStyles fontLoginStylesadd">
-               شرایط عضویت
-            </Typography>
-            <Checkbox {...label} defaultChecked color="default" />
-          </Box>
-          <Box display="flex" justifyContent="center">
-            <Button className="loginbuttonStyles" variant="contained">
-              ورود
-            </Button>
-          </Box>
+            <Box
+              className="inputLoginStylesParent"
+              display="flex"
+              justifyContent="center"
+            >
+              <input
+                className="inputLoginStyles"
+                placeholder="ایمیل یا شماره تماس"
+              />
+            </Box>
+            <Box display="flex" justifyContent="flex-end" gap=".3rem">
+              <Typography className="fontLoginStyles">
+                را مطالعه کرده ام و می‌پذیرم
+              </Typography>
+              <Typography
+                onClick={conditionButton}
+                className="fontLoginStyles fontLoginStylesadd"
+              >
+                شرایط عضویت
+              </Typography>
+              <Checkbox {...label} defaultChecked color="default" />
+            </Box>
+            <Box display="flex" justifyContent="center">
+              <Button className="loginbuttonStyles" variant="contained">
+ثبت              </Button>
+            </Box>
           </Box>
         </Box>
       </Modal>

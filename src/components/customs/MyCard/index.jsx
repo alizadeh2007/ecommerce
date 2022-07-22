@@ -7,8 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import img from './../../../assets/pic/Mask group.jpg'
 import { Box } from '@mui/system';
+import { useNavigate } from "react-router-dom";
 
 function MyCard() {
+  const navigate=useNavigate()
+  const openSingleProductPage=function(){
+    navigate("/SingleProduct")
+  }
   return (
     <Card className='card' justifyContent="center" sx={{ maxWidth: "15%!important" }}>
     <CardMedia
@@ -29,7 +34,7 @@ function MyCard() {
       </Typography>
     </CardContent>
 <Box  display="flex" justifyContent="center" marginBottom="1rem" >
-<Button className="buttonStyle" variant="contained">افزودن به سبد</Button>
+<Button onClick={openSingleProductPage} className="buttonStyle" variant="contained">مشاهده محصول</Button>
 </Box>
   </Card>
   )

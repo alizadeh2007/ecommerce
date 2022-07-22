@@ -1,0 +1,73 @@
+.single-Product-Image{
+    width: 60%;
+}
+
+.Single-Product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.Single-Product-Title{
+    height: 4rem;
+    width: 100%!important;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem!important;
+    font-weight: bold!important;
+}
+.Single-Product-Explain{
+    font-size: 1.6rem!important;
+    text-align: right!important;
+
+}
+.Single-Product-info{
+    border: .1rem solid #D9D9D9;
+    width: 100%;
+    direction: rtl;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+
+    
+}
+.Single-Product-payAttention{
+    display: flex;
+    border-top: .1rem solid #d9d9d9e6;
+    gap: .5rem;
+    color: #9e9a9a;
+    font-size: 1rem!important;
+
+}
+.Single-Product-guaranty{
+    direction: rtl;
+    align-items: flex-start;
+    font-size: 1.5rem!important;
+    font-weight: bolder!important;
+}
+.Single-Product-Price{
+    font-size: 1.5rem!important;
+    color: #ef3030;
+
+}
+.Single-Product-section{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.Single-Product-button{
+    font-size: 1.3rem!important;
+    background-color: #24b85a!important;
+}
+.Single-Product-garauntyPic{
+    width: 3rem;
+}
+.Single-Product-moneyPic{
+    width: 3rem;
+}

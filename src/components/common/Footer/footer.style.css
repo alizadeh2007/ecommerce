@@ -3,6 +3,7 @@
   border-top: 0.1rem solid rgba(0, 0, 0, 0.214);
   display: flex;
   gap: 5rem;
+  background-color: #444540;
   padding-top: 2rem;
   justify-content: center;
   padding-bottom: 2rem;
@@ -10,9 +11,11 @@
 .fontStyles {
   font-size: 1.6rem !important;
   cursor: pointer;
+  color: rgb(222, 222, 222)!important;
 }
 .fontStylesTitle{
-  font-size: 1.6rem !important;
+  font-size: 1.3rem !important;
+  color: rgb(232, 232, 232)!important;
 
 }
 .fontStylesParent {

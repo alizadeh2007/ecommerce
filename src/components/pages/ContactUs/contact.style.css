@@ -5,9 +5,52 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .ContactUsfont{
     font-size: 2.4rem!important;
     font-weight: bold!important;
     color: rgba(240, 248, 255, 0.939)!important;
+}
+.subContactUsfontstyle{
+    font-size: 1.6rem!important;
+    font-weight:bold!important;
+}
+.ContactUsSendEmain{
+    width: 50%;
+    height: 40vh;
+    background-color: #f6f6f6;
+    box-shadow: .5px .5px .5px .5px #595A54;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+.ContactUsinputstyle{
+    width: 50%!important;
+    height: 4rem!important;
+    border-radius: .5rem;
+    background-color: #F9F9F9;
+    padding-right: 1rem;
+}
+.yourLetterBox{
+    width:95%!important;
+    height: 20rem!important;
+    border-radius: .5rem;
+    background-color: #F9F9F9;
+}
+.yourLetterBox::placeholder{
+    text-align: right;
+}
+.ContactUsinputstyle::placeholder{
+    text-align: right;
+}
+.ContactUsicons{
+    font-size: 1.9rem!important;
+    cursor: pointer;
+
 }

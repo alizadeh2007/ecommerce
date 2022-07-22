@@ -41,6 +41,7 @@
 }
 .fontLoginStylesadd {
   border-bottom: 0.2rem solid #fd6e5e;
+  /* line-height: -2000%!important; */
   color: rgb(235, 86, 0);
   cursor: pointer;
   font-weight: bold !important;

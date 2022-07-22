@@ -73,6 +73,7 @@
   padding-right: 10%;
 }
 .styleLinks {
+  /* all: unset; */
   color: rgba(255, 255, 255, 0.958) !important;
   font-size: 1.4rem !important;
   font-family: "Shabnam", sans-serif !important;
@@ -119,16 +120,4 @@
   font-family: "Shabnam", sans-serif !important;
   cursor: pointer;
 }
-.categoryBoxStyles {
-  height: 100%;
-  width: 10%;
-  background-color: #f6bd32 !important;
-  display: flex;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 1rem;
-  cursor: pointer;
-}
-.textCategoryBoxStyles {
-  font-size: 1.4rem !important;
-}
+

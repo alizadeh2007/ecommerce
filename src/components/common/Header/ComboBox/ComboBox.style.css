@@ -1,0 +1,28 @@
+.ComboBoxInput input::placeholder{
+    font-size: 1.2rem!important;
+    text-align: end!important;
+    color: #000!important;
+}
+.ComboBoxInput input{
+    font-size: 1.4rem!important;
+    text-align:end!important;
+    direction: rtl!important;
+
+}
+.ComboBoxInput fieldset{
+    padding: 0rem!important;
+    border-radius:.1rem!important;
+}
+.ComboBoxInput .MuiOutlinedInput-root{
+    /* padding: .5rem!important; */
+    height: 100%!important;
+    border: none!important;
+padding-top: 0rem!important;
+}
+
+.ComboBoxInput .MuiAutocomplete-input{
+    padding-right: 0rem!important;
+}
+.ComboBoxInput .MuiOutlinedInput-root{
+    padding-right: 0rem!important;
+}
