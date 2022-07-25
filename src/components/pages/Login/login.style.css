@@ -46,6 +46,22 @@
   cursor: pointer;
   font-weight: bold !important;
 }
+.register-button-Styles{
+  width: 31.6rem !important;
+  height: 4.8rem !important;
+  border-radius: 0.7rem !important;
+  background-color: #4b4b4b !important;
+  color: #fff !important;
+  font-size: 2.4rem !important;
+}
+.register-button-Styles:active{
+  width: 31.6rem !important;
+  height: 4.8rem !important;
+  border-radius: 0.7rem !important;
+  background-color: #636363 !important;
+  color: #fff !important;
+  font-size: 2.4rem !important;
+}
 .closeIcon {
   cursor: pointer !important;
 }

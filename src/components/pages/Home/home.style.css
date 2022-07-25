@@ -28,3 +28,14 @@
 .fontStyleSeeAll{
     text-decoration: underline;
 }
+.banner{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+}
+.banner img{
+    width: 30%;
+
+
+}

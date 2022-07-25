@@ -5,9 +5,13 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import { Checkbox } from "@mui/material";
-import "./login.style.css";
+import "./register.Module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { changeType, changeTypeConditions,changeTypeRegisterPage } from "../../../redux/slice/slice";
+import {
+  changeType,
+  changeTypeConditions,
+  changeTypeRegisterPage,
+} from "../../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 const style = {
   position: "absolute",
@@ -21,23 +25,11 @@ const style = {
   p: 4,
 };
 
-export default function BasicModal() {
+export default function RegisterModal() {
+  const { openModalRegisterPage } = useSelector(
+    (state) => state.openModalRegisterPage
+  );
   const navigate = useNavigate();
-
-
-
-  const loginFn = function () {
-    navigate("/Admin");
-    disPatch(changeType(false));
-  };
-  const registerFn = function () {
-    disPatch(changeTypeRegisterPage(true));
-    disPatch(changeType(false));
-
-  };
-
-
-
 
   const conditionButton = function () {
     disPatch(changeTypeConditions(true));
@@ -46,13 +38,13 @@ export default function BasicModal() {
   const disPatch = useDispatch();
   const handleClose = function () {
     disPatch(changeType(false));
+    disPatch(changeTypeRegisterPage(false));
   };
 
-  const { closeLogIn } = useSelector((state) => state.closeLogIn);
   return (
     <div>
       <Modal
-        open={closeLogIn}
+        open={openModalRegisterPage}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
@@ -65,12 +57,10 @@ export default function BasicModal() {
             variant="h6"
             component="h2"
           >
-            ورود/ثبت نام
+            ثبت نام
           </Typography>
           <Box display="flex" padding="1rem" flexDirection="column" gap="2rem">
-            <Typography className="fontLoginStyles">
-              برای ورود، شماره موبایل یا ایمیل خود را وارد کنید
-            </Typography>
+            <Typography className="fontLoginStyles">آدرس ایمیل </Typography>
             <Box
               className="inputLoginStylesParent"
               display="flex"
@@ -81,6 +71,30 @@ export default function BasicModal() {
                 placeholder="ایمیل یا شماره تماس"
               />
             </Box>
+            <Typography className="fontLoginStyles">پسورد</Typography>
+            <Box
+              className="inputLoginStylesParent"
+              display="flex"
+              justifyContent="center"
+            >
+              <input
+                className="inputLoginStyles"
+                placeholder="ایمیل یا شماره تماس"
+              />
+            </Box>
+
+            <Typography className="fontLoginStyles">تکرار پسورد</Typography>
+            <Box
+              className="inputLoginStylesParent"
+              display="flex"
+              justifyContent="center"
+            >
+              <input
+                className="inputLoginStyles"
+                placeholder="ایمیل یا شماره تماس"
+              />
+            </Box>
+
             <Box display="flex" justifyContent="flex-end" gap=".3rem">
               <Typography className="fontLoginStyles">
                 را مطالعه کرده ام و می‌پذیرم
@@ -93,19 +107,14 @@ export default function BasicModal() {
               </Typography>
               <Checkbox {...label} defaultChecked color="default" />
             </Box>
-            <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" gap="1rem">
-              <Button
-                className="loginbuttonStyles"
-                variant="contained"
-                onClick={loginFn}
-              >
-                ورود{" "}
-              </Button>
-              <Button
-                className="register-button-Styles"
-                variant="contained"
-                onClick={registerFn}
-              >
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignItems="center"
+              gap="1rem"
+            >
+              <Button className="register-button-Styles" variant="contained">
                 ثبت نام{" "}
               </Button>
             </Box>

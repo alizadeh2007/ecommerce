@@ -10,8 +10,11 @@ import ContactUs from "./../components/pages/ContactUs/insex";
 import GuidLine from "./../components/pages/GuidLine/index";
 import { Routes, Route } from "react-router-dom";
 import Conditions from "../components/pages/Login/TermsAndConditions/index";
-import EmptyBasket from './../components/pages/EmptyBasket/index';
-import SingleProduct from './../components/pages/SingleProduct/index';
+import EmptyBasket from "./../components/pages/EmptyBasket/index";
+import SingleProduct from "./../components/pages/SingleProduct/index";
+import FilterPges from "./../components/pages/FilterPges/index";
+import Admin from "./../components/pages/Admin/index";
+import RegisterModal from "./../components/pages/Login/Register/index";
 function App() {
   return (
     <Box>
@@ -24,7 +27,10 @@ function App() {
         <Route path="ContactUs" element={<ContactUs />} />
         <Route path="EmptyBasket" element={<EmptyBasket />} />
         <Route path="SingleProduct" element={<SingleProduct />} />
+        <Route path="FilterPges" element={<FilterPges />} />
+        <Route path="Admin" element={<Admin />} />
       </Routes>
+      <RegisterModal></RegisterModal>
       <Login></Login>
       <Footer></Footer>
     </Box>

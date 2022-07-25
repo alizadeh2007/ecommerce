@@ -1,21 +1,17 @@
 .iconsCircle {
-  border-radius: 50%;
   width: 5.5rem;
   height: 5.5rem;
-  background-color: #FDF3F2;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  flex-direction: column;
 }
-.icon {
-  font-size: 4rem !important;
-  color: hsla(0, 1%, 29%, 0.722) !important;
+.icon{
+  filter: grayscale(60%)!important;
+
 }
-.iconsCircle:hover {
-  background-color: #fd7668;
-}
-.icon:hover {
-  font-size: 4rem !important;
-  color: rgba(255, 255, 255, 0.709) !important;
+.icon:hover{
+  filter: grayscale(0%)!important;
+
 }

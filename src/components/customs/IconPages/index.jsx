@@ -1,11 +1,11 @@
 import React from "react";
-import { Box } from "@mui/material";
-import PedalBikeIcon from "@mui/icons-material/PedalBike";
-import SmartphoneIcon from '@mui/icons-material/Smartphone';
-import DriveEtaIcon from '@mui/icons-material/DriveEta';
-import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
-import ComputerIcon from '@mui/icons-material/Computer';
-import FlatwareIcon from '@mui/icons-material/Flatware';
+import { Box, Typography } from "@mui/material";
+import sounds from "./../../../assets/pic/sounds1.svg";
+import computer from "./../../../assets/pic/computer.svg";
+import sport from "./../../../assets/pic/sport.svg";
+import kitchen from "./../../../assets/pic/kitchen.svg";
+import car from "./../../../assets/pic/car.svg";
+import bicycle from "./../../../assets/pic/bicycle.svg";
 import "./iconpages.style.css";
 function IconPages() {
   return (
@@ -17,29 +17,35 @@ function IconPages() {
       marginTop="2rem"
     >
       <Box className="iconsCircle">
-        <SmartphoneIcon className="icon"></SmartphoneIcon>
+      <img className="icon" src={sounds}/>
+      <Typography>صوتی</Typography>
       </Box>
       <Box className="iconsCircle">
-        <DriveEtaIcon className="icon"></DriveEtaIcon>
+      <img className="icon" src={sport}/>
+      <Typography>ورزشی</Typography>
+
       </Box>
       <Box className="iconsCircle">
-        <PedalBikeIcon className="icon"></PedalBikeIcon>
+      <img className="icon" src={computer}/>
+      <Typography>کامپیوتر</Typography>
+
       </Box>
       <Box className="iconsCircle">
-        <ChildFriendlyIcon className="icon"></ChildFriendlyIcon>
+      <img className="icon" src={kitchen}/>
+      <Typography>آشپزخانه</Typography>
+
       </Box>
       <Box className="iconsCircle">
-        <PedalBikeIcon className="icon"></PedalBikeIcon>
-      </Box>{" "}
-      <Box className="iconsCircle">
-        <FlatwareIcon className="icon"></FlatwareIcon>
-      </Box>{" "}
-      <Box className="iconsCircle">
-        <ComputerIcon className="icon"></ComputerIcon>
-      </Box>{" "}
-      <Box className="iconsCircle">
-        <PedalBikeIcon className="icon"></PedalBikeIcon>
+      <img className="icon" src={car}/>
+      <Typography> ماشین</Typography>
+
       </Box>
+      <Box className="iconsCircle">
+      <img className="icon" src={bicycle}/>
+      <Typography>دوچرخه</Typography>
+
+      </Box>
+
     </Box>
   );
 }

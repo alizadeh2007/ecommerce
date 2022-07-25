@@ -5,6 +5,9 @@ export const counterSlice = createSlice({
   initialState: {
     closeLogIn: false,
     openModalConditions:false,
+    openModalShowMiniPic:false,
+    openModalFilterPage:false,
+    openModalRegisterPage:false,
   },
   reducers: {
     changeType: (state,action) => {
@@ -13,7 +16,16 @@ export const counterSlice = createSlice({
     changeTypeConditions: (state,action) => {
         state.openModalConditions =action.payload ;
       },
+      changeTypeMiniPic: (state,action) => {
+        state.openModalShowMiniPic =action.payload ;
+      },
+      changeTypeFilterPage: (state,action) => {
+        state.openModalFilterPage =action.payload ;
+      },
+      changeTypeRegisterPage: (state,action) => {
+        state.openModalRegisterPage =action.payload ;
+      },
   },
 });
-export const { changeType, changeTypeConditions } = counterSlice.actions;
+export const { changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage } = counterSlice.actions;
 export default counterSlice.reducer;

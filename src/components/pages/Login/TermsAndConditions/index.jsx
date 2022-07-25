@@ -23,8 +23,6 @@ const style = {
 
 export default function Conditions() {
   const dispatch = useDispatch();
-  // const [open, setOpen] = React.useState(false);
-  // const handleClose = () => setOpen(false);
   const handleClose = function () {
     dispatch(changeTypeConditions(false));
   };
