@@ -7,7 +7,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Checkbox } from "@mui/material";
 import "./login.style.css";
 import { useSelector, useDispatch } from "react-redux";
-import { changeType, changeTypeConditions,changeTypeRegisterPage } from "../../../redux/slice/slice";
+import {
+  changeType,
+  changeTypeConditions,
+  changeTypeRegisterPage,
+} from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 const style = {
   position: "absolute",
@@ -24,20 +28,14 @@ const style = {
 export default function BasicModal() {
   const navigate = useNavigate();
 
-
-
   const loginFn = function () {
-    navigate("/Admin");
+    navigate("/Dashboard");
     disPatch(changeType(false));
   };
   const registerFn = function () {
     disPatch(changeTypeRegisterPage(true));
     disPatch(changeType(false));
-
   };
-
-
-
 
   const conditionButton = function () {
     disPatch(changeTypeConditions(true));
@@ -83,17 +81,18 @@ export default function BasicModal() {
             </Box>
             <Box display="flex" justifyContent="flex-end" gap=".3rem">
               <Typography className="fontLoginStyles">
-                را مطالعه کرده ام و می‌پذیرم
+                من را به خاطر بسپار{" "}
               </Typography>
-              <Typography
-                onClick={conditionButton}
-                className="fontLoginStyles fontLoginStylesadd"
-              >
-                شرایط عضویت
-              </Typography>
+
               <Checkbox {...label} defaultChecked color="default" />
             </Box>
-            <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center" gap="1rem">
+            <Box
+              display="flex"
+              justifyContent="center"
+              flexDirection="column"
+              alignItems="center"
+              gap="1rem"
+            >
               <Button
                 className="loginbuttonStyles"
                 variant="contained"

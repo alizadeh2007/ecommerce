@@ -1,0 +1,21 @@
+.dashoard {
+    font-size: 1.6rem !important;
+    direction: rtl !important;
+    padding: 2rem !important;
+    align-items: flex-end;
+    color: rgba(19, 19, 19, 0.708) !important;
+  }
+  .Admin-main-menu-rigth-button{
+    background-color: aliceblue!important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    direction: rtl;
+    padding: 2rem;
+    border-bottom: 0.1rem solid #dcdcdc1f;
+    cursor: pointer;
+  }
+  .send-button-Styles{
+    width: 50%;
+    margin-top: 3rem!important;
+    font-size: 1.5rem!important;
+  }

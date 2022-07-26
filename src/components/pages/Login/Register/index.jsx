@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import { Checkbox } from "@mui/material";
 import "./register.Module.css";
+import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import { useSelector, useDispatch } from "react-redux";
 import {
   changeType,
@@ -13,6 +14,7 @@ import {
   changeTypeRegisterPage,
 } from "../../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -60,39 +62,52 @@ export default function RegisterModal() {
             ثبت نام
           </Typography>
           <Box display="flex" padding="1rem" flexDirection="column" gap="2rem">
-            <Typography className="fontLoginStyles">آدرس ایمیل </Typography>
-            <Box
-              className="inputLoginStylesParent"
-              display="flex"
-              justifyContent="center"
-            >
-              <input
-                className="inputLoginStyles"
-                placeholder="ایمیل یا شماره تماس"
-              />
-            </Box>
-            <Typography className="fontLoginStyles">پسورد</Typography>
-            <Box
-              className="inputLoginStylesParent"
-              display="flex"
-              justifyContent="center"
-            >
-              <input
-                className="inputLoginStyles"
-                placeholder="ایمیل یا شماره تماس"
-              />
+            <Box>
+              <Typography className="Register-email-title">
+                آدرس ایمیل <span className="Register-stares">*</span>
+              </Typography>
+
+              <Box className="Register-email-input-Box">
+                <input
+                  className="Register-email-input"
+                  placeholder="ایمیل یا شماره تماس"
+                />
+              </Box>
             </Box>
 
-            <Typography className="fontLoginStyles">تکرار پسورد</Typography>
-            <Box
-              className="inputLoginStylesParent"
-              display="flex"
-              justifyContent="center"
-            >
-              <input
-                className="inputLoginStyles"
-                placeholder="ایمیل یا شماره تماس"
-              />
+            <Box>
+              <Typography className="Register-email-title">
+                پسورد
+                <span className="Register-stares">*</span>
+              </Typography>
+
+              <Box
+                className="Register-email-input-Box"
+                display="flex"
+                justifyContent="center"
+              >
+                <input
+                  className="Register-email-input"
+                  placeholder="ایمیل یا شماره تماس"
+                />
+              </Box>
+            </Box>
+
+            <Box>
+              <Typography className="Register-email-title">
+                تکرار پسورد
+                <span className="Register-stares">*</span>
+              </Typography>
+              <Box
+                className="Register-email-input-Box"
+                display="flex"
+                justifyContent="center"
+              >
+                <input
+                  className="Register-email-input"
+                  placeholder="ایمیل یا شماره تماس"
+                />
+              </Box>
             </Box>
 
             <Box display="flex" justifyContent="flex-end" gap=".3rem">
