@@ -7,6 +7,7 @@
     background-color: #FD6E5E!important;
     width: 12.6rem!important;
     font-size: 1.3rem!important;
+
 }
 .img{
     filter: contrast(90%);
@@ -17,7 +18,7 @@
 }
 .card{
     filter: drop-shadow(3px 3px 4px gray);
-    height: 30rem;
+    height: 33rem;
     
 }
 .card:hover{

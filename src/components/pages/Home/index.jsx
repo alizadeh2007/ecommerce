@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.style.css";
 import { Box, Typography } from "@mui/material";
 import BootstrapCarousel from "./../../customs/Carousel/index";
@@ -8,12 +8,22 @@ import LaptopWindowsIcon from "@mui/icons-material/LaptopWindows";
 import IconPages from "./../../customs/IconPages/index";
 import MyCard from "./../../customs/MyCard/index";
 import { useDispatch } from "react-redux";
-import { changeTypeFilterPage } from "../../../redux/slice/slice";
+import { changeTypeFilterPage, storageInformationJson } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
+import { useSelector} from "react-redux";
+import axios from "axios"
 
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [eyesGlasses,setEyesGlasses]=useState([])
+  const { storeInfoJsonServer } = useSelector((state) => state.storeInfoJsonServer);
+  console.log(storeInfoJsonServer)
+  useEffect(() => {
+    axios.get("http://localhost:8000/eyeglasses/").then((res)=> dispatch(storageInformationJson((res.data))))
+    axios.get("http://localhost:8000/eyeglasses/").then((res)=> setEyesGlasses((res.data).slice(0,5)))
+  }, []);
+  // console.log(eyeglass[0].category)
   const openFilterPage = function () {
     dispatch(changeTypeFilterPage(true));
     navigate("/FilterPges");
@@ -45,11 +55,9 @@ function Home() {
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
-        <MyCard></MyCard>
-        <MyCard></MyCard>
-        <MyCard></MyCard>
-        <MyCard></MyCard>
-        <MyCard></MyCard>
+      {eyesGlasses.map((item)=><MyCard title={item.title} price={item.price} image={item.imgURL} />)}
+
+
       </Box>
     </Box>
   );

@@ -396,7 +396,7 @@
     {
       "id": "25",
       "category": "eyeglasses",
-      "title": "عینک آفتابی بالمن مدل Wonder Boy (BPS-102C-146GD) Limited Edition",
+      "title": "عینک آفتابی بالمن مدل",
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/1520830ce53dafa84f95b50c128185f9b7480a19_1633012739.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
       "price": "8900000",
       "inventory": "10",
@@ -508,7 +508,7 @@
     {
       "id": "32",
       "category": "eyeglasses",
-      "title": " عینک آفتابی مدل 6577 SL",
+      "title": " عینک آفتابی مدل 6577 ",
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121132723.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
       "price": "150000",
       "inventory": "10",
@@ -524,7 +524,7 @@
     {
       "id": "33",
       "category": "eyeglasses",
-      "title": " عینک آفتابی مدل 6577 SL",
+      "title": " عینک آفتابی مدل 6577 ",
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/5505852.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
       "price": "65000",
       "inventory": "10",
@@ -565,6 +565,54 @@
         "material": " پلاستیک",
         "size": [""],
         "style": "خلبانی",
+        "crotch": "",
+        "HowToClose": ""
+      }
+    },
+    {
+      "id": "36",
+      "category": "eyeglasses",
+      "title": "عینک آفتابی لوناتو مدل mod job 02",
+      "imgURL": "https://dkstatics-public.digikala.com/digikala-products/f218b6d963d117857784ac7dfdce2d2bb979ccf5_1637499854.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+      "price": "417000",
+      "inventory": "10",
+      "star": "3.8",
+      "property": {
+        "material": " استات",
+        "size": [""],
+        "style": "ویفرر",
+        "crotch": "",
+        "HowToClose": ""
+      }
+    },
+    {
+      "id": "37",
+      "category": "eyeglasses",
+      "title": "عینک آفتابی مدل 1041",
+      "imgURL": "https://dkstatics-public.digikala.com/digikala-products/919537.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+      "price": "709000",
+      "inventory": "10",
+      "star": "4.8",
+      "property": {
+        "material": " فلزی",
+        "size": [""],
+        "style": "خلبانی",
+        "crotch": "",
+        "HowToClose": ""
+      }
+    },
+    {
+      "id": "38",
+      "category": "eyeglasses",
+      "title": "عینک آفتابی  ",
+      "imgURL": "https://dkstatics-public.digikala.com/digikala-products/3751617.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+      "price": "430000",
+      "inventory": "10",
+      "star": "4.1",
+      "property": {
+        "material": " پلاستیکی",
+        "size": [""],
+        "style": "مستطیلی",
         "crotch": "",
         "HowToClose": ""
       }

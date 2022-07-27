@@ -8,6 +8,7 @@ export const counterSlice = createSlice({
     openModalShowMiniPic:false,
     openModalFilterPage:false,
     openModalRegisterPage:false,
+    storeInfoJsonServer:[],
   },
   reducers: {
     changeType: (state,action) => {
@@ -25,7 +26,10 @@ export const counterSlice = createSlice({
       changeTypeRegisterPage: (state,action) => {
         state.openModalRegisterPage =action.payload ;
       },
+      storageInformationJson: (state,action) => {
+        state.storeInfoJsonServer =action.payload ;
+      },
   },
 });
-export const { changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage } = counterSlice.actions;
+export const { changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

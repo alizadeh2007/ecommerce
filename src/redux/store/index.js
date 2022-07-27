@@ -4,6 +4,7 @@ import openModalConditions from "./../slice/slice";
 import openModalShowMiniPic from "./../slice/slice";
 import openModalFilterPage from "./../slice/slice";
 import openModalRegisterPage from "./../slice/slice";
+import storeInfoJsonServer from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     openModalConditions,
     openModalShowMiniPic,
     openModalFilterPage,
-    openModalRegisterPage
+    openModalRegisterPage,
+    storeInfoJsonServer,
   },
 });
