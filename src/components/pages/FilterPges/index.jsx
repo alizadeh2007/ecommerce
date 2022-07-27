@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Switch, Typography } from "@mui/material";
 import "./filterPage.Module.css";
 import MyCard from "../../customs/MyCard";
 import RangeSlider from "./RangeSlider/index";
 import RadioButtonsGroup from "./CategoriesSection/index";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  storageInformationJson,
+  uptodateSearchEyesGlass,
+} from "../../../redux/slice/slice";
+import Button from "@mui/material/Button";
+import Sortes from "./Sortes/index";
 
 function FilterPges() {
+  const dispatch = useDispatch();
+  const { searchEyesGlass } = useSelector((state) => state.searchEyesGlass);
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
+  const [store, setStore] = useState([...storeInfoJsonServer]);
+  useEffect(() => {
+    let finderCard = store.filter((item) =>
+      item.title.includes(searchEyesGlass) ? item : null
+    );
+    if (searchEyesGlass) {
+      setStore(finderCard);
+    } else {
+      setStore(storeInfoJsonServer);
+    }
+  }, [searchEyesGlass]);
+
   return (
     <Box className="FilterPges">
       <Box className="FilterPges-pages">
-        {storeInfoJsonServer.map((item) => (
+        {store?.map((item) => (
           <MyCard title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
@@ -22,11 +42,8 @@ function FilterPges() {
         <Box className="FilterPges-filters-rangslider">
           <RangeSlider></RangeSlider>
         </Box>
-        <Box className="FilterPges-filters-Available">
-          <Typography className="FilterPges-filters-Available-title">
-            فقط کالای موجود
-          </Typography>
-          <Switch />
+        <Box className="FilterPges-filters-Available" width="100%!important">
+          <Sortes width="100%!important" />
         </Box>
         <Box className="FilterPges-filters-Available">
           <Typography className="FilterPges-filters-Available-title">

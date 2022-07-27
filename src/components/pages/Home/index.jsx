@@ -12,7 +12,7 @@ import {
   changeTypeFilterPage,
   storageInformationJson,
   storageInformationPantsJson,
-  storageInformationShoesJson
+  storageInformationShoesJson,
 } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -34,18 +34,18 @@ function Home() {
       .get("http://localhost:8000/eyeglasses/")
       .then((res) => dispatch(storageInformationJson(res.data)));
     axios
-      .get("http://localhost:8000/eyeglasses/")
-      .then((res) => setEyesGlasses(res.data.slice(0, 5)));
-      axios
       .get("http://localhost:8000/pants/")
       .then((res) => dispatch(storageInformationPantsJson(res.data)));
-      axios
+    axios
       .get("http://localhost:8000/shoes/")
       .then((res) => dispatch(storageInformationShoesJson(res.data)));
     axios
+      .get("http://localhost:8000/eyeglasses/")
+      .then((res) => setEyesGlasses(res.data.slice(0, 5)));
+    axios
       .get("http://localhost:8000/pants/")
       .then((res) => setPants(res.data.slice(0, 5)));
-      axios
+    axios
       .get("http://localhost:8000/shoes/")
       .then((res) => setShoes(res.data.slice(0, 5)));
   }, []);
@@ -92,8 +92,6 @@ function Home() {
         ))}
       </Box>
 
-      
-
       <Box
         display="flex"
         marginTop="5.5rem"
@@ -110,15 +108,10 @@ function Home() {
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
-      {pants.map((item)=><MyCard title={item.title} price={item.price} image={item.imgURL} />)}
+        {pants.map((item) => (
+          <MyCard title={item.title} price={item.price} image={item.imgURL} />
+        ))}
       </Box>
-
-
-
-
-
-
-
 
       <Box
         display="flex"
@@ -136,18 +129,10 @@ function Home() {
         </Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
-      {shoes.map((item)=><MyCard title={item.title} price={item.price} image={item.imgURL} />)}
+        {shoes.map((item) => (
+          <MyCard title={item.title} price={item.price} image={item.imgURL} />
+        ))}
       </Box>
-
-
-
-
-
-
-
-
-
-
     </Box>
   );
 }

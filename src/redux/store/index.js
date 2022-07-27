@@ -7,6 +7,7 @@ import openModalRegisterPage from "./../slice/slice";
 import storeInfoJsonServer from "./../slice/slice";
 import storeInfoPantsJsonServer from "./../slice/slice";
 import storeInfoShoesJsonServer from "./../slice/slice";
+import searchEyesGlass from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -18,5 +19,6 @@ export const store = configureStore({
     storeInfoJsonServer,
     storeInfoPantsJsonServer,
     storeInfoShoesJsonServer,
+    searchEyesGlass,
   },
 });

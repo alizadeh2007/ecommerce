@@ -7,7 +7,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import changeTypes, { changeType } from "./../../../redux/slice/slice.js";
+import changeTypes, { changeType, uptodateSearchEyesGlass } from "./../../../redux/slice/slice.js";
 import Categories from './ComboBox/index';
 import DirectionSensitive from "../../../assets/Rtl";
 function Header() {
@@ -33,8 +33,10 @@ function Header() {
     navigate("/EmptyBasket")
   }
   const [userInput, setUserInput] = useState([])
+
   const handleChange=function(e){
     setUserInput(e.target.value)
+    disPatch(uptodateSearchEyesGlass(userInput));
   }
   
   return (
