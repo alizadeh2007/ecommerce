@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import "./header.style.css";
 import PersonIcon from "@mui/icons-material/Person";
@@ -32,6 +32,11 @@ function Header() {
   const openModalShoppingList=function(){
     navigate("/EmptyBasket")
   }
+  const [userInput, setUserInput] = useState([])
+  const handleChange=function(e){
+    setUserInput(e.target.value)
+  }
+  
   return (
     <Box>
       <Box className="styleHeader">
@@ -40,7 +45,7 @@ function Header() {
       </Box>
       <Box className="bgHeaderMiddle">
         <Box className="search">
-          <input className="input" placeholder="جستجو" />
+          <input className="input" onChange={handleChange}  value={userInput}  placeholder="جستجو" />
           <Box className="magIcon">
             <SearchOutlinedIcon className="SearchOutlinedIcon"></SearchOutlinedIcon>
           </Box>

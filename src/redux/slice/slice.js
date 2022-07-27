@@ -9,6 +9,8 @@ export const counterSlice = createSlice({
     openModalFilterPage:false,
     openModalRegisterPage:false,
     storeInfoJsonServer:[],
+    storeInfoPantsJsonServer:[],
+    storeInfoShoesJsonServer:[],
   },
   reducers: {
     changeType: (state,action) => {
@@ -29,7 +31,13 @@ export const counterSlice = createSlice({
       storageInformationJson: (state,action) => {
         state.storeInfoJsonServer =action.payload ;
       },
+      storageInformationPantsJson: (state,action) => {
+        state.storeInfoPantsJsonServer =action.payload ;
+      },
+      storageInformationShoesJson: (state,action) => {
+        state.storeInfoShoesJsonServer =action.payload ;
+      },
   },
 });
-export const { changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

@@ -1,19 +1,18 @@
 import React from "react";
 import { Box, Switch, Typography } from "@mui/material";
-import "./filterPage.Module.css";
-import MyCard from "../../customs/MyCard";
-import RangeSlider from "./RangeSlider/index";
-import RadioButtonsGroup from "./CategoriesSection/index";
+import "./shoes.Module.css";
+import MyCard from "./../../../customs/MyCard/index";
+import RangeSlider from "./../../FilterPges/RangeSlider/index";
+import RadioButtonsGroup from "./../../FilterPges/CategoriesSection/index";
 import { useSelector } from "react-redux";
 
-function FilterPges() {
-  const { storeInfoJsonServer } = useSelector(
-    (state) => state.storeInfoJsonServer
-  );
+function Shoes() {
+  const { storeInfoShoesJsonServer } = useSelector((state) => state.storeInfoShoesJsonServer);
+
   return (
     <Box className="FilterPges">
       <Box className="FilterPges-pages">
-        {storeInfoJsonServer.map((item) => (
+        {storeInfoShoesJsonServer.map((item) => (
           <MyCard title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
@@ -44,4 +43,4 @@ function FilterPges() {
     </Box>
   );
 }
-export default FilterPges;
+export default Shoes;

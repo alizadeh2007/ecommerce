@@ -5,6 +5,8 @@ import openModalShowMiniPic from "./../slice/slice";
 import openModalFilterPage from "./../slice/slice";
 import openModalRegisterPage from "./../slice/slice";
 import storeInfoJsonServer from "./../slice/slice";
+import storeInfoPantsJsonServer from "./../slice/slice";
+import storeInfoShoesJsonServer from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +16,7 @@ export const store = configureStore({
     openModalFilterPage,
     openModalRegisterPage,
     storeInfoJsonServer,
+    storeInfoPantsJsonServer,
+    storeInfoShoesJsonServer,
   },
 });
