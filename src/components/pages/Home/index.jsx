@@ -13,6 +13,7 @@ import {
   storageInformationJson,
   storageInformationPantsJson,
   storageInformationShoesJson,
+  uptodateNewSort,
 } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -49,9 +50,12 @@ function Home() {
       .get("http://localhost:8000/shoes/")
       .then((res) => setShoes(res.data.slice(0, 5)));
   }, []);
+  const {newSort}=useSelector((state)=>state.newSort)
   const openFilterPage = function () {
+    dispatch(uptodateNewSort(storeInfoJsonServer));
     dispatch(changeTypeFilterPage(true));
     navigate("/FilterPges");
+    
   };
   const openFilterPagePants = function () {
     navigate("/Pants");

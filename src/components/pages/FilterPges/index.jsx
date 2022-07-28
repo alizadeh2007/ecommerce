@@ -5,12 +5,8 @@ import MyCard from "../../customs/MyCard";
 import RangeSlider from "./RangeSlider/index";
 import RadioButtonsGroup from "./CategoriesSection/index";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  storageInformationJson,
-  uptodateSearchEyesGlass,
-} from "../../../redux/slice/slice";
-import Button from "@mui/material/Button";
 import Sortes from "./Sortes/index";
+import { uptodateNewSort } from "../../../redux/slice/slice";
 
 function FilterPges() {
   const dispatch = useDispatch();
@@ -18,22 +14,30 @@ function FilterPges() {
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
-  const [store, setStore] = useState([...storeInfoJsonServer]);
+
+
+  
+  const { newSort } = useSelector((state) => state.newSort);
   useEffect(() => {
-    let finderCard = store.filter((item) =>
+    dispatch(uptodateNewSort([...storeInfoJsonServer]));
+    console.log("inga hstam")
+    let finderCard = newSort.filter((item) =>
       item.title.includes(searchEyesGlass) ? item : null
     );
+
+
     if (searchEyesGlass) {
-      setStore(finderCard);
+      dispatch(uptodateNewSort(finderCard));
     } else {
-      setStore(storeInfoJsonServer);
+      dispatch(uptodateNewSort(storeInfoJsonServer));
     }
   }, [searchEyesGlass]);
+
 
   return (
     <Box className="FilterPges">
       <Box className="FilterPges-pages">
-        {store?.map((item) => (
+        {newSort?.map((item) => (
           <MyCard title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
