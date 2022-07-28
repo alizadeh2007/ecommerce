@@ -40,10 +40,10 @@ export default function Sortes() {
   }, [sort]);
 
   return (
-    <Box sx={{ minWidth: 300 }}>
-      <DirectionSensitive>
+    
+    <Box sx={{ minWidth: 130 }}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">اولویت </InputLabel>
+          <InputLabel className="placeholder-Style" id="demo-simple-select-label">اولویت </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
@@ -52,12 +52,11 @@ export default function Sortes() {
             style={{ direction: "rtl!important", textAlign: "right!important" }}
             onChange={handleChange}
           >
-            <MenuItem style={{direction:"rtl!important" , textAlign:"rigth!important"}} value={30}>جدید ترین</MenuItem>
-            <MenuItem  value={10}>گرانترین</MenuItem>
-            <MenuItem value={20}>ارزان ترین</MenuItem>
+            <MenuItem style={{direction:"rtl!important" , textAlign:"rigth!important"}} value={30}>جدید ترین محصولات</MenuItem>
+            <MenuItem  value={10}>گرانترین محصولات</MenuItem>
+            <MenuItem value={20}>ارزان ترین محصولات</MenuItem>
           </Select>
         </FormControl>
-      </DirectionSensitive>
     </Box>
   );
 }

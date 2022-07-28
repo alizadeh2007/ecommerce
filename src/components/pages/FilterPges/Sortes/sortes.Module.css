@@ -2,3 +2,6 @@
     direction: rtl!important;
     text-align: right!important;
 }
+.placeholder-Style::placeholder{
+    font-size: 2.6rem!important;
+}

@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import im1 from "./../../../assets/pic/Mask group.jpg";
+import im2 from "./../../../assets/pic/banner5.jpg";
+import im3 from "./../../../assets/pic/banner2.jpg";
 import "./carousel.style.css";
 export class BootstrapCarousel extends Component {
   render() {
@@ -15,12 +17,12 @@ export class BootstrapCarousel extends Component {
             <Carousel.Item style={{ height: "400px" }}>
               <img
                 alt="dfsdf0"
-                style={{ height: "400px" }}
+                style={{ height: "400px",width:"100%!important" }}
                 className="d-block w-100"
                 src={im1}
               />
               <Carousel.Caption>
-                <h3>First Demo </h3>
+                <h3>عینک ریوندی </h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item style={{ height: "400px" }}>
@@ -31,7 +33,7 @@ export class BootstrapCarousel extends Component {
                 src={im1}
               />
               <Carousel.Caption>
-                <h3>Second Demo</h3>
+                <h3> عینک ریوندی</h3>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item style={{ height: "400px" }}>
@@ -42,7 +44,8 @@ export class BootstrapCarousel extends Component {
                 src={im1}
               />
               <Carousel.Caption>
-                <h3>Third Demo</h3>
+              <h3> عینک ریوندی</h3>
+            
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

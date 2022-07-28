@@ -121,8 +121,8 @@ const plasticEyesGlassSwitchBtn = function (e) {
           <RangeSlider></RangeSlider>
         </Box>
         <DirectionSensitive>
-        <Box className="FilterPges-filters-Available" width="100%!important">
-          <Sortes width="100%!important" />
+        <Box className="FilterPges-filters-Available" justifyContent="center!important" width="100%!important">
+          <Sortes  />
         </Box>
         </DirectionSensitive>
 

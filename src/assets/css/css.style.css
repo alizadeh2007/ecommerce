@@ -3,6 +3,7 @@
     src: url('./../fonts/IRYekan.ttf') format('truetype');
     src: url('./../fonts/IRYekanBold.ttf') format('truetype');
   }
+  
 *{
     box-sizing: border-box;
     padding: 0;

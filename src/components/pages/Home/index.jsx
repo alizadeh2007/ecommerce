@@ -20,7 +20,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 function Home() {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [eyesGlasses, setEyesGlasses] = useState([]);
@@ -51,12 +50,11 @@ function Home() {
       .get("http://localhost:8000/shoes/")
       .then((res) => setShoes(res.data.slice(0, 5)));
   }, []);
-  const {newSort}=useSelector((state)=>state.newSort)
+  const { newSort } = useSelector((state) => state.newSort);
   const openFilterPage = function () {
     dispatch(uptodateNewSort(storeInfoJsonServer));
     dispatch(changeTypeFilterPage(true));
     navigate("/FilterPges");
-    
   };
   const openFilterPagePants = function () {
     navigate("/Pants");
@@ -83,13 +81,13 @@ function Home() {
         padding="2rem"
         fontSize="1.6rem"
       >
-        <Typography className="fontStyle fontStyleProduct">عینک</Typography>
         <Typography
           onClick={openFilterPage}
           className="fontStyle fontStyleSeeAll"
         >
           دیدن همه
         </Typography>
+        <Typography className="fontStyle fontStyleProduct">عینک</Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
         {eyesGlasses.map((item) => (
@@ -104,13 +102,13 @@ function Home() {
         padding="2rem"
         fontSize="1.6rem"
       >
-        <Typography className="fontStyle fontStyleProduct">شلوار</Typography>
         <Typography
           onClick={openFilterPagePants}
           className="fontStyle fontStyleSeeAll"
         >
           دیدن همه
         </Typography>
+        <Typography className="fontStyle fontStyleProduct">شلوار</Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
         {pants.map((item) => (
@@ -125,13 +123,13 @@ function Home() {
         padding="2rem"
         fontSize="1.6rem"
       >
-        <Typography className="fontStyle fontStyleProduct">کفش</Typography>
         <Typography
           onClick={openFilterPageShoes}
           className="fontStyle fontStyleSeeAll"
         >
           دیدن همه
         </Typography>
+        <Typography className="fontStyle fontStyleProduct">کفش</Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
         {shoes.map((item) => (
