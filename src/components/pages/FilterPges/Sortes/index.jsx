@@ -12,6 +12,8 @@ import {
   uptodateSortData,
 } from "../../../../redux/slice/slice";
 import { useEffect } from "react";
+import DirectionSensitive from "./../../../../assets/Rtl/index";
+
 export default function Sortes() {
   const [sort, setSort] = React.useState("");
   const dispatch = useDispatch();
@@ -25,33 +27,37 @@ export default function Sortes() {
   };
 
   useEffect(() => {
-    let data=[...storeInfoJsonServer]
+    let data = [...storeInfoJsonServer];
     if (sort === 20) {
-          let cheapestData=data.sort((a, b) => Number(a.price) - Number(b.price))
-          dispatch(uptodateNewSort(cheapestData))
+      let cheapestData = data.sort((a, b) => Number(a.price) - Number(b.price));
+      dispatch(uptodateNewSort(cheapestData));
     } else if (sort === 10) {
-      let expensiveData=data.sort((a, b) => Number(b.price) - Number(a.price))
-      dispatch(uptodateNewSort(expensiveData))
-
+      let expensiveData = data.sort(
+        (a, b) => Number(b.price) - Number(a.price)
+      );
+      dispatch(uptodateNewSort(expensiveData));
     }
   }, [sort]);
 
   return (
     <Box sx={{ minWidth: 300 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">اولویت </InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={sort}
-          label="Sort"
-          onChange={handleChange}
-        >
-          <MenuItem value={30}>جدید ترین</MenuItem>
-          <MenuItem value={10}>گرانترین</MenuItem>
-          <MenuItem value={20}>ارزان ترین</MenuItem>
-        </Select>
-      </FormControl>
+      <DirectionSensitive>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">اولویت </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={sort}
+            label="Sort"
+            style={{ direction: "rtl!important", textAlign: "right!important" }}
+            onChange={handleChange}
+          >
+            <MenuItem style={{direction:"rtl!important" , textAlign:"rigth!important"}} value={30}>جدید ترین</MenuItem>
+            <MenuItem  value={10}>گرانترین</MenuItem>
+            <MenuItem value={20}>ارزان ترین</MenuItem>
+          </Select>
+        </FormControl>
+      </DirectionSensitive>
     </Box>
   );
 }

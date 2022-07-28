@@ -10,6 +10,7 @@ import { uptodateNewSort } from "../../../redux/slice/slice";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Button from "@mui/material/Button";
+import DirectionSensitive from './../../../assets/Rtl/index';
 // Filterpges is eyeGlass component
 function FilterPges() {
   const dispatch = useDispatch();
@@ -119,9 +120,11 @@ const plasticEyesGlassSwitchBtn = function (e) {
         <Box className="FilterPges-filters-rangslider">
           <RangeSlider></RangeSlider>
         </Box>
+        <DirectionSensitive>
         <Box className="FilterPges-filters-Available" width="100%!important">
           <Sortes width="100%!important" />
         </Box>
+        </DirectionSensitive>
 
         <Box className="FilterPges-filters-Available">
           <Typography className="FilterPges-filters-Available-title">
