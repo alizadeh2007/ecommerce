@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Pagination, Switch, Typography } from "@mui/material";
+import { Box, Switch, Typography } from "@mui/material";
 import "./filterPage.Module.css";
 import MyCard from "../../customs/MyCard";
 import RangeSlider from "./RangeSlider/index";
@@ -9,7 +9,7 @@ import Sortes from "./Sortes/index";
 import { uptodateNewSort } from "../../../redux/slice/slice";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import IconButton from "@material-ui/core/IconButton";
+import Button from "@mui/material/Button";
 // Filterpges is eyeGlass component
 function FilterPges() {
   const dispatch = useDispatch();
@@ -23,7 +23,6 @@ function FilterPges() {
   // search data
   useEffect(() => {
     dispatch(uptodateNewSort([...storeInfoJsonServer]));
-    console.log("inga hstam");
     let finderCard = newSort.filter((item) =>
       item.title.includes(searchEyesGlass) ? item : null
     );
@@ -40,34 +39,79 @@ function FilterPges() {
   }
   // state for change page in pagination
   const [page, setPage] = useState("1");
-  const backBtn = function(){
-    if(+page>1){
-      setPage(+page-1)
-    } else{return setPage(+page)}
+  const backBtn = function () {
+    if (+page > 1) {
+      setPage(+page - 1);
+    } else {
+      return setPage(+page);
+    }
+  };
+  const forwardBtn = function () {
+    if (+page >= 0) {
+      setPage(Number(page) + 1);
+    } else {
+      return setPage(+page);
+    }
+  };
+  // switch BTN for eyeGlass btn
+  const handelSwitchBtn = function (e) {
+    const blackEyesGlass = [...storeInfoJsonServer];
+    if (e.target.checked === true) {
+      const getBlackColor = blackEyesGlass.filter((card) =>
+        card.property.color==="دودی"
+      );
+      console.log("cards=",blackEyesGlass)
+      dispatch(uptodateNewSort(getBlackColor));
+    }else {
+      dispatch(uptodateNewSort(storeInfoJsonServer));
+    }
+  };
+  // airplain Eyes Glass SwitchBtn
+  const airplainEyesGlassSwitchBtn = function (e) {
+    const airplainEyesGlass = [...storeInfoJsonServer];
+    if (e.target.checked === true) {
+      const getairplainEyesGlass = airplainEyesGlass.filter((card) =>
+        card.property.style==="خلبانی"
+      );
+      dispatch(uptodateNewSort(getairplainEyesGlass));
+    }else {
+      dispatch(uptodateNewSort(storeInfoJsonServer));
+    }
+  };
+//plastic EyesGlass Switch Btn
+const plasticEyesGlassSwitchBtn = function (e) {
+  const plasticEyesGlass = [...storeInfoJsonServer];
+  if (e.target.checked === true) {
+    const getplasticEyesGlass = plasticEyesGlass.filter((card) =>
+      card.property.material==="پلاستیک"
+    );
+    dispatch(uptodateNewSort(getplasticEyesGlass));
+  }else {
+    dispatch(uptodateNewSort(storeInfoJsonServer));
   }
-  const forwardBtn = function(){
-    if(+page>=0){
-      setPage(Number(page)+1)
-    } else{return setPage(+page)}
-  }
+};
   return (
     <Box className="FilterPges">
-      <Box display="block!important" width="100%!important">
-        <Box className="FilterPges-pages" width="100%!important">
-          {paginate(newSort, 12, +page)?.map((item) => (
+      <Box className="FilterPges-pages-card-Generate">
+        <Box className="FilterPges-pages-card-Generate">
+          {paginate(newSort, 10, +page)?.map((item) => (
             <MyCard title={item.title} price={item.price} image={item.imgURL} />
           ))}
         </Box>
-        <Box display="flex" justifyContent="center" alignItems="flex-start">
-          <Box display="flex" alignItems="center" gap="2rem">
-            <IconButton onClick={backBtn}>
-              <ArrowBackIosNewIcon className="pagination-icon" />
-            </IconButton>
-            {page}
-            <IconButton onClick={forwardBtn}>
-              <ArrowForwardIosIcon className="pagination-icon" />
-            </IconButton>
-          </Box>
+
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          gap="2rem"
+          width="100%"
+        >
+          <ArrowBackIosNewIcon className="pagination-icon" onClick={backBtn} />
+          {page}
+          <ArrowForwardIosIcon
+            className="pagination-icon"
+            onClick={forwardBtn}
+          />
         </Box>
       </Box>
       <Box className="FilterPges-filters">
@@ -81,10 +125,27 @@ function FilterPges() {
 
         <Box className="FilterPges-filters-Available">
           <Typography className="FilterPges-filters-Available-title">
-            فقط سوپر مارکتی{" "}
+            فقط دودی{" "}
           </Typography>
-          <Switch />
+          <Switch onChange={handelSwitchBtn} />
         </Box>
+        <Box className="FilterPges-filters-Available">
+          <Typography className="FilterPges-filters-Available-title">
+            فقط خلبانی{" "}
+          </Typography>
+          <Switch onChange={airplainEyesGlassSwitchBtn} />
+        </Box>
+
+
+        <Box className="FilterPges-filters-Available">
+          <Typography className="FilterPges-filters-Available-title">
+            فقط پلاستیکی{" "}
+          </Typography>
+          <Switch onChange={plasticEyesGlassSwitchBtn} />
+        </Box>
+
+
+
         <Box className="FilterPges-filters-Categories">
           <Typography className="FilterPges-filters-Available-title">
             سایر دسته بندی ها{" "}

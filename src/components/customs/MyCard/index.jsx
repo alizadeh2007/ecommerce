@@ -19,7 +19,7 @@ function MyCard({ title, price, image }) {
     <Card
       className="card"
       justifyContent="center"
-      sx={{ maxWidth: "15%!important", minWidth: "15%!important" }}
+      sx={{ maxWidth: "15%!important", minWidth: "17%!important" }}
     >
       <CardMedia
         component="img"

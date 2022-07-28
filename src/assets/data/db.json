@@ -501,6 +501,8 @@
         "material": "نایلون",
         "size": [""],
         "style": "فریم های خاص، مستطیلی ",
+        "color":"دودی",
+
         "crotch": "",
         "HowToClose": ""
       }
@@ -515,6 +517,8 @@
       "star": "4.1",
       "property": {
         "material": "پلاستیک",
+        "color":"دودی",
+
         "size": [""],
         "style": "مستطیلی",
         "crotch": "",
@@ -531,6 +535,8 @@
       "star": "3.8",
       "property": {
         "material": "استیل",
+        "color":"سبز",
+
         "size": [""],
         "style": "گرد",
         "crotch": "",
@@ -547,6 +553,8 @@
       "star": "4.5",
       "property": {
         "material": "پلاستیکی",
+        "color":"دودی",
+
         "size": [""],
         "style": "گرد، گربه ای",
         "crotch": "",
@@ -563,6 +571,8 @@
       "star": "4.4",
       "property": {
         "material": "استیل",
+        "color":"دودی",
+
         "size": [""],
         "style": "گرد",
         "crotch": "",
@@ -579,6 +589,8 @@
       "star": "3.5",
       "property": {
         "material": "فلزی",
+        "color":"بی رنگ",
+
         "size": [""],
         "style": "گرد",
         "crotch": "",
@@ -597,6 +609,8 @@
         "material": "استیل",
         "size": [""],
         "style": "مربعی، بیضی، گرد، چند ضلعی",
+        "color":"بی رنگ و قهوه ای",
+
         "crotch": "",
         "HowToClose": ""
       }
@@ -611,6 +625,8 @@
       "star": "3.8",
       "property": {
         "material": "پلی کربنات",
+        "color":"قرمز",
+
         "size": [""],
         "style": "گرد",
         "crotch": "",
@@ -627,6 +643,8 @@
       "star": "3.8",
       "property": {
         "material": "پلی کربنات",
+        "color":"آبی",
+
         "size": [""],
         "style": "گرد",
         "crotch": "",
@@ -643,6 +661,8 @@
       "star": "3.5",
       "property": {
         "material": " استیل",
+        "color":"قهوه ای",
+
         "size": [""],
         "style": "گربه ای، خلبانی، فریم های خاص، بیضی",
         "crotch": "",
@@ -661,6 +681,7 @@
         "material": " پلاستیک",
         "size": [""],
         "style": "خلبانی",
+        "color":"سبز",
         "crotch": "",
         "HowToClose": ""
       }
@@ -678,7 +699,10 @@
         "size": [""],
         "style": "ویفرر",
         "crotch": "",
-        "HowToClose": ""
+        "HowToClose": "",
+        "color":"قهوه ای"
+
+        
       }
     },
     {
@@ -694,6 +718,7 @@
         "size": [""],
         "style": "خلبانی",
         "crotch": "",
+        "color":10,
         "HowToClose": ""
       }
     },
@@ -710,6 +735,7 @@
         "size": [""],
         "style": "مستطیلی",
         "crotch": "",
+        "color":"بنفش",
         "HowToClose": ""
       }
     }
