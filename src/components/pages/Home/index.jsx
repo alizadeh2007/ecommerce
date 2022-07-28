@@ -8,6 +8,7 @@ import LaptopWindowsIcon from "@mui/icons-material/LaptopWindows";
 import IconPages from "./../../customs/IconPages/index";
 import MyCard from "./../../customs/MyCard/index";
 import { useDispatch } from "react-redux";
+import bannerFooter from './../../../assets/pic/footer-banner.jpg'
 import {
   changeTypeFilterPage,
   storageInformationJson,
@@ -116,9 +117,15 @@ function Home() {
         ))}
       </Box>
 
+<Box width="100%" marginTop="5rem">
+<img src={bannerFooter}/>
+</Box>
+
+
+
       <Box
         display="flex"
-        marginTop="5.5rem"
+        marginTop="3rem"
         justifyContent="space-between"
         padding="2rem"
         fontSize="1.6rem"

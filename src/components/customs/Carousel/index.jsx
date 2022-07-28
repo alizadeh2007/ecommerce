@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import im1 from "./../../../assets/pic/Mask group.jpg";
-import im2 from "./../../../assets/pic/banner5.jpg";
-import im3 from "./../../../assets/pic/banner2.jpg";
+import im1 from "./../../../assets/pic/b3.jpg";
+import im2 from "./../../../assets/pic/b5e501216f7d50205a01b89c3d12370a3c20c114_1658557717.jpg";
+import im3 from "./../../../assets/pic/b2.jpg";
 import "./carousel.style.css";
 export class BootstrapCarousel extends Component {
   render() {
@@ -19,10 +19,10 @@ export class BootstrapCarousel extends Component {
                 alt="dfsdf0"
                 style={{ height: "400px",width:"100%!important" }}
                 className="d-block w-100"
-                src={im1}
+                src={im2}
               />
               <Carousel.Caption>
-                <h3>عینک ریوندی </h3>
+                {/* <h3>عینک ریوندی </h3> */}
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item style={{ height: "400px" }}>
@@ -33,7 +33,7 @@ export class BootstrapCarousel extends Component {
                 src={im1}
               />
               <Carousel.Caption>
-                <h3> عینک ریوندی</h3>
+                {/* <h3> عینک ریوندی</h3> */}
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item style={{ height: "400px" }}>
@@ -41,10 +41,10 @@ export class BootstrapCarousel extends Component {
                 alt="dfsdf2"
                 style={{ height: "400px" }}
                 className="d-block w-100"
-                src={im1}
+                src={im3}
               />
               <Carousel.Caption>
-              <h3> عینک ریوندی</h3>
+              {/* <h3> عینک ریوندی</h3> */}
             
               </Carousel.Caption>
             </Carousel.Item>
