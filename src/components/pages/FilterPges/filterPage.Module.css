@@ -16,11 +16,11 @@
     font-size: 1.3rem!important;
 }
 .FilterPges-pages{
-    width: 80%!important;
+    width: 100%!important;
     /* background-color: rgb(22, 77, 77)!important; */
     color: rgb(255, 0, 0);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding: 2rem;
     gap: 1rem;
@@ -59,4 +59,7 @@
     width: 100%;
     flex-direction: column;
 
+}
+.pagination-icon{
+    cursor:pointer !important;
 }
