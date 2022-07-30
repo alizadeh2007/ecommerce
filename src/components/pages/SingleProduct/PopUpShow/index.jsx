@@ -1,43 +1,61 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import MainImage from "../../../../assets/pic/download.png";
-import Modal from "@mui/material/Modal";
-import { useDispatch, useSelector } from "react-redux";
-import { changeTypeMiniPic } from "../../../../redux/slice/slice";
-import "./popupshow.module.css";
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+
+ import * as React from 'react';
+import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
+import Rating from '@mui/material/Rating';
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
+import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAltOutlined';
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
+
+const StyledRating = styled(Rating)(({ theme }) => ({
+  '& .MuiRating-iconEmpty .MuiSvgIcon-root': {
+    color: theme.palette.action.disabled,
+  },
+}));
+
+const customIcons = {
+  1: {
+    icon: <SentimentVeryDissatisfiedIcon color="error" />,
+    label: 'Very Dissatisfied',
+  },
+  2: {
+    icon: <SentimentDissatisfiedIcon color="error" />,
+    label: 'Dissatisfied',
+  },
+  3: {
+    icon: <SentimentSatisfiedIcon color="warning" />,
+    label: 'Neutral',
+  },
+  4: {
+    icon: <SentimentSatisfiedAltIcon color="success" />,
+    label: 'Satisfied',
+  },
+  5: {
+    icon: <SentimentVerySatisfiedIcon color="success" />,
+    label: 'Very Satisfied',
+  },
 };
 
-export default function PopupShow() {
-  const { openModalShowMiniPic } = useSelector(
-    (state) => state.openModalShowMiniPic
-  );
-  const dispatch = useDispatch();
-  const handleClose = function () {
-    dispatch(changeTypeMiniPic(false));
-  };
+function IconContainer(props) {
+  const { value, ...other } = props;
+  return <span {...other}>{customIcons[value].icon}</span>;
+}
 
+IconContainer.propTypes = {
+  value: PropTypes.number.isRequired,
+};
+
+export default function Range() {
   return (
-    <div>
-      <Modal
-        open={openModalShowMiniPic}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <img  src={MainImage} />
-        </Box>
-      </Modal>
-    </div>
+    <StyledRating
+      name="highlight-selected-only"
+      defaultValue={2}
+      IconContainerComponent={IconContainer}
+      getLabelText={(value) => customIcons[value].label}
+      highlightSelectedOnly
+    />
   );
 }
+

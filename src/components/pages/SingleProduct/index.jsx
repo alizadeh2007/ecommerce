@@ -16,6 +16,7 @@ import deliverPic2 from "./../../../assets/pic/deliver2.svg";
 import deliverPic3 from "./../../../assets/pic/deliver3.svg";
 import deliverPic4 from "./../../../assets/pic/deliver4.svg";
 import SinglePageAccordion from "./AccordionSingleProduct/index";
+import Comments from "./Comments/index";
 function SingleProduct() {
   const disPatch = useDispatch();
   const miniPicShows = function () {
@@ -29,6 +30,7 @@ function SingleProduct() {
       <Typography className="watch-Product">خانه/مشاهده محصول</Typography>
       <Box display="flex" height="55vh" justifyContent="center">
         <Box className="Single-Product-section-parent">
+          {/* LEFT section */}
           <Box className="Single-Product-about-product">
             <Box className="Single-Product-about-product-sections">
               <Typography className="Single-Product-about-product-title-sections">
@@ -70,6 +72,7 @@ function SingleProduct() {
               <SinglePageAccordion></SinglePageAccordion>
             </Box>
           </Box>
+          {/* midle section/ details of product */}
           <Box display="Single-Product-section">
             <Box className="Single-Product">
               <Typography className="Single-Product-Title">
@@ -149,26 +152,11 @@ function SingleProduct() {
           >
             <img className="single-Product-Image" src={singleProductImage} />
           </Box>
-          <Box display="flex" gap="1rem" justifyContent="center">
-            <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
-            />
-            <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
-            />
-            <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
-            />
-            <PopupShow></PopupShow>
-          </Box>
         </Box>
       </Box>
+      {/* comments section */}
+      <Comments></Comments>
+        {/* massage done */}
     </Box>
   );
 }

@@ -115,7 +115,7 @@
 .Single-Product-section-parent {
   display: flex !important;
   justify-content: center !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   gap: 2rem;
   background-color: #00f2ff00;
 }
@@ -158,13 +158,30 @@
   padding: 0.5rem !important;
   cursor: pointer !important;
 }
-.watch-Product{
-    font-size: 1.6rem!important;
-    font-weight: bold!important;
-    direction: rtl;
-    align-items: flex-start;
+.watch-Product {
+  font-size: 1.6rem !important;
+  font-weight: bold !important;
+  direction: rtl;
+  align-items: flex-start;
 
-    margin: 1rem!important;
-    border-bottom: .1rem solid #d9d9d9;
+  margin: 1rem !important;
+  border-bottom: 0.1rem solid #d9d9d9;
+}
+.comments-section-date {
+  display: flex;
+  gap: 0.5rem;
+}
+.comments-section-date-title {
+  font-size: 1.5rem !important;
+  color: #9e9a9a;
+}
+.comments-section-date-parent {
+  border-top: 0.1rem solid #9e9a9a64;
+  padding: 2rem;
+}
+.GppBadIcon {
+  /* width: 2.4rem!important; */
+  font-size: 2.4rem !important;
+  color: #d43200;
 }
 
