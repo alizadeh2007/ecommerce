@@ -11,11 +11,7 @@ import InputIcon from "../Input/InputIcon";
 function IconPages() {
   return (
     <Box
-      width="100%"
-      display="flex"
-      justifyContent="center"
-      gap="4rem"
-      marginTop="2rem"
+    className="iconpage-icons-style"
     >
       <InputIcon title="صوتی" srcIcon={sounds} />
       <InputIcon title="ورزشی" srcIcon={sport} />

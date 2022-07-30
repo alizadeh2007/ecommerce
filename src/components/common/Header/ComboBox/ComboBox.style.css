@@ -1,28 +1,47 @@
-.ComboBoxInput input::placeholder{
-    font-size: 1.2rem!important;
-    text-align: end!important;
-    color: #000!important;
+.ComboBoxInput input::placeholder {
+  font-size: 1.2rem !important;
+  text-align: end !important;
+  color: #000 !important;
 }
-.ComboBoxInput input{
-    font-size: 1.4rem!important;
-    text-align:end!important;
-    direction: rtl!important;
+.ComboBoxInput input {
+  font-size: 1.4rem !important;
+  text-align: end !important;
+  direction: rtl !important;
+}
+.ComboBoxInput fieldset {
+  padding: 0rem !important;
+  border-radius: 0.1rem !important;
+}
+.ComboBoxInput .MuiOutlinedInput-root {
+  /* padding: .5rem!important; */
+  height: 100% !important;
+  border: none !important;
+  padding-top: 0rem !important;
+}
 
+.ComboBoxInput .MuiAutocomplete-input {
+  padding-right: 0rem !important;
 }
-.ComboBoxInput fieldset{
-    padding: 0rem!important;
-    border-radius:.1rem!important;
-}
-.ComboBoxInput .MuiOutlinedInput-root{
-    /* padding: .5rem!important; */
-    height: 100%!important;
-    border: none!important;
-padding-top: 0rem!important;
+.ComboBoxInput .MuiOutlinedInput-root {
+  padding-right: 0rem !important;
 }
 
-.ComboBoxInput .MuiAutocomplete-input{
-    padding-right: 0rem!important;
-}
-.ComboBoxInput .MuiOutlinedInput-root{
-    padding-right: 0rem!important;
+@media screen and (max-width: 768px) {
+  .ComboBoxInput-parent {
+    display:none!important;
+    width: 110px !important;
+  }.ComboBoxInput input::placeholder {
+    font-size: .9rem !important;
+    text-align: end !important;
+    color: #000 !important;
+  }.ComboBoxInput input {
+    font-size: .9rem !important;
+    text-align: end !important;
+    color: #000 !important;
+    padding: 3px 1px 0px 0px!important;
+  }
+  .bgHeaderFinallyParent>.categoryBoxStyles{
+    display:none!important;
+  }
+
 }

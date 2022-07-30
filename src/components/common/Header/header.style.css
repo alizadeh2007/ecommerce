@@ -121,4 +121,69 @@
   font-family: "Shabnam", sans-serif !important;
   cursor: pointer;
 }
+.styleHeader-Parent{
+  display: none!important;
+}
 
+@media screen and  (max-width: 768px) {
+  .bgHeaderFinally{
+    font-size: .6rem !important;
+  };
+  .input{
+    width: 2rem!important;
+    height: 3rem!important;
+    text-align: end;
+    padding-right: 1rem;
+    border: 0.1rem solid #f6bf3200 !important;
+    font-family: "Shabnam", sans-serif !important;
+  }
+  .search {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10%;
+  }
+  .styleLinks{
+    color: rgba(255, 255, 255, 0.958) !important;
+    font-size: 1rem !important;
+    font-family: "Shabnam", sans-serif !important;
+    display: none;
+  }
+  .TitleFinally{
+    font-weight: lighter !important;
+    color: #f6bd32 !important;
+    font-size: 1rem !important;
+    font-family: "Shabnam", sans-serif !important;
+  }
+  .bgHeaderFinallyParent{
+    width: 100%;
+    height: 3rem;
+    background-color: #444540;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: "Shabnam", sans-serif !important;
+  }
+  .styleHeader {
+    width: 100%;
+    height: 3rem;
+    background-color: #2485b8;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-right: 2rem;
+    /* gap: 0.5rem; */
+    border-bottom: 0.2rem solid rgba(255, 255, 255, 0.24);
+     padding-left: 2rem!important; 
+    
+  }
+  .styleHeader-Parent{
+    display: flex!important;
+    color: rgb(249, 249, 249)!important;
+    cursor: pointer;
+    /* padding-left: 2rem!important; */
+  }
+
+}

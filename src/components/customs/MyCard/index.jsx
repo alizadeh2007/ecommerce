@@ -19,7 +19,7 @@ function MyCard({ title, price, image }) {
     <Card
       className="card"
       justifyContent="center"
-      sx={{ maxWidth: "15%!important", minWidth: "17%!important" }}
+      sx={{ maxWidth: "10%!important" }}
     >
       <CardMedia
         component="img"
@@ -29,7 +29,7 @@ function MyCard({ title, price, image }) {
         className="img"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom className="mycard-Title-Style" variant="h5" component="div">
           {title}
         </Typography>
         <Typography
@@ -43,13 +43,11 @@ function MyCard({ title, price, image }) {
           <Typography className="priceStyle">{price}</Typography>
         </Typography>
       </CardContent>
-      <Box display="flex" justifyContent="center" height="6rem" alignItems="center">
+      <Box className="mycard-button-style">
         <Button
           onClick={openSingleProductPage}
           className="buttonStyle"
-          variant="contained"
-        >
-          مشاهده محصول
+          variant="contained">مشاهده محصول
         </Button>
       </Box>
     </Card>

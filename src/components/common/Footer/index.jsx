@@ -23,34 +23,34 @@ function Footer() {
       <Box
         className="iconFooter-parent"
         display="flex"
-        gap="10rem"
+        gap="7rem"
         padding="3rem"
       >
         <Box className="footer-icon-box">
           <img className="iconFooter" src={cart} />
-          <Typography className="titleIconsFooter">شارژ حساب </Typography>
+          <Typography className="titleIconsFooter">شارژحساب </Typography>
         </Box>
 
 
         <Box className="footer-icon-box">
           <img className="iconFooter" src={paper} />
-          <Typography className="titleIconsFooter"> یادداشت ها </Typography>
+          <Typography className="titleIconsFooter"> یادداشت </Typography>
         </Box>
 
 
         <Box className="footer-icon-box">
           <img className="iconFooter" src={money} />
-          <Typography className="titleIconsFooter">درآمد زایی</Typography>
+          <Typography className="titleIconsFooter">درآمدزایی</Typography>
         </Box>
 
         
         <Box className="footer-icon-box">
           <img className="iconFooter" src={guaranty2} />
-          <Typography className="titleIconsFooter"> ضمانت خرید</Typography>
+          <Typography className="titleIconsFooter"> ضمانت </Typography>
         </Box>
       </Box>
       <Box className="footer">
-        <Box className="fontStylesParent">
+        <Box className="fontStylesParent ">
           <Typography className="fontStylesTitle" fontWeight="bold">
             پیکاب در شبکه های اجتماعی
           </Typography>

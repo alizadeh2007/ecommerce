@@ -4,12 +4,13 @@ import "./header.style.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import changeTypes, { changeType, uptodateSearchEyesGlass } from "./../../../redux/slice/slice.js";
 import Categories from './ComboBox/index';
 import DirectionSensitive from "../../../assets/Rtl";
+import DensityMediumRoundedIcon from '@mui/icons-material/DensityMediumRounded';
+import PrimarySearchAppBar from './MenuBarMobile/index';
 function Header() {
   const disPatch = useDispatch();
   console.log(changeTypes);
@@ -41,9 +42,14 @@ function Header() {
   
   return (
     <Box>
+      <Box>
       <Box className="styleHeader">
-        <ShoppingCartOutlinedIcon onClick={openModalShoppingList} className="ShoppingCartOutlinedIcon"></ShoppingCartOutlinedIcon>
-        <PersonIcon onClick={registerIcon} className="PersonIcon"></PersonIcon>
+      <Box>
+        <ShoppingCartOutlinedIcon onClick={openModalShoppingList} className="ShoppingCartOutlinedIcon"/>
+        <PersonIcon onClick={registerIcon} className="PersonIcon"/>
+      </Box>
+        <DensityMediumRoundedIcon className="styleHeader-Parent" />
+      </Box>
       </Box>
       <Box className="bgHeaderMiddle">
         <Box className="search">
@@ -68,7 +74,7 @@ function Header() {
         </Box>
       </Box>
       <Box className="bgHeaderFinallyParent">
-        <Box >
+        <Box>
         <DirectionSensitive>
           <Categories className="categoryBoxStyles"></Categories>
         </DirectionSensitive>

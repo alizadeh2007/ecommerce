@@ -10,6 +10,7 @@ export default function ComboBox() {
       disablePortal
       id="combo-box-demo"
       options={top100Films}
+      className='ComboBoxInput-parent'
       sx={{ width: 150,bgcolor:"#F6BD32", border:"none!important", textAlign: "end!important"}}
       renderInput={(params) => <TextField  className='ComboBoxInput' {...params} placeholder="همه دسته بندی ها"  />}
     />

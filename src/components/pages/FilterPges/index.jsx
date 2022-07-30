@@ -10,7 +10,7 @@ import { uptodateNewSort } from "../../../redux/slice/slice";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Button from "@mui/material/Button";
-import DirectionSensitive from './../../../assets/Rtl/index';
+import DirectionSensitive from "./../../../assets/Rtl/index";
 // Filterpges is eyeGlass component
 function FilterPges() {
   const dispatch = useDispatch();
@@ -58,12 +58,12 @@ function FilterPges() {
   const handelSwitchBtn = function (e) {
     const blackEyesGlass = [...storeInfoJsonServer];
     if (e.target.checked === true) {
-      const getBlackColor = blackEyesGlass.filter((card) =>
-        card.property.color==="دودی"
+      const getBlackColor = blackEyesGlass.filter(
+        (card) => card.property.color === "دودی"
       );
-      console.log("cards=",blackEyesGlass)
+      console.log("cards=", blackEyesGlass);
       dispatch(uptodateNewSort(getBlackColor));
-    }else {
+    } else {
       dispatch(uptodateNewSort(storeInfoJsonServer));
     }
   };
@@ -71,26 +71,26 @@ function FilterPges() {
   const airplainEyesGlassSwitchBtn = function (e) {
     const airplainEyesGlass = [...storeInfoJsonServer];
     if (e.target.checked === true) {
-      const getairplainEyesGlass = airplainEyesGlass.filter((card) =>
-        card.property.style==="خلبانی"
+      const getairplainEyesGlass = airplainEyesGlass.filter(
+        (card) => card.property.style === "خلبانی"
       );
       dispatch(uptodateNewSort(getairplainEyesGlass));
-    }else {
+    } else {
       dispatch(uptodateNewSort(storeInfoJsonServer));
     }
   };
-//plastic EyesGlass Switch Btn
-const plasticEyesGlassSwitchBtn = function (e) {
-  const plasticEyesGlass = [...storeInfoJsonServer];
-  if (e.target.checked === true) {
-    const getplasticEyesGlass = plasticEyesGlass.filter((card) =>
-      card.property.material==="پلاستیک"
-    );
-    dispatch(uptodateNewSort(getplasticEyesGlass));
-  }else {
-    dispatch(uptodateNewSort(storeInfoJsonServer));
-  }
-};
+  //plastic EyesGlass Switch Btn
+  const plasticEyesGlassSwitchBtn = function (e) {
+    const plasticEyesGlass = [...storeInfoJsonServer];
+    if (e.target.checked === true) {
+      const getplasticEyesGlass = plasticEyesGlass.filter(
+        (card) => card.property.material === "پلاستیک"
+      );
+      dispatch(uptodateNewSort(getplasticEyesGlass));
+    } else {
+      dispatch(uptodateNewSort(storeInfoJsonServer));
+    }
+  };
   return (
     <Box className="FilterPges">
       <Box className="FilterPges-pages-card-Generate">
@@ -117,13 +117,17 @@ const plasticEyesGlassSwitchBtn = function (e) {
       </Box>
       <Box className="FilterPges-filters">
         <Typography className="FilterPges-filters-title">فیلتر</Typography>
-        <Box className="FilterPges-filters-rangslider">
+        {/* <Box className="FilterPges-filters-rangslider">
           <RangeSlider></RangeSlider>
-        </Box>
+        </Box> */}
         <DirectionSensitive>
-        <Box className="FilterPges-filters-Available" justifyContent="center!important" width="100%!important">
-          <Sortes  />
-        </Box>
+          <Box
+            className="FilterPges-filters-Available"
+            justifyContent="center!important"
+            width="100%!important"
+          >
+            <Sortes />
+          </Box>
         </DirectionSensitive>
 
         <Box className="FilterPges-filters-Available">
@@ -139,15 +143,12 @@ const plasticEyesGlassSwitchBtn = function (e) {
           <Switch onChange={airplainEyesGlassSwitchBtn} />
         </Box>
 
-
         <Box className="FilterPges-filters-Available">
           <Typography className="FilterPges-filters-Available-title">
             فقط پلاستیکی{" "}
           </Typography>
           <Switch onChange={plasticEyesGlassSwitchBtn} />
         </Box>
-
-
 
         <Box className="FilterPges-filters-Categories">
           <Typography className="FilterPges-filters-Available-title">

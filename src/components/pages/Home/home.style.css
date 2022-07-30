@@ -20,7 +20,6 @@
 .fontStyle{
     font-size: 1.6rem!important;
     color:rgba(3, 3, 3, 0.854)!important;
-
     padding-right: 4rem!important;
 }
 .fontStyleProduct{
@@ -39,6 +38,47 @@
 }
 .banner img{
     width: 30%;
-
-
 }
+.middle-Page-banner{
+    width: 100vw!important;
+}
+@media screen and  (max-width: 768px) {
+    .middle-Page-banner{
+        width: 100vw!important;
+    }  
+    .fontStyle{
+        font-size: 1rem!important;
+        color:rgba(3, 3, 3, 0.854)!important;
+        padding-right: 1rem!important;
+    }
+}
+
+/* @media screen and  (max-width: 904px) {
+    .middle-Page-banner{
+        width: 100vw!important;
+    }  
+    .fontStyle{
+        font-size: 1rem!important;
+        color:rgba(3, 3, 3, 0.854)!important;
+        padding-right: 8rem!important;
+    }
+    .fontStyleSeeAll{
+        text-decoration: underline;
+        padding-left: 8rem!important;
+        cursor: pointer!important;
+    }
+} */
+/* @media screen and  (max-width: 1203px) {
+    .middle-Page-banner{
+        width: 100vw!important;
+    }  
+    .fontStyle{
+        color:rgba(3, 3, 3, 0.854)!important;
+        padding-right: 12rem!important;
+    }
+    .fontStyleSeeAll{
+        text-decoration: underline;
+        padding-left: 12rem!important;
+        cursor: pointer!important;
+    }
+} */

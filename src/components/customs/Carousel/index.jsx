@@ -8,39 +8,38 @@ import "./carousel.style.css";
 export class BootstrapCarousel extends Component {
   render() {
     return (
-      <div className="carouselStyle">
+      <div className="carouselStyle carouselStyle-responsive">
         <div className="container-fluid carouselStyle">
           <div className="row title"></div>
         </div>
         <div className="container-fluid carouselStyle">
           <Carousel>
-            <Carousel.Item style={{ height: "400px" }}>
+            <Carousel.Item className="h400-height" >
               <img
                 alt="dfsdf0"
-                style={{ height: "400px",width:"100%!important" }}
-                className="d-block w-100"
-                src={im2}
+                style={{width:"100%!important" }}
+                className="d-block w-100 h400-height"
+                src={im1}
               />
               <Carousel.Caption>
                 {/* <h3>عینک ریوندی </h3> */}
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{ height: "400px" }}>
+            <Carousel.Item className="h400-height" >
               <img
                 alt="dfsdf"
-                style={{ height: "400px"}}
-                className="d-block w-100 "
-                src={im1}
+                style={{width:"100%!important" }}
+                className="d-block w-100 h400-height"
+                src={im2}
               />
               <Carousel.Caption>
                 {/* <h3> عینک ریوندی</h3> */}
               </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item style={{ height: "400px" }}>
+            <Carousel.Item className="h400-height">
               <img
                 alt="dfsdf2"
-                style={{ height: "400px" }}
-                className="d-block w-100"
+                className="d-block w-100 h400-height"
                 src={im3}
               />
               <Carousel.Caption>

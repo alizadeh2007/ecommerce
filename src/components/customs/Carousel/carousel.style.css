@@ -6,3 +6,34 @@
     padding: 0rem!important;
     border:none!important
 }
+.h400-height{
+height: 400px!important;
+}
+.carousel-indicators>button{
+     width: .5rem!important;
+     height: .5rem!important;
+     border-radius: 100%!important;
+     border: .2rem solid;
+    /* height: 2rem!important;  */
+}
+
+@media screen and  (max-width: 1000px) {
+    .h400-height{
+        height: 300px!important;
+        }
+}
+@media screen and  (max-width: 768px) {
+    .h400-height{
+        height: 150px!important;
+        }
+        .carousel-control-prev-icon {
+
+            width: 1rem!important;
+            height: 1rem!important;
+
+        }
+        .carousel-control-next-icon{
+            width: 1rem!important;
+            height: 1rem!important;
+        }
+}

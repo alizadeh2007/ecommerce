@@ -102,3 +102,54 @@
     padding-right: 3.5rem!important;
     color:#44454092!important
   }
+  @media screen and  (max-width: 768px) {
+    .fontStyles{
+      font-size: 1rem !important;
+    }
+    .footer{
+      margin-top: .2rem;
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.214);
+      display: flex;
+      gap: 1rem;
+      background-color: #444540;
+      padding-top: 2rem;
+      justify-content: center;
+      padding-bottom: 2rem;
+    }
+    .fontStylesTitle{
+      font-size: 1rem !important;
+      color: rgb(232, 232, 232)!important;
+    }
+    .footerstyleforinputregistration{
+      width: 3rem;
+      height: 2rem;
+      background-color: #eeb21b;
+      color: aliceblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 0.2rem 0 0 0.2rem;
+    }
+    .footerstyleforinput{
+      width: 10rem;
+      height: 2rem;
+    }
+    .icons{
+      width: 1.2rem!important;
+    }
+    .titleIconsFooter{
+    font-size: 1rem!important;
+    width: 100%!important;
+    }
+    .iconFooter{
+      width: 100%!important;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    };
+    .iconFooter-parent{
+      background-color: #44454032;
+      padding: 1rem!important
+    }
+    ;}
