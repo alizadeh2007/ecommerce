@@ -26,11 +26,9 @@ function Home() {
   const [eyesGlasses, setEyesGlasses] = useState([]);
   const [pants, setPants] = useState([]);
   const [shoes, setShoes] = useState([]);
-  console.log("pants=", pants);
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
-  console.log(storeInfoJsonServer);
   useEffect(() => {
     axios
       .get("http://localhost:8000/eyeglasses/")
@@ -91,8 +89,9 @@ function Home() {
         <Typography className="fontStyle fontStyleProduct">عینک</Typography>
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
+      
         {eyesGlasses.map((item) => (
-          <MyCard title={item.title} price={item.price} image={item.imgURL} />
+          <MyCard item={item} title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
 
@@ -113,7 +112,7 @@ function Home() {
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
         {pants.map((item) => (
-          <MyCard title={item.title} price={item.price} image={item.imgURL} />
+          <MyCard item={item} title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
 
@@ -138,7 +137,7 @@ function Home() {
       </Box>
       <Box display="flex" justifyContent="center" gap="3.5rem" flexWrap="wrap">
         {shoes.map((item) => (
-          <MyCard title={item.title} price={item.price} image={item.imgURL} />
+          <MyCard item={item} title={item.title} price={item.price} image={item.imgURL} />
         ))}
       </Box>
     </Box>

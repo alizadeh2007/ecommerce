@@ -5,16 +5,25 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import img from "./../../../assets/pic/Mask group.jpg";
+import { useDispatch } from "react-redux";
 import { Box } from "@mui/system";
 import { useNavigate } from "react-router-dom";
+import { uptodateopenSingleProduct } from "../../../redux/slice/slice";
 import { useSelector } from "react-redux";
 
-function MyCard({ title, price, image }) {
+function MyCard({ title, price, image, item, id }) {
   const navigate = useNavigate();
-  const openSingleProductPage = function () {
+  const dispatch = useDispatch();
+
+  const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
+  console.log("total card=", item);
+
+  const openSingleProductPage = function (values) {
+    console.log("item=", item);
+    dispatch(uptodateopenSingleProduct(item));
     navigate("/SingleProduct");
   };
+
   return (
     <Card
       className="card"
@@ -29,7 +38,12 @@ function MyCard({ title, price, image }) {
         className="img"
       />
       <CardContent style={{ textAlign: "center" }}>
-        <Typography gutterBottom className="mycard-Title-Style" variant="h5" component="div">
+        <Typography
+          gutterBottom
+          className="mycard-Title-Style"
+          variant="h5"
+          component="div"
+        >
           {title}
         </Typography>
         <Typography
@@ -45,9 +59,11 @@ function MyCard({ title, price, image }) {
       </CardContent>
       <Box className="mycard-button-style">
         <Button
-          onClick={openSingleProductPage}
+          onClick={(e) => openSingleProductPage()}
           className="buttonStyle"
-          variant="contained">مشاهده محصول
+          variant="contained"
+        >
+          مشاهده محصول
         </Button>
       </Box>
     </Card>

@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import garauntyPic from "./../../../assets/pic/guaranty.svg";
 import moneyPic from "./../../../assets/pic/money.svg";
 import { changeTypeMiniPic } from "../../../redux/slice/slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PopupShow from "./PopUpShow/index";
 import deliverPic from "./../../../assets/pic/Delivery .svg";
 import deliverPic1 from "./../../../assets/pic/deliver1.svg";
@@ -17,7 +17,11 @@ import deliverPic3 from "./../../../assets/pic/deliver3.svg";
 import deliverPic4 from "./../../../assets/pic/deliver4.svg";
 import SinglePageAccordion from "./AccordionSingleProduct/index";
 import Comments from "./Comments/index";
+import Btn from "./../../customs/Buttons/index";
+import BasicModalcomment from "./PopUpShow/index";
 function SingleProduct() {
+  const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
+  console.log("openSingleProduct=", openSingleProduct);
   const disPatch = useDispatch();
   const miniPicShows = function () {
     disPatch(changeTypeMiniPic(true));
@@ -76,13 +80,11 @@ function SingleProduct() {
           <Box display="Single-Product-section">
             <Box className="Single-Product">
               <Typography className="Single-Product-Title">
-                مشخصات کفش آریا
+                مشخصات {openSingleProduct.title}
               </Typography>
               <Box className="Single-Product-info">
                 <Typography className="Single-Product-Explain">
-                  کف پوش نانو در طرح و رنگ متفاوت با ده درصد تخفیف. این کالا در
-                  چهار رنگ متفاوت عرضه می گردد. کف پوش نانویی این محصول قابل
-                  تعویض و با یک کف پوش اضافه می باشد.
+                  {openSingleProduct.explain}
                 </Typography>
                 <Box display="flex" gap=".3rem">
                   <img
@@ -100,7 +102,7 @@ function SingleProduct() {
                   <img className="Single-Product-moneyPic" src={moneyPic} />
 
                   <Typography className="Single-Product-Price">
-                    270000
+                    {openSingleProduct.price}
                   </Typography>
                   <Typography className="Single-Product-Price">
                     تومان
@@ -150,13 +152,21 @@ function SingleProduct() {
             justifyContent="center"
             alignContent="center"
           >
-            <img className="single-Product-Image" src={singleProductImage} />
+            <img
+              className="single-Product-Image"
+              src={openSingleProduct.imgURL}
+            />
           </Box>
         </Box>
       </Box>
       {/* comments section */}
+
+      <Box className="comments-parts">
+        <BasicModalcomment></BasicModalcomment>
+      </Box>
       <Comments></Comments>
-        {/* massage done */}
+      <Comments></Comments>
+      {/* massage done */}
     </Box>
   );
 }

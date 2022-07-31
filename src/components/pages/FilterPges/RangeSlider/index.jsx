@@ -7,7 +7,6 @@ const RangeSlider = () => {
 
   const rangeSelector = (event, newValue) => {
     setValue(newValue);
-    console.log(newValue);
   };
   return (
     <Box className="rangeSlider">

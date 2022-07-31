@@ -13,7 +13,6 @@ import DensityMediumRoundedIcon from '@mui/icons-material/DensityMediumRounded';
 import PrimarySearchAppBar from './MenuBarMobile/index';
 function Header() {
   const disPatch = useDispatch();
-  console.log(changeTypes);
   const registerIcon = function () {
     disPatch(changeType(true));
   };

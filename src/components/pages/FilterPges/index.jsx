@@ -61,7 +61,6 @@ function FilterPges() {
       const getBlackColor = blackEyesGlass.filter(
         (card) => card.property.color === "دودی"
       );
-      console.log("cards=", blackEyesGlass);
       dispatch(uptodateNewSort(getBlackColor));
     } else {
       dispatch(uptodateNewSort(storeInfoJsonServer));
@@ -96,7 +95,7 @@ function FilterPges() {
       <Box className="FilterPges-pages-card-Generate">
         <Box className="FilterPges-pages-card-Generate">
           {paginate(newSort, 10, +page)?.map((item) => (
-            <MyCard title={item.title} price={item.price} image={item.imgURL} />
+            <MyCard item={item} title={item.title} price={item.price} image={item.imgURL} id={item.id} />
           ))}
         </Box>
 

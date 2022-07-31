@@ -10,6 +10,7 @@ import storeInfoShoesJsonServer from "./../slice/slice";
 import searchEyesGlass from "./../slice/slice";
 import sortData from "./../slice/slice";
 import newSort from "./../slice/slice";
+import openSingleProduct from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -24,5 +25,6 @@ export const store = configureStore({
     searchEyesGlass,
     sortData,
     newSort,
+    openSingleProduct,
   },
 });

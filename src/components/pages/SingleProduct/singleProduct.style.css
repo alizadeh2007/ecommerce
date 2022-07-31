@@ -184,4 +184,16 @@
   font-size: 2.4rem !important;
   color: #d43200;
 }
+.comments-parts{
+  border-top: .1rem solid #9e9a9a11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+
+}
+.comments-parts-text{
+  width: 10rem!important;
+  font-size: 1.3rem!important;
+}
 

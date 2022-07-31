@@ -17,7 +17,7 @@ function Comments() {
         >
           <Box>
             <GppBadIcon className="GppBadIcon" />
-            <Typography fontWeight="bold!important">گزارش</Typography>
+            <Typography fontWeight="bold!important" className="font-GppBadIcon">گزارش</Typography>
           </Box>
           <Box display="flex" gap="2rem">
             <Box className="comments-section-date-title">

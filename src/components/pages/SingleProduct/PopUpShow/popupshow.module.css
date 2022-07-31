@@ -1,0 +1,30 @@
+.BasicModalcomment-input{
+    font-size: 1.3rem!important;
+    height: 15rem!important;
+    direction: rtl!important;
+    text-align: right!important;
+    display: flex!important;
+    align-items: flex-start!important;
+    justify-content: flex-start!important;
+    width: 100%!important;
+    padding: 1rem!important;
+
+  }
+  .BasicModalcomment-input::placeholder{
+    font-size: 1.3rem!important;
+    direction: rtl!important;
+    text-align: right!important;
+    width: 200rem!important;
+    padding: .3rem!important;
+  }
+  .css-jm3i9k{
+    width: 8rem!important;
+  }
+  .raiting-popUpShoe{
+    color: rgba(53, 53, 53, 0.624)!important;
+    font-size: 1.2rem!important;
+  }
+  .popUpShow-send-data-comment{
+margin-top: 1.2rem!important;
+font-size: 1.5rem!important;
+}
