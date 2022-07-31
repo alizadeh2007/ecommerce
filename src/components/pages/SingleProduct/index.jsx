@@ -16,9 +16,11 @@ import deliverPic2 from "./../../../assets/pic/deliver2.svg";
 import deliverPic3 from "./../../../assets/pic/deliver3.svg";
 import deliverPic4 from "./../../../assets/pic/deliver4.svg";
 import SinglePageAccordion from "./AccordionSingleProduct/index";
+import BarChartIcon from "@mui/icons-material/BarChart";
 import Comments from "./Comments/index";
 import Btn from "./../../customs/Buttons/index";
 import BasicModalcomment from "./PopUpShow/index";
+import SameProduct from './SameProduct/index';
 function SingleProduct() {
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
   console.log("openSingleProduct=", openSingleProduct);
@@ -92,10 +94,7 @@ function SingleProduct() {
                     src={garauntyPic}
                   />
                   <Typography className="Single-Product-guaranty">
-                    18
-                  </Typography>
-                  <Typography className="Single-Product-guaranty">
-                    ماه گارانتی
+                    {openSingleProduct.guarantee}
                   </Typography>
                 </Box>
                 <Box display="flex">
@@ -107,6 +106,11 @@ function SingleProduct() {
                   <Typography className="Single-Product-Price">
                     تومان
                   </Typography>
+                </Box>
+                {/* star section */}
+                <Box display="flex">
+                  <BarChartIcon></BarChartIcon>
+                  {openSingleProduct.star}
                 </Box>
                 <Box display="flex" justifyContent="center">
                   <Button className="Single-Product-button" variant="contained">
@@ -159,6 +163,8 @@ function SingleProduct() {
           </Box>
         </Box>
       </Box>
+    {/* same product */}
+    <SameProduct/>
       {/* comments section */}
 
       <Box className="comments-parts">
