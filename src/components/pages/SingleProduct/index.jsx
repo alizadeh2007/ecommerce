@@ -23,7 +23,6 @@ import BasicModalcomment from "./PopUpShow/index";
 import SameProduct from './SameProduct/index';
 function SingleProduct() {
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
-  console.log("openSingleProduct=", openSingleProduct);
   const disPatch = useDispatch();
   const miniPicShows = function () {
     disPatch(changeTypeMiniPic(true));
@@ -164,14 +163,15 @@ function SingleProduct() {
         </Box>
       </Box>
     {/* same product */}
-    <SameProduct/>
+    <SameProduct productProps={openSingleProduct.category}/>
       {/* comments section */}
 
       <Box className="comments-parts">
         <BasicModalcomment></BasicModalcomment>
       </Box>
-      <Comments></Comments>
-      <Comments></Comments>
+      {openSingleProduct.comments.map((item)=><Comments propsComment={item}/>)}
+      {/* <Comments propsComment={openSingleProduct.comments}></Comments> */}
+      
       {/* massage done */}
     </Box>
   );

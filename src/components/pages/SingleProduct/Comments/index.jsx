@@ -6,7 +6,8 @@ import PersonPinIcon from "@mui/icons-material/PersonPin";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import Typography from '@mui/material/Typography';
-function Comments() {
+function Comments({propsComment}) {
+  console.log("propsComment=",propsComment)
   return (
     <Box marginTop="4rem">
       <Box>
@@ -21,7 +22,7 @@ function Comments() {
           </Box>
           <Box display="flex" gap="2rem">
             <Box className="comments-section-date-title">
-              مهدی جهانی
+            {propsComment.name}
               <PersonPinIcon></PersonPinIcon>
             </Box>
             <Box className="comments-section-date">
@@ -39,7 +40,7 @@ function Comments() {
         <Box className="massage-section">
           <Box className="massage-sub-section">
             <Typography className="massage-sub-section-text">
-              خوب بود راضی بودم ولی قیمت بالا بود
+{propsComment.comment}
             </Typography>
             <Box className="massage-sub-section-text-range">
               <ThumbUpOffAltIcon className="massage-sub-section-text-range-icon-up" />

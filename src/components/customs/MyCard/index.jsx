@@ -16,10 +16,8 @@ function MyCard({ title, price, image, item, id }) {
   const dispatch = useDispatch();
 
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
-  console.log("total card=", item);
 
   const openSingleProductPage = function (values) {
-    console.log("item=", item);
     dispatch(uptodateopenSingleProduct(item));
     navigate("/SingleProduct");
   };
