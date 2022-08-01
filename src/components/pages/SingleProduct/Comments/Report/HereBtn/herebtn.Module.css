@@ -1,0 +1,19 @@
+.HereBtn{
+    text-align: right;
+    direction: rtl;
+    font-size: 1.3rem!important;
+}
+.HereBtnTitle{
+    text-align: right;
+    direction: rtl;
+    font-size: 1.3rem!important;
+    font-weight: bold!important;
+}
+.Here{
+    height: 60rem!important;
+    overflow:scroll;
+}
+.HereBtnTitle-Parent{
+    border-bottom: .1rem solid rgba(59, 58, 58, 0.483);
+    padding-bottom: .5rem!important;
+}

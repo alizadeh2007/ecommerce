@@ -15,6 +15,8 @@ export const counterSlice = createSlice({
     sortData:"",
     newSort:[],
     openSingleProduct:[],
+    openReportModal:false,
+    openHereReportModal:false,
   },
   reducers: {
     changeType: (state,action) => {
@@ -53,7 +55,13 @@ export const counterSlice = createSlice({
       uptodateopenSingleProduct: (state,action) => {
         state.openSingleProduct =action.payload ;
       },
+      uptodatOpenReportModal: (state,action) => {
+        state.openReportModal =action.payload ;
+      },
+      uptodatOpenHereReportModal: (state,action) => {
+        state.openHereReportModal =action.payload ;
+      },
   },
 });
-export const {uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

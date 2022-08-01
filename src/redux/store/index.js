@@ -11,6 +11,8 @@ import searchEyesGlass from "./../slice/slice";
 import sortData from "./../slice/slice";
 import newSort from "./../slice/slice";
 import openSingleProduct from "./../slice/slice";
+import openReportModal from "./../slice/slice";
+import openHereReportModal from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -26,5 +28,7 @@ export const store = configureStore({
     sortData,
     newSort,
     openSingleProduct,
+    openReportModal,
+    openHereReportModal,
   },
 });

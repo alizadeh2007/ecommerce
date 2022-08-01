@@ -43,13 +43,13 @@ function SameProduct({ productProps }) {
   useEffect(() => {
     axios
       .get("http://localhost:8000/eyeglasses/")
-      .then((res) => setEyesGlassess(res.data.slice(0, 15)));
+      .then((res) => setEyesGlassess(res.data.slice(0, 20)));
     axios
       .get("http://localhost:8000/pants/")
-      .then((res) => setPants(res.data.slice(0, 5)));
+      .then((res) => setPants(res.data.slice(0, 20)));
     axios
       .get("http://localhost:8000/shoes/")
-      .then((res) => setShoes(res.data.slice(0, 5)));
+      .then((res) => setShoes(res.data.slice(0,20)));
   }, []);
   return (
     <Box>

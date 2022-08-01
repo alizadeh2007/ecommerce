@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import HoverRating from "./../Rating/index";
 import "./popupshow.Module.css";
+import { useState } from "react";
 
 const style = {
   position: "absolute",
@@ -19,6 +20,9 @@ const style = {
 };
 
 export default function BasicModalcomment() {
+  const [name, setName] = useState("");
+  const [textSection, setTextSection] = useState("");
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -35,17 +39,27 @@ export default function BasicModalcomment() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Box display="flex">
+          <Box display="flex" justifyContent="center">
             <HoverRating></HoverRating>
-            <Typography className="raiting-popUpShoe">:امتیاز شما</Typography>
+            <Typography className="raiting-popUpShoe">:امتیاز بدهید</Typography>
           </Box>
-          <Box display="flex" flexDirection="column" width="95%">
+          <Box display="flex" flexDirection="column" width="95%" gap="1rem">
+            <input
+              onChange={(e) => setName(e.target.value)}
+              className="BasicModalcomment-input-input"
+              placeholder="نام خود را وارد کنید"
+            />
             <textarea
+              onChange={(e) => setTextSection(e.target.value)}
               placeholder="پیغام خودتان را بنویسید"
               className="BasicModalcomment-input"
             />
           </Box>
-          <Button className="popUpShow-send-data-comment" variant="outlined" color="success">
+          <Button
+            className="popUpShow-send-data-comment"
+            variant="outlined"
+            color="success"
+          >
             ارسال
           </Button>
         </Box>

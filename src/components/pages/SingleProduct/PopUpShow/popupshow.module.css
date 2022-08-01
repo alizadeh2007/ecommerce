@@ -28,3 +28,16 @@
 margin-top: 1.2rem!important;
 font-size: 1.5rem!important;
 }
+.BasicModalcomment-input-input::placeholder{
+    font-size: 1.3rem!important;
+    direction: rtl!important;
+    text-align: right!important;
+    width: 200rem!important;
+    padding: .3rem!important;
+  }
+  .BasicModalcomment-input-input{
+    font-size: 1.3rem!important;
+    direction: rtl!important;
+    text-align: right!important;
+    padding: .3rem!important;
+  }

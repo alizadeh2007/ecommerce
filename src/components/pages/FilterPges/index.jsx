@@ -94,7 +94,7 @@ function FilterPges() {
     <Box className="FilterPges">
       <Box className="FilterPges-pages-card-Generate">
         <Box className="FilterPges-pages-card-Generate">
-          {paginate(newSort, 10, +page)?.map((item) => (
+          {paginate(newSort, 12, +page)?.map((item) => (
             <MyCard item={item} title={item.title} price={item.price} image={item.imgURL} id={item.id} />
           ))}
         </Box>

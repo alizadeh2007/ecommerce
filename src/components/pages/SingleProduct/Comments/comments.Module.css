@@ -48,5 +48,12 @@
   .font-GppBadIcon{
     color: rgba(0, 0, 0, 0.317)!important;
   }
-  
+  .GppBadIcon{
+    cursor: pointer;
+    color: rgba(177, 0, 0, 0.66);
+  }
+  .GppBadIcon:hover{
+    cursor: pointer;
+    color: rgb(177, 0, 0);
+  }
   
