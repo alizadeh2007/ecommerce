@@ -20,6 +20,7 @@ import Order from './../components/pages/Admin/Order/index';
 import PersonalInfo from './../components/pages/Admin/PersonalInfo/index';
 import Pants from './../components/pages/Products/Pants/index';
 import Shoes from './../components/pages/Products/Shoes/index';
+import ShoppingCart from "../components/pages/ShoppingCart";
 function App() {
   return (
     <Box>
@@ -39,6 +40,8 @@ function App() {
         <Route path="PersonalInfo" element={<PersonalInfo />} />
         <Route path="Pants" element={<Pants />} />
         <Route path="Shoess" element={<Shoes />} />
+        <Route path="ShoppingCart" element={<ShoppingCart />} />
+
       </Routes>
       <RegisterModal></RegisterModal>
       <Login></Login>

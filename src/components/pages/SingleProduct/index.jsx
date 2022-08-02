@@ -20,8 +20,13 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import Comments from "./Comments/index";
 import Btn from "./../../customs/Buttons/index";
 import BasicModalcomment from "./PopUpShow/index";
-import SameProduct from './SameProduct/index';
+import SameProduct from "./SameProduct/index";
+import { useNavigate } from "react-router-dom";
 function SingleProduct() {
+  const navigate = useNavigate();
+  const OpenShoppingCart=function(){
+    navigate("/ShoppingCart")
+  }
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
   const disPatch = useDispatch();
   const miniPicShows = function () {
@@ -112,7 +117,11 @@ function SingleProduct() {
                   {openSingleProduct.star}
                 </Box>
                 <Box display="flex" justifyContent="center">
-                  <Button className="Single-Product-button" variant="contained">
+                  <Button
+                    onClick={OpenShoppingCart}
+                    className="Single-Product-button"
+                    variant="contained"
+                  >
                     افزودن به سبد
                   </Button>
                 </Box>
@@ -162,16 +171,18 @@ function SingleProduct() {
           </Box>
         </Box>
       </Box>
-    {/* same product */}
-    <SameProduct productProps={openSingleProduct.category}/>
+      {/* same product */}
+      <SameProduct productProps={openSingleProduct.category} />
       {/* comments section */}
 
       <Box className="comments-parts">
         <BasicModalcomment></BasicModalcomment>
       </Box>
-      {openSingleProduct.comments.map((item)=><Comments propsComment={item}/>)}
+      {openSingleProduct.comments.map((item) => (
+        <Comments propsComment={item} />
+      ))}
       {/* <Comments propsComment={openSingleProduct.comments}></Comments> */}
-      
+
       {/* massage done */}
     </Box>
   );

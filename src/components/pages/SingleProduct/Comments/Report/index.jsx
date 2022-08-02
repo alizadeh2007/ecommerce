@@ -30,7 +30,6 @@ export default function Report() {
   const [comment, setComment] = useState("");
   const disPatch = useDispatch();
   const { openReportModal } = useSelector((state) => state.openReportModal);
-  console.log("openReportModal", openReportModal);
   const handleClose = function () {
     disPatch(uptodatOpenReportModal(false));
   };

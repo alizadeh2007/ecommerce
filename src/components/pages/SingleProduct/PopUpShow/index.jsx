@@ -6,6 +6,8 @@ import Modal from "@mui/material/Modal";
 import HoverRating from "./../Rating/index";
 import "./popupshow.Module.css";
 import { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -18,14 +20,22 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-
 export default function BasicModalcomment() {
   const [name, setName] = useState("");
   const [textSection, setTextSection] = useState("");
-
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = function () {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    const res = axios.post("http://localhost:8000/eyeglasses/1", {
+      name: "name",
+      comment: "textSection",
+    });
+    console.log("responsive=", res);
+  }, [handleClose]);
 
   return (
     <div>
@@ -58,6 +68,7 @@ export default function BasicModalcomment() {
           <Button
             className="popUpShow-send-data-comment"
             variant="outlined"
+            onClick={(e) => handleClose(e.target.value)}
             color="success"
           >
             ارسال

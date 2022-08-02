@@ -13,7 +13,6 @@ function Comments({ propsComment }) {
   const dispatch = useDispatch();
   const handelOpenReport = function () {
     dispatch(uptodatOpenReportModal(true));
-    console.log("hi")
   };
   return (
     <Box marginTop="4rem">
