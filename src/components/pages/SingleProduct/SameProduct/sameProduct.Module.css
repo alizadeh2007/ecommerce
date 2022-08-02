@@ -1,0 +1,24 @@
+.SameProduct {
+  width: 100%;
+  height: 33rem;
+  background-color: rgba(0, 146, 183, 0.339);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-icon-samePage{
+    border-radius: 100%;
+    background-color: rgba(50, 50, 50, 0.249)!important;
+    color: rgba(255, 255, 255, 0.379)!important;
+    width: 2.5rem!important;
+    height: 2.5rem!important;
+}
+.pagination-icon-samePage:hover{
+    border-radius: 100%;
+    background-color: rgba(50, 50, 50, 0.566)!important;
+    color: rgba(255, 255, 255, 0.913)!important;
+    width: 2.5rem!important;
+    height: 2.5rem!important;
+}
+

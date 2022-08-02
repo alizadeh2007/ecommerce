@@ -1,0 +1,18 @@
+.button{
+width: 8rem!important;
+    /* height: 2rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.button-button{
+    color: rgb(45, 45, 45)!important;
+    font-size: 1.8rem!important;
+}
+.outline-primary{
+    background-color: rgba(0, 120, 225, 0);
+    border: .1rem solid #000;
+    border-radius: .8rem!important;
+    /* border-bottom: .2rem solid  rgba(165, 42, 42, 0.639); */
+}

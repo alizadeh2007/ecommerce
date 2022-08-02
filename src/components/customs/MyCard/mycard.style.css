@@ -1,25 +1,61 @@
-.priceStyle{
-    font-size: 1.6rem!important;
-    color:#0e0e0e;
-    font-weight: bold!important;
+.priceStyle {
+  font-size: 1.6rem !important;
+  color: #0e0e0e;
+  font-weight: bold !important;
 }
-.buttonStyle{
-    background-color: #FD6E5E!important;
-    width: 12.6rem!important;
-    font-size: 1.3rem!important;
+.buttonStyle {
+  background-color: #fd6e5e !important;
+  width: 12.6rem !important;
+  font-size: 1.3rem !important;
 }
-.img{
-    filter: contrast(90%);
-    
+.img {
+  filter: contrast(90%);
 }
-.img:hover{
-    filter: contrast(100%);
+.img:hover {
+  filter: contrast(100%);
 }
-.card{
-    filter: drop-shadow(3px 3px 4px gray);
-    height: 30rem;
-    
+.card {
+  filter: drop-shadow(3px 3px 4px gray);
+  max-height: 300px!important;
+  min-width: 280px!important;
 }
-.card:hover{
-    filter: drop-shadow(0px 0px 0px gray);
+
+.card:hover {
+  filter: drop-shadow(0px 0px 0px gray);
+
+}
+.mycard-Title-Style{
+    height: 3rem!important;
+}
+.mycard-button-style{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .buttonStyle {
+    background-color: #fd6e5e !important;
+    /* width: 10rem !important; */
+    /* font-size: 0.8rem !important; */
+  };
+  /* .img {
+    height: 70px !important;
+  }; */
+  .card {
+    max-height: 150px!important;
+    min-width: 300px!important;
+  }
+  .card>.css-1gab04w-MuiPaper-root-MuiCard-root{
+    min-width: 150px!important;
+    max-height: 150px!important;
+
+  }
+  /* .priceStyle{
+    font-size: 1rem !important;
+  }
+  .mycard-Title-Style{
+    font-size: 1rem !important;
+  } */
 }

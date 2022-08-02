@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import "./singleProduct.style.css";
 import singleProductImage from "./../../../assets/pic/download.png";
@@ -7,8 +7,8 @@ import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import garauntyPic from "./../../../assets/pic/guaranty.svg";
 import moneyPic from "./../../../assets/pic/money.svg";
-import { changeTypeMiniPic } from "../../../redux/slice/slice";
-import { useDispatch } from "react-redux";
+import { changeTypeMiniPic, uptodatPaymentCMP } from "../../../redux/slice/slice";
+import { useDispatch, useSelector } from "react-redux";
 import PopupShow from "./PopUpShow/index";
 import deliverPic from "./../../../assets/pic/Delivery .svg";
 import deliverPic1 from "./../../../assets/pic/deliver1.svg";
@@ -16,11 +16,29 @@ import deliverPic2 from "./../../../assets/pic/deliver2.svg";
 import deliverPic3 from "./../../../assets/pic/deliver3.svg";
 import deliverPic4 from "./../../../assets/pic/deliver4.svg";
 import SinglePageAccordion from "./AccordionSingleProduct/index";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import Comments from "./Comments/index";
+import Btn from "./../../customs/Buttons/index";
+import BasicModalcomment from "./PopUpShow/index";
+import SameProduct from "./SameProduct/index";
+import { useNavigate } from "react-router-dom";
 function SingleProduct() {
+  const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
   const disPatch = useDispatch();
+  const navigate = useNavigate();
   const miniPicShows = function () {
     disPatch(changeTypeMiniPic(true));
   };
+
+
+  // navigate to shop card and up to date my purches
+  const OpenShoppingCart=function(){
+    navigate("/ShoppingCart")
+     disPatch(uptodatPaymentCMP(openSingleProduct))
+  }
+
+
+
   return (
     <Box>
       <Box className="ContactUs">
@@ -29,6 +47,7 @@ function SingleProduct() {
       <Typography className="watch-Product">خانه/مشاهده محصول</Typography>
       <Box display="flex" height="55vh" justifyContent="center">
         <Box className="Single-Product-section-parent">
+          {/* LEFT section */}
           <Box className="Single-Product-about-product">
             <Box className="Single-Product-about-product-sections">
               <Typography className="Single-Product-about-product-title-sections">
@@ -70,16 +89,15 @@ function SingleProduct() {
               <SinglePageAccordion></SinglePageAccordion>
             </Box>
           </Box>
+          {/* midle section/ details of product */}
           <Box display="Single-Product-section">
             <Box className="Single-Product">
               <Typography className="Single-Product-Title">
-                مشخصات کفش آریا
+                مشخصات {openSingleProduct.title}
               </Typography>
               <Box className="Single-Product-info">
                 <Typography className="Single-Product-Explain">
-                  کف پوش نانو در طرح و رنگ متفاوت با ده درصد تخفیف. این کالا در
-                  چهار رنگ متفاوت عرضه می گردد. کف پوش نانویی این محصول قابل
-                  تعویض و با یک کف پوش اضافه می باشد.
+                  {openSingleProduct.explain}
                 </Typography>
                 <Box display="flex" gap=".3rem">
                   <img
@@ -87,24 +105,30 @@ function SingleProduct() {
                     src={garauntyPic}
                   />
                   <Typography className="Single-Product-guaranty">
-                    18
-                  </Typography>
-                  <Typography className="Single-Product-guaranty">
-                    ماه گارانتی
+                    {openSingleProduct.guarantee}
                   </Typography>
                 </Box>
                 <Box display="flex">
                   <img className="Single-Product-moneyPic" src={moneyPic} />
 
                   <Typography className="Single-Product-Price">
-                    270000
+                    {openSingleProduct.price}
                   </Typography>
                   <Typography className="Single-Product-Price">
                     تومان
                   </Typography>
                 </Box>
+                {/* star section */}
+                <Box display="flex">
+                  <BarChartIcon></BarChartIcon>
+                  {openSingleProduct.star}
+                </Box>
                 <Box display="flex" justifyContent="center">
-                  <Button className="Single-Product-button" variant="contained">
+                  <Button
+                    onClick={OpenShoppingCart}
+                    className="Single-Product-button"
+                    variant="contained"
+                  >
                     افزودن به سبد
                   </Button>
                 </Box>
@@ -147,28 +171,26 @@ function SingleProduct() {
             justifyContent="center"
             alignContent="center"
           >
-            <img className="single-Product-Image" src={singleProductImage} />
-          </Box>
-          <Box display="flex" gap="1rem" justifyContent="center">
             <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
+              className="single-Product-Image"
+              src={openSingleProduct.imgURL}
             />
-            <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
-            />
-            <img
-              onClick={miniPicShows}
-              className="single-Product-mini-Image"
-              src={singleProductImage}
-            />
-            <PopupShow></PopupShow>
           </Box>
         </Box>
       </Box>
+      {/* same product */}
+      <SameProduct productProps={openSingleProduct.category} />
+      {/* comments section */}
+
+      <Box className="comments-parts">
+        <BasicModalcomment></BasicModalcomment>
+      </Box>
+      {openSingleProduct.comments.map((item) => (
+        <Comments propsComment={item} />
+      ))}
+      {/* <Comments propsComment={openSingleProduct.comments}></Comments> */}
+
+      {/* massage done */}
     </Box>
   );
 }

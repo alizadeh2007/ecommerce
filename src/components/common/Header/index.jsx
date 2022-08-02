@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import "./header.style.css";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import changeTypes, { changeType } from "./../../../redux/slice/slice.js";
+import changeTypes, { changeType, uptodateSearchEyesGlass } from "./../../../redux/slice/slice.js";
 import Categories from './ComboBox/index';
 import DirectionSensitive from "../../../assets/Rtl";
+import DensityMediumRoundedIcon from '@mui/icons-material/DensityMediumRounded';
+import PrimarySearchAppBar from './MenuBarMobile/index';
 function Header() {
   const disPatch = useDispatch();
-  console.log(changeTypes);
   const registerIcon = function () {
     disPatch(changeType(true));
   };
@@ -32,15 +32,27 @@ function Header() {
   const openModalShoppingList=function(){
     navigate("/EmptyBasket")
   }
+  const [userInput, setUserInput] = useState([])
+
+  const handleChange=function(e){
+    setUserInput(e.target.value)
+    disPatch(uptodateSearchEyesGlass(userInput));
+  }
+  
   return (
     <Box>
+      <Box>
       <Box className="styleHeader">
-        <ShoppingCartOutlinedIcon onClick={openModalShoppingList} className="ShoppingCartOutlinedIcon"></ShoppingCartOutlinedIcon>
-        <PersonIcon onClick={registerIcon} className="PersonIcon"></PersonIcon>
+      <Box>
+        <ShoppingCartOutlinedIcon onClick={openModalShoppingList} className="ShoppingCartOutlinedIcon"/>
+        <PersonIcon onClick={registerIcon} className="PersonIcon"/>
+      </Box>
+        <DensityMediumRoundedIcon className="styleHeader-Parent" />
+      </Box>
       </Box>
       <Box className="bgHeaderMiddle">
         <Box className="search">
-          <input className="input" placeholder="جستجو" />
+          <input className="input" onChange={handleChange}  value={userInput}  placeholder="جستجو" />
           <Box className="magIcon">
             <SearchOutlinedIcon className="SearchOutlinedIcon"></SearchOutlinedIcon>
           </Box>
@@ -61,7 +73,7 @@ function Header() {
         </Box>
       </Box>
       <Box className="bgHeaderFinallyParent">
-        <Box >
+        <Box>
         <DirectionSensitive>
           <Categories className="categoryBoxStyles"></Categories>
         </DirectionSensitive>

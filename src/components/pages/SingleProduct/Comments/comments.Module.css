@@ -1,0 +1,59 @@
+.massage-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .massage-sub-section {
+    width: 96%;
+    background-color: #e8e8e832;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 20px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    text-align: right;
+    direction: rtl;
+    padding: 2rem;
+    justify-content: space-between;
+  }
+  .massage-sub-section-text {
+    font-size: 1.4rem !important;
+  }
+  .massage-sub-section-text-range {
+    display: flex;
+  
+    gap: 1rem;
+  }
+  .massage-sub-section-text-range-icon-down {
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    cursor: pointer !important;
+    color: rgba(0, 0, 0, 0.23);
+  }
+  .massage-sub-section-text-range-icon-up {
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    cursor: pointer !important;
+    color: rgba(0, 0, 0, 0.23);
+  }
+  .massage-sub-section-text-range-icon-down:hover {
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    color: #d43200 !important;
+    cursor: pointer !important;
+  }
+  .massage-sub-section-text-range-icon-up:hover {
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    color: #24b85a !important;
+    cursor: pointer !important;
+  }
+  .font-GppBadIcon{
+    color: rgba(0, 0, 0, 0.317)!important;
+  }
+  .GppBadIcon{
+    cursor: pointer;
+    color: rgba(177, 0, 0, 0.66);
+  }
+  .GppBadIcon:hover{
+    cursor: pointer;
+    color: rgb(177, 0, 0);
+  }
+  

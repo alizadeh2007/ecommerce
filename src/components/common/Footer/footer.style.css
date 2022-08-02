@@ -1,8 +1,8 @@
 .footer {
-  margin-top: 4rem;
+  margin-top: .2rem;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.214);
   display: flex;
-  gap: 5rem;
+  gap: 10rem;
   background-color: #444540;
   padding-top: 2rem;
   justify-content: center;
@@ -14,14 +14,14 @@
   color: rgb(222, 222, 222)!important;
 }
 .fontStylesTitle{
-  font-size: 1.3rem !important;
+  font-size: 1.6rem !important;
   color: rgb(232, 232, 232)!important;
 
 }
 .fontStylesParent {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   align-items: flex-end;
 }
 .footerstyleforinput {
@@ -45,3 +45,111 @@
 .footerstyleforinputregistration:active {
     background-color: #eac974;
   }
+  .iconFooter{
+    width: 15%!important;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .iconFooter:hover{
+    font-weight: bold!important;
+  }
+  .iconFooter-parent{
+    justify-content:space-around!important;
+    background-color: #44454032;
+  }
+  .titleIconsFooter{
+    font-size: 1.4rem!important;
+  }
+  .titleIconsFooter:hover{
+    font-weight: bold!important;
+  }
+  .footer-icon-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    filter: saturate(100%);
+  }
+  .footer-icon-box:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    filter: saturate(150%);
+
+  }
+  .pikab-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-top: .1rem solid #44454019;
+    padding-top: .5rem!important;
+    margin-top: 5rem!important;
+  }
+  .pikab-section-font{
+    font-size: 3rem!important;
+    font-weight: bolder!important;
+    color: #8a6300fc!important;
+    padding-right: 3.5rem;
+  }
+  .pikab-section-subfont{
+    font-size: 1.4rem!important;
+    padding-right: 3.5rem!important;
+    color:#44454092!important
+  }
+  @media screen and  (max-width: 768px) {
+    .fontStyles{
+      font-size: 1rem !important;
+    }
+    .footer{
+      margin-top: .2rem;
+      border-top: 0.1rem solid rgba(0, 0, 0, 0.214);
+      display: flex;
+      gap: 1rem;
+      background-color: #444540;
+      padding-top: 2rem;
+      justify-content: center;
+      padding-bottom: 2rem;
+    }
+    .fontStylesTitle{
+      font-size: 1rem !important;
+      color: rgb(232, 232, 232)!important;
+    }
+    .footerstyleforinputregistration{
+      width: 3rem;
+      height: 2rem;
+      background-color: #eeb21b;
+      color: aliceblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: 0.2rem 0 0 0.2rem;
+    }
+    .footerstyleforinput{
+      width: 10rem;
+      height: 2rem;
+    }
+    .icons{
+      width: 1.2rem!important;
+    }
+    .titleIconsFooter{
+    font-size: 1rem!important;
+    width: 100%!important;
+    }
+    .iconFooter{
+      width: 100%!important;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    };
+    .iconFooter-parent{
+      background-color: #44454032;
+      padding: 1rem!important
+    }
+    ;}

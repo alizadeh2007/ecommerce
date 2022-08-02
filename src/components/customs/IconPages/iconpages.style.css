@@ -15,3 +15,18 @@
   filter: grayscale(0%)!important;
 
 }
+.iconpage-icons-style{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  gap:4rem;
+  margin-top:2rem;
+}
+@media screen and  (max-width: 768px) {
+  .iconpage-icons-style{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+
+    padding:2rem!important;
+  }}

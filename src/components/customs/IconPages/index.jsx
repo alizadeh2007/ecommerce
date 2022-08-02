@@ -7,45 +7,18 @@ import kitchen from "./../../../assets/pic/kitchen.svg";
 import car from "./../../../assets/pic/car.svg";
 import bicycle from "./../../../assets/pic/bicycle.svg";
 import "./iconpages.style.css";
+import InputIcon from "../Input/InputIcon";
 function IconPages() {
   return (
     <Box
-      width="100%"
-      display="flex"
-      justifyContent="center"
-      gap="4rem"
-      marginTop="2rem"
+    className="iconpage-icons-style"
     >
-      <Box className="iconsCircle">
-      <img className="icon" src={sounds}/>
-      <Typography>صوتی</Typography>
-      </Box>
-      <Box className="iconsCircle">
-      <img className="icon" src={sport}/>
-      <Typography>ورزشی</Typography>
-
-      </Box>
-      <Box className="iconsCircle">
-      <img className="icon" src={computer}/>
-      <Typography>کامپیوتر</Typography>
-
-      </Box>
-      <Box className="iconsCircle">
-      <img className="icon" src={kitchen}/>
-      <Typography>آشپزخانه</Typography>
-
-      </Box>
-      <Box className="iconsCircle">
-      <img className="icon" src={car}/>
-      <Typography> ماشین</Typography>
-
-      </Box>
-      <Box className="iconsCircle">
-      <img className="icon" src={bicycle}/>
-      <Typography>دوچرخه</Typography>
-
-      </Box>
-
+      <InputIcon title="صوتی" srcIcon={sounds} />
+      <InputIcon title="ورزشی" srcIcon={sport} />
+      <InputIcon title="کامپیوتر" srcIcon={computer} />
+      <InputIcon title="آشپزخانه" srcIcon={kitchen} />
+      <InputIcon title="ماشین" srcIcon={car} />
+      <InputIcon title="دوچرخه" srcIcon={bicycle} />
     </Box>
   );
 }
