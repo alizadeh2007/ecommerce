@@ -17,6 +17,8 @@ export const counterSlice = createSlice({
     openSingleProduct:[],
     openReportModal:false,
     openHereReportModal:false,
+    PaymentCMP:[],
+    totalPaymentCost:[],
   },
   reducers: {
     changeType: (state,action) => {
@@ -61,7 +63,22 @@ export const counterSlice = createSlice({
       uptodatOpenHereReportModal: (state,action) => {
         state.openHereReportModal =action.payload ;
       },
+      uptodatPaymentCMP: (state,action) => {
+        const newItems=action.payload;
+        const productIndexFind=state.PaymentCMP.findIndex((p)=>{
+          return p.id===newItems.id
+        })
+        if(productIndexFind>=0){
+          const newCounter=state.PaymentCMP[productIndexFind].count+1;
+          state.PaymentCMP[productIndexFind].count=newCounter
+        }else{
+          state.PaymentCMP=[...state.PaymentCMP,{...action.payload,count:1}]
+        }
+      },
+      uptodatTotalPaymentCost: (state,action) => {
+        state.totalPaymentCost=action.payload;
+      },
   },
 });
-export const {uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

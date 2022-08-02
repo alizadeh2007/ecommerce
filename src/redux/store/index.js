@@ -13,6 +13,8 @@ import newSort from "./../slice/slice";
 import openSingleProduct from "./../slice/slice";
 import openReportModal from "./../slice/slice";
 import openHereReportModal from "./../slice/slice";
+import PaymentCMP from "./../slice/slice";
+import totalPaymentCost from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -30,5 +32,7 @@ export const store = configureStore({
     openSingleProduct,
     openReportModal,
     openHereReportModal,
+    PaymentCMP,
+    totalPaymentCost,
   },
 });

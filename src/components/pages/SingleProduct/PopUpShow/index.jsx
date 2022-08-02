@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import HoverRating from "./../Rating/index";
-import "./popupshow.Module.css";
+import "./popupshow.module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
@@ -34,7 +34,6 @@ export default function BasicModalcomment() {
       name: "name",
       comment: "textSection",
     });
-    console.log("responsive=", res);
   }, [handleClose]);
 
   return (

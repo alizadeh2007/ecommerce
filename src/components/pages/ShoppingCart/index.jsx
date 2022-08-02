@@ -1,44 +1,93 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import "./ShoppingCart.Module.css";
-import { store } from "./../../../redux/store/index";
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
+import Payment from "./Payment/index";
 
 function ShoppingCart() {
-  const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
-  const [price, setPrice] = useState(1);
+  const { PaymentCMP } = useSelector((state) => state.PaymentCMP);
+
+
+  console.log("PaymentCMP=", PaymentCMP);
   return (
     <Box>
       <Box className="ShoppingCart">
         <Typography className="ShoppingCartfont"> سبد خرید شما </Typography>
       </Box>
       {/* boxes */}
-      <Box display="flex" marginTop="3rem" justifyContent="center" gap="2rem">
+      <Box
+        display="flex"
+        marginTop="3rem"
+        justifyContent="center"
+        gap="2rem"
+        marginBottom="2rem"
+        paddingBottom="2rem"
+      >
         {/* left Box */}
-        <Box className="ShoppingCart-left-box">
+        <Box className="ShoppingCart-left-box" component="container">
           <Box className="ShoppingCart-left-box-header">
             <Box className="ShoppingCart-left-box-header-child">
               جمع کل خرید شما
             </Box>
           </Box>
-          <Box className="ShoppingCart-left-box-col">
-            <Box className="ShoppingCart-left-box-col-child">
-              <Typography>مجموع قیمت ها:</Typography>
-              <Box display="flex">
-                <Typography className="tomen-font">270000</Typography>
-                <Typography className="tomen-font">تومان</Typography>
+          <Box className="ShoppingCart-left-box-col" display="flex">
+            <Box className="ShoppingCart-left-box-col-rigth">
+              <Box className="ShoppingCart-left-box-col-rigth-child">
+                مجموع قیمت ها:
+              </Box>
+              <Box className="ShoppingCart-left-box-col-rigth-child">
+                کارمزد:
+              </Box>
+              <Box className="ShoppingCart-left-box-col-rigth-child">
+                کد تخفیف:
+              </Box>
+              <Box className="ShoppingCart-left-box-col-rigth-child">
+                مبلغ قابل پرداخت:
               </Box>
             </Box>
-            <Box className="ShoppingCart-left-box-col-child">
-            <Typography>کارمزد:</Typography>
-              <Box display="flex">
-                <Typography className="tomen-font">2%</Typography>
+            <Box className="ShoppingCart-left-box-col-left">
+              <Box
+                className="ShoppingCart-left-box-col-left-child"
+                display="flex"
+                gap=".5rem"
+              >
+                <Typography fontSize="1.4rem!important">270000</Typography>
+                <Typography fontSize="1.4rem!important">تومان</Typography>
+              </Box>
+              <Box className="ShoppingCart-left-box-col-left-child">2%</Box>
+              <Box
+                className="ShoppingCart-left-box-col-left-child"
+                display="flex"
+              >
+                <input
+                  className="ShoppingCart-left-box-col-left-child-input"
+                  placeholder="کد تخفیف خود را وارد کنید"
+                />
+                <button className="ShoppingCart-left-box-col-left-child-button">
+                  ثبت
+                </button>
+              </Box>
+              <Box className="ShoppingCart-left-box-col-left-child">
+                <Box
+                  className="ShoppingCart-left-box-col-left-child"
+                  display="flex"
+                  gap=".5rem"
+                >
+                  <Typography fontSize="1.4rem!important">270000</Typography>
+                  <Typography fontSize="1.4rem!important">تومان</Typography>
+                </Box>
               </Box>
             </Box>
-            <Box className="ShoppingCart-left-box-col-child">dsf</Box>
-            <Box className="ShoppingCart-left-box-col-child">sdfsdf</Box>
-            <Box className="ShoppingCart-left-box-col-child">sdfdsf</Box>
+          </Box>
+          <Box display="flex" justifyContent="center">
+            <Button
+              className="ShoppingCart-left-box-col-left-child-BTN"
+              variant="contained"
+              color="success"
+            >
+              پرداخت
+            </Button>
           </Box>
         </Box>
         {/* rigth Box */}
@@ -49,47 +98,10 @@ function ShoppingCart() {
             <Box className="ShoppingCart-rigth-box-header-child">تعداد</Box>
             <Box className="ShoppingCart-rigth-box-header-child">جمع کل</Box>
           </Box>
-          <Box className="ShoppingCart-rigth-box-col">
-            <Box className="ShoppingCart-rigth-box-col-child">
-              <img
-                className="ShoppingCart-rigth-box-col-child-img"
-                src={openSingleProduct.imgURL}
-              />
-              {openSingleProduct.title}
-            </Box>
-            <Box className="ShoppingCart-rigth-box-col-child">
-              {openSingleProduct.price}
-              <Typography className="tomen-font">تومان</Typography>
-            </Box>
-            <Box className="ShoppingCart-rigth-box-col-child">
-              <Box display="flex">
-                <Button
-                  variant="outlined"
-                  color="success"
-                  onClick={() => setPrice(price + 1)}
-                  className="ShoppingCart-rigth-box-col-child-add"
-                >
-                  +
-                </Button>
-                <Box className="ShoppingCart-rigth-box-col-child-number">
-                  {price}
-                </Box>
-                <Button
-                  variant="outlined"
-                  color="error"
-                  onClick={() =>
-                    price > 0 ? setPrice(price - 1) : setPrice(price)
-                  }
-                  className="ShoppingCart-rigth-box-col-child-minus"
-                >
-                  -
-                </Button>
-              </Box>
-            </Box>
-            <Box className="ShoppingCart-rigth-box-col-child">
-              {openSingleProduct.price * price}{" "}
-            </Box>
-          </Box>
+          {/* <Payment />  */}
+          {PaymentCMP.map((item) => (
+           <Payment propspayments={item} /> 
+          ))}
         </Box>
       </Box>
     </Box>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import "./singleProduct.style.css";
 import singleProductImage from "./../../../assets/pic/download.png";
@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import garauntyPic from "./../../../assets/pic/guaranty.svg";
 import moneyPic from "./../../../assets/pic/money.svg";
-import { changeTypeMiniPic } from "../../../redux/slice/slice";
+import { changeTypeMiniPic, uptodatPaymentCMP } from "../../../redux/slice/slice";
 import { useDispatch, useSelector } from "react-redux";
 import PopupShow from "./PopUpShow/index";
 import deliverPic from "./../../../assets/pic/Delivery .svg";
@@ -23,15 +23,22 @@ import BasicModalcomment from "./PopUpShow/index";
 import SameProduct from "./SameProduct/index";
 import { useNavigate } from "react-router-dom";
 function SingleProduct() {
-  const navigate = useNavigate();
-  const OpenShoppingCart=function(){
-    navigate("/ShoppingCart")
-  }
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
   const disPatch = useDispatch();
+  const navigate = useNavigate();
   const miniPicShows = function () {
     disPatch(changeTypeMiniPic(true));
   };
+
+
+  // navigate to shop card and up to date my purches
+  const OpenShoppingCart=function(){
+    navigate("/ShoppingCart")
+     disPatch(uptodatPaymentCMP(openSingleProduct))
+  }
+
+
+
   return (
     <Box>
       <Box className="ContactUs">
