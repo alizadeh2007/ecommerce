@@ -4,10 +4,11 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import HoverRating from "./../Rating/index";
-import "./popupshow.module.css";
+import "./popupshow.Module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
+import { useSelector } from 'react-redux';
 
 const style = {
   position: "absolute",
@@ -21,6 +22,9 @@ const style = {
   p: 4,
 };
 export default function BasicModalcomment() {
+  const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
+  const { raitingStore } = useSelector((state) => state.raitingStore);
+
   const [name, setName] = useState("");
   const [textSection, setTextSection] = useState("");
   const [open, setOpen] = React.useState(false);
@@ -30,10 +34,16 @@ export default function BasicModalcomment() {
   };
 
   useEffect(() => {
-    const res = axios.post("http://localhost:8000/eyeglasses/1", {
-      name: "name",
-      comment: "textSection",
-    });
+    let comments=[...openSingleProduct.comments,
+    {
+      name:name,
+      comment:textSection,
+      rate:raitingStore,
+    }
+    ]
+    if(openSingleProduct.category==="eyeglasses"){
+     axios.put(`http://localhost:8000/eyeglasses/${openSingleProduct.id}`, {...openSingleProduct,comments});
+    }
   }, [handleClose]);
 
   return (

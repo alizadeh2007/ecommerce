@@ -9,7 +9,10 @@ import Typography from "@mui/material/Typography";
 import { useDispatch } from "react-redux";
 import { uptodatOpenReportModal } from "../../../../redux/slice/slice";
 import Report from "./Report";
+import { useSelector } from 'react-redux';
 function Comments({ propsComment }) {
+  const { raitingStore } = useSelector((state) => state.raitingStore);
+
   const dispatch = useDispatch();
   const handelOpenReport = function () {
     dispatch(uptodatOpenReportModal(true));
@@ -30,13 +33,19 @@ function Comments({ propsComment }) {
             <Report></Report>
           </Box>
           <Box display="flex" gap="2rem">
-            <Box className="comments-section-date-title">
+            <Box className="comments-section-date-title" display="flex" gap=".5rem">
+              <Box  display="flex" paddingRight="2rem">
+              <Typography className="rateColor">{propsComment.rate}</Typography>
+              <Typography className="rateColor">:امتیاز کاربر</Typography>
+              </Box>
+              <Box className="comments-section-date-title">
               {propsComment.name}
               <PersonPinIcon></PersonPinIcon>
+              </Box>
             </Box>
             <Box className="comments-section-date">
+           
               <Typography className="comments-section-date-title">
-                1395
               </Typography>
               <Typography className="comments-section-date-title">
                 مرداد

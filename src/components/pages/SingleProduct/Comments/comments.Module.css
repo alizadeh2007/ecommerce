@@ -56,4 +56,7 @@
     cursor: pointer;
     color: rgb(177, 0, 0);
   }
+  .rateColor{
+    color: rgb(177, 0, 0)!important;
+  }
   

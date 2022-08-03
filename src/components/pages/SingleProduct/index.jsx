@@ -186,7 +186,7 @@ function SingleProduct() {
         <BasicModalcomment></BasicModalcomment>
       </Box>
       {openSingleProduct.comments.map((item) => (
-        <Comments propsComment={item} />
+        <Comments key={item.name} propsComment={item} />
       ))}
       {/* <Comments propsComment={openSingleProduct.comments}></Comments> */}
 

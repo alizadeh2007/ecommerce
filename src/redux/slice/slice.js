@@ -19,6 +19,7 @@ export const counterSlice = createSlice({
     openHereReportModal:false,
     PaymentCMP:[],
     totalPaymentCost:[],
+    raitingStore:""
   },
   reducers: {
     changeType: (state,action) => {
@@ -63,6 +64,9 @@ export const counterSlice = createSlice({
       uptodatOpenHereReportModal: (state,action) => {
         state.openHereReportModal =action.payload ;
       },
+      uptodatRaitingStore: (state,action) => {
+        state.raitingStore =action.payload ;
+      },
       uptodatPaymentCMP: (state,action) => {
         const newItems=action.payload;
         const productIndexFind=state.PaymentCMP.findIndex((p)=>{
@@ -80,5 +84,5 @@ export const counterSlice = createSlice({
       },
   },
 });
-export const {uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;
