@@ -978,6 +978,11 @@
           "comment": " قیمت مناسب کیفیت عالی.",
           "name": "رامین شریفی",
           "rate": "2.1"
+        },
+        {
+          "name": "plom,kp",
+          "comment": "kjnk",
+          "rate": 2
         }
       ],
       "guarantee": "ندارد",
@@ -1012,11 +1017,6 @@
           "comment": "پسند نبود.",
           "name": "محمدرضا زارع",
           "rate": "1.1"
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": ""
         }
       ],
       "guarantee": "ندارد",
@@ -1047,23 +1047,6 @@
           "comment": " کیفیتش سال به سال داره افت می کنه.",
           "name": "علیرضا زارع بیدکی",
           "rate": "2.1"
-        },
-        {
-          "name": "رضا",
-          "comment": "خوب بودا ولی...\n"
-        },
-        {
-          "name": "محمد جواد",
-          "comment": "قیمتش خیلی بال"
-        },
-        {
-          "name": "رامین حسینی",
-          "comment": "خوبه بد نبود"
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": ""
         }
       ],
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121620286.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -1112,11 +1095,6 @@
           "comment": "افتضاح .",
           "name": "مهدی زارع",
           "rate": "2"
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": ""
         }
       ]
     },
@@ -1132,24 +1110,6 @@
           "comment": " در کارخانش را ببندید.",
           "name": "خلیل علیزاده",
           "rate": "2.1"
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": "",
-          "id": 1659530728186
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": "",
-          "id": 1659530930280
-        },
-        {
-          "name": "",
-          "comment": "",
-          "rate": "",
-          "id": 1659530936734
         }
       ],
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121620083.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",

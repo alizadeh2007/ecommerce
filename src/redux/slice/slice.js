@@ -81,6 +81,17 @@ export const counterSlice = createSlice({
       },
       uptodatTotalPaymentCost: (state,action) => {
         state.totalPaymentCost=action.payload;
+        const newMinusBtn=action.payload;
+        const productMinusIndexFind=state.PaymentCMP.findIndex((p)=>{
+          return p.id===newMinusBtn.id
+        }
+          )
+          const newMinusCounter=state.PaymentCMP[productMinusIndexFind].count-1;
+          if(newMinusCounter===0){
+            state.PaymentCMP.splice(productMinusIndexFind,1)
+          }else{
+            state.PaymentCMP[productMinusIndexFind].count=newMinusCounter
+          }
       },
   },
 });

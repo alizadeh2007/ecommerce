@@ -188,7 +188,7 @@ function SingleProduct() {
       {openSingleProduct.comments.map((item) => (
         <Comments key={item.name} propsComment={item} />
       ))}
-      {/* <Comments propsComment={openSingleProduct.comments}></Comments> */}
+
 
       {/* massage done */}
     </Box>

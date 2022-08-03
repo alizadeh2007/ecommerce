@@ -5,27 +5,18 @@ import Box from "@mui/material/Box";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./payment.Module.css";
-import { uptodatPaymentCMP } from "../../../../redux/slice/slice";
+import { uptodatPaymentCMP, uptodatTotalPaymentCost } from "../../../../redux/slice/slice";
 function Payment({ propspayments }) {
   const dispatch=useDispatch()
   const {openSingleProduct}=useSelector((state)=>state.openSingleProduct)
 console.log("propspaymentspropspayments=",propspayments)
 const minus = function () {
-    if (+propspayments.count > 1) {
-      
-    } else {
-
-     
-    }
+      dispatch(uptodatTotalPaymentCost(propspayments))
 };
 const plusBtn = function () {
   dispatch(uptodatPaymentCMP(propspayments))
-   
   };
   let totalPrice = Number(propspayments.count)*Number(propspayments.price);
-  // let totalCost = +0;
-  // totalCost = Number(totalCost) + Number(propspayments.count * count);
-//   let test=PaymentCMP.price=totalCost;
   return (
     <Box className="ShoppingCart-rigth-box-col ShoppingCart-rigth-box-col-payment">
       <Box className="ShoppingCart-rigth-box-col-child-sec1">
@@ -54,7 +45,7 @@ const plusBtn = function () {
           <Button
             variant="outlined"
             color="error"
-            onClick={() => minus()}
+            onClick={(e) => minus(e.target)}
             className="ShoppingCart-rigth-box-col-child-minus"
           >
             -

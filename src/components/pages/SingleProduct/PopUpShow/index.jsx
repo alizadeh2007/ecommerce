@@ -31,20 +31,19 @@ export default function BasicModalcomment() {
   const handleOpen = () => setOpen(true);
   const handleClose = function () {
     setOpen(false);
+    if(openSingleProduct.category==="eyeglasses"){
+      axios.put(`http://localhost:8000/eyeglasses/${openSingleProduct.id}`, {...openSingleProduct,comments});
+     }
   };
 
-  useEffect(() => {
-    let comments=[...openSingleProduct.comments,
-    {
-      name:name,
-      comment:textSection,
-      rate:raitingStore,
-    }
-    ]
-    if(openSingleProduct.category==="eyeglasses"){
-     axios.put(`http://localhost:8000/eyeglasses/${openSingleProduct.id}`, {...openSingleProduct,comments});
-    }
-  }, [handleClose]);
+  const comments=[...openSingleProduct.comments,
+  {
+    name:name,
+    comment:textSection,
+    rate:raitingStore,
+  }
+  ]
+
 
   return (
     <div>
