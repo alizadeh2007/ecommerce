@@ -16,6 +16,8 @@ import openHereReportModal from "./../slice/slice";
 import PaymentCMP from "./../slice/slice";
 import totalPaymentCost from "./../slice/slice";
 import raitingStore from "./../slice/slice";
+import usersSource from "./../slice/slice";
+import totalCost from "./../slice/slice";
 
 export const store = configureStore({
   reducer: {
@@ -36,5 +38,7 @@ export const store = configureStore({
     PaymentCMP,
     totalPaymentCost,
     raitingStore,
+    usersSource,
+    totalCost
   },
 });

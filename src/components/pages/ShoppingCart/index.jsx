@@ -1,18 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { Box, Typography } from "@mui/material";
 import "./ShoppingCart.Module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Button from "@mui/material/Button";
 import Payment from "./Payment/index";
+import { useNavigate } from 'react-router-dom';
+import { changeType, upToDateTotalCost } from "../../../redux/slice/slice";
 
 function ShoppingCart() {
+  const navigate=useNavigate()
+  const disPatch=useDispatch()
   const { PaymentCMP } = useSelector((state) => state.PaymentCMP);
   const[discountState,setDiscountState]=useState("")
   const[total,setTotal]=useState()
   const[changetypes,setChangetypes]=useState("none")
   const[changetypesw,setChangetypesw]=useState("flex")
-
   const[totalDiscount,setTotalDiscount]=useState(total)
+
+  const paymentBTN=function(){
+    disPatch(upToDateTotalCost(total))
+    const token = localStorage.getItem('token');
+    if(token){
+navigate("/CheckOut")
+    }
+    else{
+      disPatch(changeType(true));
+    }
+  }
 useEffect(()=>{
   let sum=0
   PaymentCMP.map((item)=>{
@@ -98,6 +112,8 @@ useEffect(()=>{
                   <Typography className=" ShoppingCart-left-box-col-rigth-child-PRICE" display={changetypes} fontSize="1.4rem!important">{totalDiscount}</Typography>
                   <Typography className="ShoppingCart-left-box-col-rigth-child-PRICE" fontSize="1.4rem!important">تومان</Typography>
                 </Box>
+
+
               </Box>
             </Box>
           </Box>
@@ -106,6 +122,7 @@ useEffect(()=>{
               className="ShoppingCart-left-box-col-left-child-BTN"
               variant="contained"
               color="success"
+              onClick={paymentBTN}
             >
               پرداخت
             </Button>

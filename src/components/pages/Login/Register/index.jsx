@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
-import { Checkbox } from "@mui/material";
+import { Alert, Checkbox } from "@mui/material";
 import "./register.Module.css";
 import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,8 +12,11 @@ import {
   changeType,
   changeTypeConditions,
   changeTypeRegisterPage,
+  upToDateUsersSource,
 } from "../../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -26,25 +29,69 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-
 export default function RegisterModal() {
+  const navigate = useNavigate();
+  const disPatch = useDispatch();
+  const [alertRegister, setAlertRegister] = useState("none!important");
+  const [email, setEmail] = useState("");
+  const [passwerd, setPasswerd] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
+  const [errorPassword, setErrorPassword] = useState("none!important");
+  const [errorPasswordEmpty, setErrorPasswordEmpty] =
+    useState("none!important");
+
+  //errorPasswordEmpty
+  const closeSuccess = function () {
+    setAlertRegister("none!important");
+  };
+  const handlerRegisterButton = function () {
+    if (email.length > 2 && passwerd.length > 2 && passwerd === confirmPass) {
+      setErrorPassword("none!important");
+      setErrorPasswordEmpty("none!important");
+      axios.post("http://localhost:8000/users", {
+        id: Date.now(),
+        email: email,
+        passwerd: passwerd,
+      });
+      disPatch(
+        upToDateUsersSource({
+          id: Date.now(),
+          email: email,
+          passwerd: passwerd,
+        })
+      );
+      disPatch(changeType(false));
+      disPatch(changeTypeRegisterPage(false));
+      setAlertRegister("flex!important");
+      navigate("/SuccessfulRigester");
+    } else if (passwerd !== confirmPass) {
+      setErrorPassword("flex!important");
+      setErrorPasswordEmpty("none!important");
+    } else if (passwerd.length < 2) {
+      setErrorPasswordEmpty("flex!important");
+      setErrorPassword("none!important");
+    }
+
+
+    
+
+  };
   const { openModalRegisterPage } = useSelector(
     (state) => state.openModalRegisterPage
   );
-  const navigate = useNavigate();
-
   const conditionButton = function () {
     disPatch(changeTypeConditions(true));
   };
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
-  const disPatch = useDispatch();
   const handleClose = function () {
     disPatch(changeType(false));
     disPatch(changeTypeRegisterPage(false));
+    setErrorPassword("none!important");
+    setErrorPasswordEmpty("none!important");
   };
 
   return (
-    <div>
+    <Box>
       <Modal
         open={openModalRegisterPage}
         onClose={handleClose}
@@ -69,6 +116,7 @@ export default function RegisterModal() {
 
               <Box className="Register-email-input-Box">
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   className="Register-email-input"
                   placeholder="ایمیل یا شماره تماس"
                 />
@@ -77,8 +125,7 @@ export default function RegisterModal() {
 
             <Box>
               <Typography className="Register-email-title">
-                پسورد
-                <span className="Register-stares">*</span>
+                رمز <span className="Register-stares">*</span>
               </Typography>
 
               <Box
@@ -87,16 +134,21 @@ export default function RegisterModal() {
                 justifyContent="center"
               >
                 <input
+                  type="password"
+                  onChange={(e) => setPasswerd(e.target.value)}
                   className="Register-email-input"
-                  placeholder="ایمیل یا شماره تماس"
+                  placeholder="رمز عبور"
                 />
               </Box>
             </Box>
-
+            <Box display={errorPasswordEmpty}>
+              <Typography className="passError">
+                رمز شما باید بیشتر از 5 کاراکتر باشد{" "}
+              </Typography>
+            </Box>
             <Box>
               <Typography className="Register-email-title">
-                تکرار پسورد
-                <span className="Register-stares">*</span>
+                تکرار رمز <span className="Register-stares">*</span>
               </Typography>
               <Box
                 className="Register-email-input-Box"
@@ -104,12 +156,19 @@ export default function RegisterModal() {
                 justifyContent="center"
               >
                 <input
+                  type="password"
+                  onChange={(e) => setConfirmPass(e.target.value)}
                   className="Register-email-input"
-                  placeholder="ایمیل یا شماره تماس"
+                  placeholder="تکرار رمز عبور"
                 />
               </Box>
             </Box>
 
+            <Box display={errorPassword}>
+              <Typography className="passError">
+                رمز عبور تطابق ندارد
+              </Typography>
+            </Box>
             <Box display="flex" justifyContent="flex-end" gap=".3rem">
               <Typography className="fontLoginStyles">
                 را مطالعه کرده ام و می‌پذیرم
@@ -129,13 +188,17 @@ export default function RegisterModal() {
               alignItems="center"
               gap="1rem"
             >
-              <Button className="register-button-Styles" variant="contained">
+              <Button
+                onClick={handlerRegisterButton}
+                className="register-button-Styles"
+                variant="contained"
+              >
                 ثبت نام{" "}
               </Button>
             </Box>
           </Box>
         </Box>
       </Modal>
-    </div>
+    </Box>
   );
 }

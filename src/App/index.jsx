@@ -21,6 +21,8 @@ import PersonalInfo from './../components/pages/Admin/PersonalInfo/index';
 import Pants from './../components/pages/Products/Pants/index';
 import Shoes from './../components/pages/Products/Shoes/index';
 import ShoppingCart from "../components/pages/ShoppingCart";
+import SuccessfulRigester from './../components/pages/Login/Register/SuccessfulRigester/index';
+import CheckOut from './../components/pages/ShoppingCart/Checkout/index';
 function App() {
   return (
     <Box>
@@ -41,6 +43,8 @@ function App() {
         <Route path="Pants" element={<Pants />} />
         <Route path="Shoess" element={<Shoes />} />
         <Route path="ShoppingCart" element={<ShoppingCart />} />
+        <Route path="SuccessfulRigester" element={<SuccessfulRigester />} />
+        <Route path="CheckOut" element={<CheckOut />} />
 
       </Routes>
       <RegisterModal></RegisterModal>
