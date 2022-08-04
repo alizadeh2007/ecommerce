@@ -8,7 +8,8 @@ import "./popupshow.Module.css";
 import { useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
+import { Alert } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -19,37 +20,59 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 3,
 };
 export default function BasicModalcomment() {
+  const [hanlerChangeType,setHanlerChangeType]=useState("none")
   const { openSingleProduct } = useSelector((state) => state.openSingleProduct);
   const { raitingStore } = useSelector((state) => state.raitingStore);
+  const[successText,setSuccessText]=useState("none!important")
 
   const [name, setName] = useState("");
   const [textSection, setTextSection] = useState("");
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () =>{
+    setHanlerChangeType("none")
+    setOpen(true);
+  } 
   const handleClose = function () {
+    setSuccessText("none!important")
     setOpen(false);
-    if(openSingleProduct.category==="eyeglasses"){
-      axios.put(`http://localhost:8000/eyeglasses/${openSingleProduct.id}`, {...openSingleProduct,comments});
-     }
   };
 
-  const comments=[...openSingleProduct.comments,
-  {
-    name:name,
-    comment:textSection,
-    rate:raitingStore,
-  }
-  ]
+  const sendBTN = function () {
+    if(name==""||textSection==""){
+      setHanlerChangeType("flex")
+    setSuccessText("none!important")
 
+    }
+    else if (openSingleProduct.category === "eyeglasses") {
+        axios.put(`http://localhost:8000/eyeglasses/${openSingleProduct.id}`, {
+          ...openSingleProduct,
+          comments,
+        });
+        setOpen(false);
+        setSuccessText("flex!important")
+      }
+  };
+  const comments = [
+    ...openSingleProduct.comments,
+    {
+      name: name,
+      comment: textSection,
+      rate: raitingStore,
+    },
+  ];
 
   return (
     <div>
       <Button onClick={handleOpen} className="comments-parts-text">
         ثبت نظر{" "}
       </Button>
+      <Box display={successText}>
+
+      <Alert className="alertSuccess"  severity="success">نظر شما به موفقیت ثبت شد</Alert>
+      </Box>
       <Modal
         open={open}
         onClose={handleClose}
@@ -76,11 +99,14 @@ export default function BasicModalcomment() {
           <Button
             className="popUpShow-send-data-comment"
             variant="outlined"
-            onClick={(e) => handleClose(e.target.value)}
+            onClick={(e) => sendBTN(e.target.value)}
             color="success"
           >
             ارسال
           </Button>
+          <Typography className="hanlerChangeType" display={hanlerChangeType}>.متن و نام نمی تواند خالی باشد</Typography>
+          <Box display="flex" justifyContent="space-between">
+          </Box>
         </Box>
       </Modal>
     </div>

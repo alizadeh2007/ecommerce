@@ -41,3 +41,16 @@ font-size: 1.5rem!important;
     text-align: right!important;
     padding: .3rem!important;
   }
+.hanlerChangeType{
+  color: red!important;
+  position: relative;
+  bottom: 4rem;
+  left: 40%;
+  font-size: 1.3rem!important;
+}
+.alertSuccess{
+font-size: 1.5rem!important;
+position:fixed;
+top: 1rem;
+right: 2rem;
+}

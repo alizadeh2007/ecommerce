@@ -39,7 +39,19 @@
     color: #d43200 !important;
     cursor: pointer !important;
   }
+  .massage-sub-section-text-range-icon-down-active{
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    color: #d43200 !important;
+    cursor: pointer !important;
+  }
   .massage-sub-section-text-range-icon-up:hover {
+    font-size: 3.4rem !important;
+    width: 2.4rem !important;
+    color: #24b85a !important;
+    cursor: pointer !important;
+  }
+  .massage-sub-section-text-range-icon-up-active{
     font-size: 3.4rem !important;
     width: 2.4rem !important;
     color: #24b85a !important;

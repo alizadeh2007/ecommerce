@@ -1,7 +1,7 @@
 .login {
   background-color: #efefef;
   z-index: 1000;
-  padding: 1rem;
+  padding: .2rem;
 }
 .loginbutton {
   position: absolute !important;

@@ -1047,6 +1047,36 @@
           "comment": " کیفیتش سال به سال داره افت می کنه.",
           "name": "علیرضا زارع بیدکی",
           "rate": "2.1"
+        },
+        {
+          "name": "رضا",
+          "comment": "خیلی خوب بود کیفیت عالییی",
+          "rate": 2
+        },
+        {
+          "name": "محمد علی",
+          "comment": "سلام چرا عکسش اینقدر خوشگله ولی کیفیت افتضاح",
+          "rate": 2
+        },
+        {
+          "name": "محمد",
+          "comment": "بد نبود",
+          "rate": 2
+        },
+        {
+          "name": "رضا",
+          "comment": "خوب بود",
+          "rate": 3.5
+        },
+        {
+          "name": "حسین",
+          "comment": "بی نظیر",
+          "rate": 2
+        },
+        {
+          "name": "علیرضا",
+          "comment": "چی بگم",
+          "rate": 2
         }
       ],
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121620286.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
@@ -1110,6 +1140,16 @@
           "comment": " در کارخانش را ببندید.",
           "name": "خلیل علیزاده",
           "rate": "2.1"
+        },
+        {
+          "name": "ناشناس",
+          "comment": "خوبه",
+          "rate": 4
+        },
+        {
+          "name": "جواد",
+          "comment": "ععالی",
+          "rate": 2
         }
       ],
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121620083.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",

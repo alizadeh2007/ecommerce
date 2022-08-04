@@ -27,13 +27,13 @@
 }
 .styleHeader {
   width: 100%;
-  height: 3rem;
+  height: 3.5rem;
   background-color: #2485b8;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 6rem;
-  gap: 0.5rem;
+  gap: .5rem!important;
   border-bottom: 0.2rem solid rgba(255, 255, 255, 0.24);
 
   /* position:fixed;
@@ -123,6 +123,28 @@
 }
 .styleHeader-Parent{
   display: none!important;
+}
+.countPro{
+  position: absolute;
+  top: -3px;
+  right: -5px;
+  width: 1.5rem!important;
+  height: 1.5rem!important;
+  font-size: 1.2rem!important;
+  border-radius: 50%!important;
+  background-color: rgb(211, 9, 9)!important;
+  color: beige!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.countProIcon{
+  position: relative;
+
+}
+.countProParent{
+  position: relative;
 }
 
 @media screen and  (max-width: 768px) {
