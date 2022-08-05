@@ -40,7 +40,6 @@ export default function RegisterModal() {
   const [errorPasswordEmpty, setErrorPasswordEmpty] =
     useState("none!important");
 
-  //errorPasswordEmpty
   const closeSuccess = function () {
     setAlertRegister("none!important");
   };
@@ -71,10 +70,6 @@ export default function RegisterModal() {
       setErrorPasswordEmpty("flex!important");
       setErrorPassword("none!important");
     }
-
-
-    
-
   };
   const { openModalRegisterPage } = useSelector(
     (state) => state.openModalRegisterPage

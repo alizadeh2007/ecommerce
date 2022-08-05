@@ -18,7 +18,9 @@ import totalPaymentCost from "./../slice/slice";
 import raitingStore from "./../slice/slice";
 import usersSource from "./../slice/slice";
 import totalCost from "./../slice/slice";
-
+import changeIcon from "./../slice/slice";
+import changePersonIcn from "./../slice/slice";
+import closeModalPersonIcon from "./../slice/slice";
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -39,6 +41,9 @@ export const store = configureStore({
     totalPaymentCost,
     raitingStore,
     usersSource,
-    totalCost
+    totalCost,
+    changeIcon,
+    changePersonIcn,
+    closeModalPersonIcon
   },
 });

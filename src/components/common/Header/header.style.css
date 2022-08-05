@@ -146,6 +146,16 @@
 .countProParent{
   position: relative;
 }
+.changePersonIcon{
+  width: 15rem!important;
+  height: 15rem!important;
+  background-color: #444540;
+  position: absolute;
+  top: 4rem;
+}
+.MuiBox-root{
+  background-color: none!important;
+}
 
 @media screen and  (max-width: 768px) {
   .bgHeaderFinally{

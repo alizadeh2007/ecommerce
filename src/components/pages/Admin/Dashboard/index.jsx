@@ -2,9 +2,13 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import "./dashboard.Module.css";
 import { useNavigate } from "react-router-dom";
+import { upToDateCloseModalPersonIcon } from "../../../../redux/slice/slice";
+import { useDispatch } from 'react-redux';
 
 function Admin() {
+  const disPatch= useDispatch()
   const navigate = useNavigate();
+
   const DashboardFn = function () {
     navigate("/Dashboard");
   };
@@ -16,7 +20,8 @@ function Admin() {
 
   }
   const ExportFn=function(){
-    navigate("/");
+    disPatch(upToDateCloseModalPersonIcon(true))
+    // navigate("/");
 
   }
   return (

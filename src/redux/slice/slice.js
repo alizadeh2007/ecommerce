@@ -21,7 +21,10 @@ export const counterSlice = createSlice({
     totalPaymentCost:[],
     raitingStore:"",
     usersSource:[],
-    totalCost:""
+    totalCost:"",
+    changeIcon:"flex",
+    changePersonIcn:"none",
+    closeModalPersonIcon:false,
   },
   reducers: {
     changeType: (state,action) => {
@@ -101,7 +104,17 @@ export const counterSlice = createSlice({
       upToDateTotalCost: (state,action) => {
         state.totalCost =action.payload ;
       },
+      upToDateChangeIcon: (state,action) => {
+        state.changeIcon =action.payload ;
+      },
+      upToDateChangePersonIcn: (state,action) => {
+        state.changePersonIcn =action.payload ;
+      },
+      upToDateCloseModalPersonIcon: (state,action) => {
+        state.closeModalPersonIcon =action.payload ;
+      },
+
   },
 });
-export const {upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

@@ -11,6 +11,8 @@ import {
   changeType,
   changeTypeConditions,
   changeTypeRegisterPage,
+  upToDateChangeIcon,
+  upToDateChangePersonIcn,
 } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -49,8 +51,13 @@ export default function BasicModal() {
         localStorage.setItem("token", `${user[0].id}`);
         navigate("/Dashboard");
         disPatch(changeType(false));
+        disPatch(upToDateChangeIcon("none"));
+        disPatch(upToDateChangePersonIcn("flex"))
       } else if (user.length === 0) {
         setLogInType("flex!important");
+
+
+
       }
     }
   };
