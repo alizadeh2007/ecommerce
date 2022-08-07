@@ -31,8 +31,17 @@
   height: 4rem !important;
   display: flex;
   justify-content: center;
-  text-align: right;
+  text-align: left;
   padding-right: 1rem;
+  padding-left: 1rem;
+}
+.inputLoginStyles::placeholder {
+  height: 4rem !important;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  padding-right: .2rem;
+
 }
 .inputLoginStylesParent {
   display: flex;

@@ -23,6 +23,12 @@ import Shoes from './../components/pages/Products/Shoes/index';
 import ShoppingCart from "../components/pages/ShoppingCart";
 import SuccessfulRigester from './../components/pages/Login/Register/SuccessfulRigester/index';
 import CheckOut from './../components/pages/ShoppingCart/Checkout/index';
+import AminLogIn from './../components/pages/Login/Admin/index';
+import Goods from './../components/pages/Login/Admin/Goods/index';
+import OrderGood from "../components/pages/Login/Admin/Goods/OrderGood";
+import StoreGood from './../components/pages/Login/Admin/Goods/StoreGood/index';
+import AdminHeader from './../components/common/Header/AdminHeader/index';
+
 function App() {
   return (
     <Box>
@@ -45,7 +51,16 @@ function App() {
         <Route path="ShoppingCart" element={<ShoppingCart />} />
         <Route path="SuccessfulRigester" element={<SuccessfulRigester />} />
         <Route path="CheckOut" element={<CheckOut />} />
+        <Route path="AminLogIn" element={<AminLogIn />} />
+        <Route path="Goods" element={<Goods />} />
+        <Route path="OrderGood" element={<OrderGood />} />
+        <Route path="StoreGood" element={<StoreGood />} />
+        <Route path="AdminHeader" element={<AdminHeader />} />
 
+        
+
+
+{/* StoreGood */}
       </Routes>
       <RegisterModal></RegisterModal>
       <Login></Login>

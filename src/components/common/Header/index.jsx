@@ -12,7 +12,7 @@ import changeTypes, {
 } from "./../../../redux/slice/slice.js";
 import Categories from "./ComboBox/index";
 import DirectionSensitive from "../../../assets/Rtl";
-import PersonalIconChange from './PersonalIconChange/index';
+import PersonalIconChange from "./PersonalIconChange/index";
 import DensityMediumRoundedIcon from "@mui/icons-material/DensityMediumRounded";
 import PrimarySearchAppBar from "./MenuBarMobile/index";
 function Header() {
@@ -21,15 +21,13 @@ function Header() {
   const { changePersonIcn } = useSelector((state) => state.changePersonIcn);
 
   //changePersonIcn
-  const [changePersonIcon,setChangePersonIcon]=useState("none!important")
-  const [persinIconRegister,setPersinIconRegister]=useState("flex")
+  const [changePersonIcon, setChangePersonIcon] = useState("none!important");
+  const [persinIconRegister, setPersinIconRegister] = useState("flex");
   const disPatch = useDispatch();
   // register icon
   const registerIcon = function () {
-    if(localStorage.getItem("token")){
-
-    }else {
-
+    if (!localStorage.getItem("token") && !localStorage.getItem("Amintoken")) {
+      
       disPatch(changeType(true));
     }
   };
@@ -70,22 +68,21 @@ function Header() {
                 onClick={openModalShoppingList}
                 className="ShoppingCartOutlinedIcon countProIcon"
               />
-              {PaymentCMP.length==0?"":
-              
-              <Typography className="countPro">{PaymentCMP.length}</Typography>
-              }
+              {PaymentCMP.length == 0 ? (
+                ""
+              ) : (
+                <Typography className="countPro">
+                  {PaymentCMP.length}
+                </Typography>
+              )}
             </Box>
-<Box display={changeIcon}>
-            <PersonIcon onClick={registerIcon} className="PersonIcon" />
-</Box>
+            <Box display={changeIcon}>
+              <PersonIcon onClick={registerIcon} className="PersonIcon" />
+            </Box>
 
             <Box display={changePersonIcn}>
-              <PersonalIconChange/>
+              <PersonalIconChange />
             </Box>
-
-
-
-
           </Box>
           <DensityMediumRoundedIcon className="styleHeader-Parent" />
         </Box>

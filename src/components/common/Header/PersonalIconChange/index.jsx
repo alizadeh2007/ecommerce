@@ -24,7 +24,12 @@ export default function PersonalIconChange() {
     const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const profileBTN=function(){
-    navigate("/Dashboard")
+    if(localStorage.getItem("token")){
+      navigate("/Dashboard")
+    }else if(localStorage.getItem("Atoken")){
+      navigate("/AminLogIn")
+
+    }
   }
   const closeProfileBTN=function(){
         disPatch(upToDateCloseModalPersonIcon(true))

@@ -6,6 +6,15 @@
       "passwerd": "123456"
     }
   ],
+  "admin": [
+
+    {
+      "id": 123456789,
+      "email": "alizadeh30@gmail.com",
+      "passwerd": "admin"
+    }
+  ],
+
   "pants": [
     {
       "id": "1",

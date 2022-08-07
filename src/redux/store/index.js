@@ -21,6 +21,12 @@ import totalCost from "./../slice/slice";
 import changeIcon from "./../slice/slice";
 import changePersonIcn from "./../slice/slice";
 import closeModalPersonIcon from "./../slice/slice";
+import dashbourdType from "./../slice/slice";
+import AllGoodsType from "./../slice/slice";
+import AllStore from "./../slice/slice";
+import AllGoods from "./../slice/slice";
+import AllOrders from "./../slice/slice";
+// AllOrders
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -44,6 +50,11 @@ export const store = configureStore({
     totalCost,
     changeIcon,
     changePersonIcn,
-    closeModalPersonIcon
+    closeModalPersonIcon,
+    dashbourdType,
+    AllGoodsType,
+    AllStore,
+    AllGoods,
+    AllOrders
   },
 });

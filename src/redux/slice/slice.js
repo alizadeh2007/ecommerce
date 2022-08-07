@@ -25,6 +25,11 @@ export const counterSlice = createSlice({
     changeIcon:"flex",
     changePersonIcn:"none",
     closeModalPersonIcon:false,
+    dashbourdType:true,
+    AllGoodsType:true,
+    AllGoods:true,
+    AllStore:true,
+    AllOrders:true,
   },
   reducers: {
     changeType: (state,action) => {
@@ -113,8 +118,23 @@ export const counterSlice = createSlice({
       upToDateCloseModalPersonIcon: (state,action) => {
         state.closeModalPersonIcon =action.payload ;
       },
+      upToDateDashbourdType: (state,action) => {
+        state.dashbourdType =action.payload ;
+      },
+      upToDateAllGoodsType: (state,action) => {
+        state.AllGoodsType =action.payload ;
+      },
+      upAllStore: (state,action) => {
+        state.AllStore =action.payload ;
+      },
+      upAllGoods: (state,action) => {
+        state.AllGoods =action.payload ;
+      },
+      upAllOrders: (state,action) => {
+        state.AllOrders =action.payload ;
+      },
 
   },
 });
-export const {upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

@@ -47,19 +47,51 @@ export default function BasicModal() {
             )
           )
         );
-      if (user.length > 0) {
+      if (user.length > 0 && email!=="alizadeh30@gmail.com") {
         localStorage.setItem("token", `${user[0].id}`);
         navigate("/Dashboard");
         disPatch(changeType(false));
         disPatch(upToDateChangeIcon("none"));
         disPatch(upToDateChangePersonIcn("flex"))
-      } else if (user.length === 0) {
+      } else if (user.length === Number(0)) {
         setLogInType("flex!important");
-
-
-
       }
     }
+
+
+
+
+
+
+    if (email==="alizadeh30@gmail.com" && password==="admin") {
+      axios
+        .get("http://localhost:8000/admin")
+        .then((res) =>
+          setUser(
+            res.data.filter(
+              (item) => item.email === email && item.passwerd == password
+            )
+          )
+        );
+      if (user.length > 0) {
+        localStorage.setItem("Atoken", `${user[0].id}`);
+        navigate("/AminLogIn");
+        disPatch(changeType(false));
+        disPatch(upToDateChangeIcon("none"));
+        disPatch(upToDateChangePersonIcn("flex"))
+      } 
+    }
+
+
+
+
+
+
+
+
+
+
+
   };
   const registerFn = function () {
     disPatch(changeTypeRegisterPage(true));
@@ -73,6 +105,8 @@ export default function BasicModal() {
   const disPatch = useDispatch();
   const handleClose = function () {
     disPatch(changeType(false));
+    setLogInType("none!important");
+
   };
 
   const { closeLogIn } = useSelector((state) => state.closeLogIn);

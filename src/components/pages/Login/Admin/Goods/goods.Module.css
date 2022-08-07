@@ -1,0 +1,30 @@
+.Goods-tyble{
+    width: 90%;
+    height: fit-content;
+    border: .1rem solid rgba(0, 0, 0, 0.413);
+    display: flex;
+    justify-content: center;
+}
+.Goods-sub-tyble{
+    width: 90%;
+    height: fit-content;
+    border: .1rem solid rgba(0, 0, 0, 0.413);
+    display: flex;
+    justify-content: center;
+}
+.Goods-tyble-row{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem!important;
+    font-weight: bold!important;
+    padding: 1rem;
+}
+.Goods-tyble-rows{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem!important;
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.413);
+    padding: 1rem;
+}
