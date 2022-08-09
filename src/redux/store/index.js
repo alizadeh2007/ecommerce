@@ -33,7 +33,9 @@ import jsonDataShirts from "./../slice/slice";
 import viewCard from "./../slice/slice";
 import editCard from "./../slice/slice";
 import ModalEdit from "./../slice/slice";
-// ModalEdit
+import DeleteModalIcon from "./../slice/slice";
+import AddProductCMD from "./../slice/slice";
+// AddProductCMD
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -69,6 +71,8 @@ export const store = configureStore({
     jsonDataShirts,
     viewCard,
     editCard,
-    ModalEdit
+    ModalEdit,
+    DeleteModalIcon,
+    AddProductCMD
   },
 });

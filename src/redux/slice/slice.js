@@ -37,6 +37,8 @@ export const counterSlice = createSlice({
     jsonDataShirts:[],
     viewCard:[],
     editCard:[],
+    DeleteModalIcon:false,
+    AddProductCMD:false,
   },
   reducers: {
     changeType: (state,action) => {
@@ -161,8 +163,14 @@ export const counterSlice = createSlice({
       upModalEdit: (state,action) => {
         state.ModalEdit =action.payload ;
       },
+      upDeleteModalIcon: (state,action) => {
+        state.DeleteModalIcon =action.payload ;
+      },
+      upAddProductCMD: (state,action) => {
+        state.AddProductCMD =action.payload ;
+      },
 
   },
 });
-export const {upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {upAddProductCMD,upDeleteModalIcon,upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

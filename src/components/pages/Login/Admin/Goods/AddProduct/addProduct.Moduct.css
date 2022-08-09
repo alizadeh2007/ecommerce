@@ -1,0 +1,122 @@
+.modalEye-title {
+    text-align: center !important;
+    font-size: 1.9rem !important;
+    background-color: blueviolet;
+    color: aliceblue;
+  }
+  
+  .ModalView-price-store-title {
+    font-size: 1.4rem !important;
+  }
+  .detail-eyeModal {
+      width: 100%;
+      display: flex;
+      margin-top: 1.5rem;
+  }
+  .detail-eyeModal-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-bottom: .1rem solid rgb(209, 209, 209);
+  }
+  .description-modalEye{
+      display: flex;
+      justify-content: flex-end;
+      text-align: right;
+      font-size: 1.4rem!important;
+  }
+  .Closa-eyeModal{
+      font-size: 1.4rem!important;
+      margin-top: 1.5rem!important;
+  
+  }
+  .edit-input{
+    width: 50%!important;
+    border: none!important;
+  }
+  .edit-input-title{
+    background-color: blueviolet!important;
+    text-align: right;
+    direction: rtl;
+    border: none!important;
+    width: 30%!important;
+  }
+  .edit-input-title::placeholder{
+    color: rgb(207, 207, 207)!important;
+    font-size: 1.3rem!important;
+  }
+  .upload-title{
+    font-size: 1.4rem!important;
+  }
+  .Add-title{
+    direction: rtl!important;
+    text-align: right!important;
+    font-size: 1.6rem!important;
+  }
+  .product-Name{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.product-Name-title{
+    font-size: 1.5rem!important;
+    text-align: right!important;
+    direction: rtl!important;
+}
+.product-Name-input{
+    border: .1rem solid rgba(0, 0, 0, 0.703);
+    text-align: right!important;
+    direction: rtl!important;
+    padding: .5rem!important;
+}
+.addProduct-closeIcon{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .1rem solid rgba(126, 126, 126, 0.152);
+    padding-bottom: 1rem!important;
+    background-color: rgba(126, 126, 126, 0.152);
+    width: 100%!important;
+    position:absolute;
+    left: 0;
+    top: 0;
+    padding: 2rem;
+    box-shadow: .1rem .1rem .1rem 0 #000;
+}
+.close-Icon{
+    font-size: 2.2rem!important;
+    /* color:  blueviolet!important; */
+    cursor: pointer;
+}
+.close-Icon:hover{
+    font-size: 2.2rem!important;
+    color:  rgb(81, 35, 124)!important;
+    cursor: pointer;
+}
+.close-Icon:active{
+    font-size: 2.2rem!important;
+    color:  rgb(163, 104, 219)!important;
+    cursor: pointer;
+}
+.explain::placeholder{
+    direction: rtl!important;
+    text-align: right!important;
+}
+.explain{
+    direction: rtl!important;
+    text-align: right!important;
+}
+.ck.ck-editor__editable_inline{
+    direction: rtl!important;
+    text-align: right!important;
+}
+.product-upload-section{
+    background-color: rgba(153, 153, 153, 0.03);
+    margin-top: 1rem;
+    border-radius: 1rem;
+    box-shadow: .1rem .1rem 0rem 0rem rgba(0, 0, 0, 0.178);
+}
+.send-icon{
+    font-size: 1.6rem!important;
+}

@@ -9,6 +9,7 @@ import BorderColorIcon from "@mui/icons-material/BorderColor";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  upAddProductCMD,
   upjsonData,
   upjsonDataPants,
   upjsonDataShirts,
@@ -18,8 +19,13 @@ import OpenViewProduct from "./ViewProduct/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SelectCMD from "./SelectCMD/index";
-import OpenEditProduct from './EditGood/index';
+import OpenEditProduct from "./EditGood/index";
+import DeleteModal from "./DeleteGoods/index";
+import AddProduct from './AddProduct/index';
 function Goods() {
+  const openModalAdd=()=>{
+    disPatch(upAddProductCMD(true))
+  }
   const [selection, setSelect] = useState("");
   const disPatch = useDispatch();
   console.log("selection=", selection);
@@ -86,7 +92,9 @@ function Goods() {
             <Box className="Goods-tyble-row-pic">تصویر</Box>
           </Box>
           <OpenViewProduct />
-<OpenEditProduct/>
+          <OpenEditProduct />
+          <DeleteModal />
+          <AddProduct/>
           {selection === "eye"
             ? jsonData.map((item) => {
                 return <SelectCMD item={item} />;
@@ -101,7 +109,7 @@ function Goods() {
               })
             : ""}
 
-          <Box className="goods-add"> + افزودن</Box>
+          <Box onClick={openModalAdd} className="goods-add"> + افزودن</Box>
         </Box>
       </Box>
     </Box>
