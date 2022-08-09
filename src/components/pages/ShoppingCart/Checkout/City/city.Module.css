@@ -1,0 +1,7 @@
+.select-city{
+    direction: rtl!important;
+    text-align: right!important;
+}
+.city-choose{
+    font-size: 1.3rem!important;
+}

@@ -15,7 +15,25 @@ import openReportModal from "./../slice/slice";
 import openHereReportModal from "./../slice/slice";
 import PaymentCMP from "./../slice/slice";
 import totalPaymentCost from "./../slice/slice";
-
+import raitingStore from "./../slice/slice";
+import usersSource from "./../slice/slice";
+import totalCost from "./../slice/slice";
+import changeIcon from "./../slice/slice";
+import changePersonIcn from "./../slice/slice";
+import closeModalPersonIcon from "./../slice/slice";
+import dashbourdType from "./../slice/slice";
+import AllGoodsType from "./../slice/slice";
+import AllStore from "./../slice/slice";
+import AllGoods from "./../slice/slice";
+import AllOrders from "./../slice/slice";
+import ModalView from "./../slice/slice";
+import jsonData from "./../slice/slice";
+import jsonDataPants from "./../slice/slice";
+import jsonDataShirts from "./../slice/slice";
+import viewCard from "./../slice/slice";
+import editCard from "./../slice/slice";
+import ModalEdit from "./../slice/slice";
+// ModalEdit
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -34,5 +52,23 @@ export const store = configureStore({
     openHereReportModal,
     PaymentCMP,
     totalPaymentCost,
+    raitingStore,
+    usersSource,
+    totalCost,
+    changeIcon,
+    changePersonIcn,
+    closeModalPersonIcon,
+    dashbourdType,
+    AllGoodsType,
+    AllStore,
+    AllGoods,
+    AllOrders,
+    ModalView,
+    jsonData,
+    jsonDataPants,
+    jsonDataShirts,
+    viewCard,
+    editCard,
+    ModalEdit
   },
 });

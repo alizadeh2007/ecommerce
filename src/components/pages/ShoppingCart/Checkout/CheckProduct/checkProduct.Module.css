@@ -1,0 +1,44 @@
+.check-Product{
+    width: 30%!important;
+    height: 40vh;
+    border: .1rem solid rgba(0, 0, 0, 0.219);
+    border-radius: .5rem!important;
+}
+.row-Items{
+    background-color: rgb(255, 255, 255);
+    border-bottom: .1rem solid rgba(0, 0, 0, 0.065);
+}
+.row-font-style{
+    font-size: 1.3rem!important;
+    padding-right: .5rem;
+}
+.check-Product-items{
+    height: 20rem!important;
+overflow-y: scroll;
+background-color:rgba(0, 109, 121, 0.31) ;
+}
+.font-calculate-price{
+    font-size: 1.6rem!important;
+    font-weight: bold!important;
+    direction: rtl!important;
+    text-align: right!important;
+}
+.total-price{
+    display: flex;
+    gap:1rem;
+}
+
+.font-calculate-price-num{
+    color: rgb(254, 0, 0)!important;
+    font-size: 1.6rem!important;
+    font-weight: bold!important;
+}
+.total-box{
+    margin-top: 2rem!important;
+    display: flex!important;
+    flex-direction: column!important;
+    justify-content: center!important;
+    align-items: center!important;
+    gap: 1rem;
+
+}

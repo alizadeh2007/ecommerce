@@ -3,29 +3,25 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./payment.Module.css";
-import { uptodatPaymentCMP } from "../../../../redux/slice/slice";
+import {
+  upToDateTotalCost,
+  uptodatPaymentCMP,
+  uptodatTotalPaymentCost,
+} from "../../../../redux/slice/slice";
 function Payment({ propspayments }) {
-  const dispatch=useDispatch()
-  const {openSingleProduct}=useSelector((state)=>state.openSingleProduct)
-console.log("propspaymentspropspayments=",propspayments)
-const minus = function () {
-    if (+propspayments.count > 1) {
-      
-    } else {
+  const dispatch = useDispatch();
+  const navigate=useNavigate()
 
-     
-    }
-};
-const plusBtn = function () {
-  dispatch(uptodatPaymentCMP(propspayments))
-   
+  const minus = function () {
+      dispatch(uptodatTotalPaymentCost(propspayments));
   };
-  let totalPrice = Number(propspayments.count)*Number(propspayments.price);
-  // let totalCost = +0;
-  // totalCost = Number(totalCost) + Number(propspayments.count * count);
-//   let test=PaymentCMP.price=totalCost;
+  const plusBtn = function () {
+    dispatch(uptodatPaymentCMP(propspayments));
+  };
+  let totalPrice = Number(propspayments.count) * Number(propspayments.price);
   return (
     <Box className="ShoppingCart-rigth-box-col ShoppingCart-rigth-box-col-payment">
       <Box className="ShoppingCart-rigth-box-col-child-sec1">
@@ -50,11 +46,13 @@ const plusBtn = function () {
           >
             +
           </Button>
-          <Box className="ShoppingCart-rigth-box-col-child-number">{propspayments.count}</Box>
+          <Box className="ShoppingCart-rigth-box-col-child-number">
+            {propspayments.count}
+          </Box>
           <Button
             variant="outlined"
             color="error"
-            onClick={() => minus()}
+            onClick={(e) => minus(e.target)}
             className="ShoppingCart-rigth-box-col-child-minus"
           >
             -
@@ -64,6 +62,7 @@ const plusBtn = function () {
       <Box className="ShoppingCart-rigth-box-col-child" gap=".5rem">
         {totalPrice} <Typography fontSize="1.4rem!important">تومان</Typography>
       </Box>
+
     </Box>
   );
 }

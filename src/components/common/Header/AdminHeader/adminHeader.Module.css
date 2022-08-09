@@ -1,0 +1,252 @@
+.adminGoods {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+}
+.adminGoods-title-Box {
+  width: 23%;
+  height: 4rem;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.adminGoods-title-Box-order {
+  width: 23%;
+  height: 4rem;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.adminGoods-title-Box-pishkhan {
+  width: 100%;
+  height: 4rem;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0rem 0rem 3rem 0rem !important;
+}
+.adminGoods-title-Box-pishkhan-active {
+  width: 100% !important;
+  height: 4rem !important;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  border-radius: 0rem 0rem 3rem 0rem !important;
+  border: 0.1rem solid bisque;
+}
+.adminGoods-title-Box-pishkhan:hover {
+  width: 100%;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0rem 0rem 3rem 0rem !important;
+  border: 0.1rem solid bisque;
+}
+.adminGoods-title-Box-exit {
+  width: 23%;
+  height: 4rem;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0rem 0rem 0rem 3rem !important;
+}
+.adminGoods-title-Box-exit:hover {
+  width: 23%;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0rem 0rem 0rem 3rem !important;
+
+  border: 0.1rem solid bisque;
+}
+.adminGoods-title-Box:hover {
+  width: 23%;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0.1rem solid bisque;
+}
+.adminGoods-title {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    color: #f6bd32 !important;
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+  }
+.adminGoods-title-pishkhan {
+  font-size: 1.3rem !important;
+  font-weight: bold !important;
+  color: #f6bd32 !important;
+  border-radius: 20%rem !important;
+}
+.adminGoods-pishtkhane {
+  text-align: right !important;
+  direction: rtl !important;
+  font-size: 1.9rem !important;
+  padding: 2rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.adminGoods-title-Box-allGoods {
+  width: 36%;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: .1rem solid  bisque; */
+}
+.SubGoods-order:hover {
+    background-color:rgba(0, 0, 0, 0.813)!important;
+}
+.SubGoods-order-active {
+  width: 100%;
+  height: 4rem;
+  background-color:rgba(0, 0, 0, 0.813)!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: .1rem solid  bisque; */
+  border-radius: 0rem 0rem 0rem 3rem;
+}
+.SubGoods-order {
+    width: 100%;
+    height: 4rem;
+    background-color: rgba(53, 52, 52, 0.87) !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* border: .1rem solid  bisque; */
+    border-radius: 0rem 0rem 0rem 3rem;
+  }
+.SubGoods-allGoods {
+  width: 36%;
+  height: 4rem;
+  /* background-color: rgba(0, 0, 0, 0.915)!important; */
+  background-color: rgba(53, 52, 52, 0.87) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: .1rem solid  bisque; */
+  border-radius: 0rem 0rem 3rem 0rem;
+}
+.SubGoods-allGoods-active {
+    width: 36%;
+    height: 4rem;
+    background-color:rgba(0, 0, 0, 0.813)!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0rem 0rem 3rem 0rem;
+  }
+.SubGoods-stores-active {
+    width: 100% !important;
+    height: 4rem !important;
+    background-color:rgba(0, 0, 0, 0.813)!important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    border-radius: 0rem 0rem 0rem 0rem;
+  }
+.SubGoods-stores {
+  width: 100%;
+  height: 4rem;
+  background-color: rgba(53, 52, 52, 0.87) !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* border: .1rem solid  bisque; */
+  border-radius: 0rem 0rem 0rem 0rem;
+}
+.SubGoods-stores:hover {
+    background-color:rgba(0, 0, 0, 0.813)!important;
+}
+.SubGoods-allGoods:hover {
+    background-color:rgba(0, 0, 0, 0.813)!important;
+}
+
+.allGoods {
+  position:absolute;
+  width: 100%;
+  height: 4rem;
+  gap: 0.1rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  bottom: -110%;
+  left: 0%;
+}
+
+.admin-goods {
+  width: 100%;
+  height: 4rem;
+  background-color: rgb(61, 61, 61);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.admin-goods-active{
+    width: 100%;
+    height: 4rem;
+
+    background-color:rgba(0, 0, 0, 0.813)!important;
+  border: 0.1rem solid bisque!important;
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.admin-goods:hover {
+  width: 100%;
+  height: 4rem;
+  background-color: rgba(0, 0, 0, 0.813);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 0.1rem solid bisque;
+}
+.adminGoods-title-paren {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

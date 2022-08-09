@@ -177,16 +177,13 @@
    border: none!important; 
 }
 .ShoppingCart-left-box-col-left-child-button:hover{
-  width: 20%!important;
-  height: 100%!important;
+
   background-color: #f7cb5d;
-   border: none!important; 
 }
 .ShoppingCart-left-box-col-left-child-button:active{
-  width: 20%!important;
-  height: 100%!important;
+
   background-color: #e7c46c;
-   border: none!important; 
+
 }
 
 .ShoppingCart-left-box-col-left-child-input::placeholder{
@@ -200,4 +197,7 @@ padding-right: 1rem!important;;
   width: 15rem!important;
   height: 3.5rem!important;
   font-size: 1.5rem!important;
+}
+.ShoppingCart-left-box-col-rigth-child-PRICE{
+  font-weight: bolder!important;
 }
