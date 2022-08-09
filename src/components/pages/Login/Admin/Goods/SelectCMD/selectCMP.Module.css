@@ -15,6 +15,15 @@
     justify-content: center;
     align-items: center;
 }
+.Goods-sub-tyble:hover{
+    width: 80%;
+    background-color: #fff;
+    height: fit-content;
+    border: .2rem solid rgba(8, 172, 201, 0.413);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .Goods-tyble-row{
     width: 8%;
     display: flex;
@@ -135,6 +144,12 @@
 }
 .image-product-eyeModal{
     width: 5rem;
+    box-shadow: .1rem .1rem .1rem .1rem  rgba(168, 168, 168, 0.273);
+    border-radius: 1rem!important;
+}
+.image-product-eyeModal:hover{
+    width: 5rem;
+    border-radius: 3rem!important;
 }
 .categories-goods{
     width: 10rem!important;

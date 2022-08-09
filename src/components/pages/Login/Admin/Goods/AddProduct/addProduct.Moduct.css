@@ -70,11 +70,12 @@
     text-align: right!important;
     direction: rtl!important;
     padding: .5rem!important;
+    width: 100%;
 }
 .addProduct-closeIcon{
     display: flex;
     justify-content: space-between;
-    border-bottom: .1rem solid rgba(126, 126, 126, 0.152);
+    border-bottom: .1rem solid rgba(126, 126, 126, 0.049);
     padding-bottom: 1rem!important;
     background-color: rgba(126, 126, 126, 0.152);
     width: 100%!important;
@@ -82,7 +83,7 @@
     left: 0;
     top: 0;
     padding: 2rem;
-    box-shadow: .1rem .1rem .1rem 0 #000;
+    box-shadow: .1rem .1rem .1rem 0 rgba(0, 0, 0, 0.212);
 }
 .close-Icon{
     font-size: 2.2rem!important;
@@ -119,4 +120,13 @@
 }
 .send-icon{
     font-size: 1.6rem!important;
+}
+.product-Name-title-pic{
+    position: relative!important;
+    top: 2rem!important;
+}
+.name-empty{
+    color: red!important;
+    position:absolute;
+    bottom: -2rem;
 }

@@ -43,8 +43,6 @@ function Goods() {
   const { jsonData } = useSelector((state) => state.jsonData);
   const { jsonDataPants } = useSelector((state) => state.jsonDataPants);
   const { jsonDataShirts } = useSelector((state) => state.jsonDataShirts);
-  // jsonDataShirts
-  // const navigate = useNavigate();
   const openModalView = () => {
     disPatch(upModalView(true));
   };
@@ -107,7 +105,9 @@ function Goods() {
             ? jsonDataShirts.map((item) => {
                 return <SelectCMD item={item} />;
               })
-            : ""}
+            : jsonData.map((item) => {
+                return <SelectCMD item={item} />;
+              })}
 
           <Box onClick={openModalAdd} className="goods-add"> + افزودن</Box>
         </Box>
