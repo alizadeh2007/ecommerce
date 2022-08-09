@@ -29,6 +29,7 @@ function Home() {
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
+  console.log("kioko",storeInfoJsonServer)
   useEffect(() => {
     axios
       .get("http://localhost:8000/eyeglasses/")

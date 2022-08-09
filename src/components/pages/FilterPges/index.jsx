@@ -116,9 +116,7 @@ function FilterPges() {
       </Box>
       <Box className="FilterPges-filters">
         <Typography className="FilterPges-filters-title">فیلتر</Typography>
-        {/* <Box className="FilterPges-filters-rangslider">
-          <RangeSlider></RangeSlider>
-        </Box> */}
+
         <DirectionSensitive>
           <Box
             className="FilterPges-filters-Available"

@@ -26,7 +26,14 @@ import AllGoodsType from "./../slice/slice";
 import AllStore from "./../slice/slice";
 import AllGoods from "./../slice/slice";
 import AllOrders from "./../slice/slice";
-// AllOrders
+import ModalView from "./../slice/slice";
+import jsonData from "./../slice/slice";
+import jsonDataPants from "./../slice/slice";
+import jsonDataShirts from "./../slice/slice";
+import viewCard from "./../slice/slice";
+import editCard from "./../slice/slice";
+import ModalEdit from "./../slice/slice";
+// ModalEdit
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -55,6 +62,13 @@ export const store = configureStore({
     AllGoodsType,
     AllStore,
     AllGoods,
-    AllOrders
+    AllOrders,
+    ModalView,
+    jsonData,
+    jsonDataPants,
+    jsonDataShirts,
+    viewCard,
+    editCard,
+    ModalEdit
   },
 });
