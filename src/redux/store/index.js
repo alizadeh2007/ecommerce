@@ -35,7 +35,13 @@ import editCard from "./../slice/slice";
 import ModalEdit from "./../slice/slice";
 import DeleteModalIcon from "./../slice/slice";
 import AddProductCMD from "./../slice/slice";
-// AddProductCMD
+import LogInType from "./../slice/slice";
+import LogInSave from "./../slice/slice";
+import Email from "./../slice/slice";
+import Password from "./../slice/slice";
+import SelectProduct from "./../slice/slice";
+import SelectMath from "./../slice/slice";
+// SelectMath
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -73,6 +79,12 @@ export const store = configureStore({
     editCard,
     ModalEdit,
     DeleteModalIcon,
-    AddProductCMD
+    AddProductCMD,
+    LogInType,
+    LogInSave,
+    Email,
+    Password,
+    SelectProduct,
+    SelectMath
   },
 });

@@ -14,6 +14,8 @@ import {
   storageInformationJson,
   storageInformationPantsJson,
   storageInformationShoesJson,
+  upToDateChangeIcon,
+  upToDateChangePersonIcn,
   uptodateNewSort,
 } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
@@ -29,8 +31,17 @@ function Home() {
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
-  console.log("kioko",storeInfoJsonServer)
+
+
+
   useEffect(() => {
+    if(localStorage.getItem("Atoken")){
+dispatch(upToDateChangePersonIcn("flex"))
+dispatch(upToDateChangeIcon("none"))
+    }else(
+dispatch(upToDateChangePersonIcn("none"))
+
+    )
     axios
       .get("http://localhost:8000/eyeglasses/")
       .then((res) => dispatch(storageInformationJson(res.data)));

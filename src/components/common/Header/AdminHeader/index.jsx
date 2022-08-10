@@ -5,7 +5,13 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { upAllGoods, upAllOrders, upAllStore, upToDateAllGoodsType, upToDateDashbourdType } from "../../../../redux/slice/slice";
+import {
+  upAllGoods,
+  upAllOrders,
+  upAllStore,
+  upToDateAllGoodsType,
+  upToDateDashbourdType,
+} from "../../../../redux/slice/slice";
 import { useSelector } from "react-redux";
 function AdminHeader() {
   const navigate = useNavigate();
@@ -22,9 +28,9 @@ function AdminHeader() {
     e.preventDefault();
     e.stopPropagation();
     dispatch(upToDateDashbourdType(false));
-    dispatch(upToDateAllGoodsType(true))
-    dispatch(upAllStore(true))
-    dispatch(upAllGoods(true))
+    dispatch(upToDateAllGoodsType(true));
+    dispatch(upAllStore(true));
+    dispatch(upAllGoods(true));
     navigate("/AminLogIn");
   };
   const goodsCMP = function (e) {
@@ -32,42 +38,39 @@ function AdminHeader() {
     setState("flex!important");
     dispatch(upToDateDashbourdType(true));
     dispatch(upToDateAllGoodsType(false));
-    dispatch(upAllStore(true))
-    dispatch(upAllGoods(true))
+    dispatch(upAllStore(true));
+    dispatch(upAllGoods(true));
     navigate("/Goods");
   };
-  const AllgoodsCMP=(e)=>{
+  const AllgoodsCMP = (e) => {
     e.stopPropagation();
     setState("flex!important");
     dispatch(upToDateDashbourdType(true));
     dispatch(upToDateAllGoodsType(false));
-    dispatch(upAllStore(true))
-    dispatch(upAllGoods(false))
-    dispatch(upAllOrders(true))
+    dispatch(upAllStore(true));
+    dispatch(upAllGoods(false));
+    dispatch(upAllOrders(true));
     navigate("/Goods");
-  }
+  };
   const orderCMP = function (e) {
     e.stopPropagation();
     navigate("/OrderGood");
     setState("flex!important");
     dispatch(upToDateDashbourdType(true));
-    dispatch(upToDateAllGoodsType(false))
-    dispatch(upAllGoods(true))
-    dispatch(upAllStore(true))
-    dispatch(upAllOrders(false))
-
-
+    dispatch(upToDateAllGoodsType(false));
+    dispatch(upAllGoods(true));
+    dispatch(upAllStore(true));
+    dispatch(upAllOrders(false));
   };
   const storeCMP = (e) => {
     e.stopPropagation();
     navigate("/StoreGood");
     setState("flex!important");
     dispatch(upToDateDashbourdType(true));
-    dispatch(upToDateAllGoodsType(false))
-    dispatch(upAllGoods(true))
-    dispatch(upAllOrders(true))
-    dispatch(upAllStore(false))
-
+    dispatch(upToDateAllGoodsType(false));
+    dispatch(upAllGoods(true));
+    dispatch(upAllOrders(true));
+    dispatch(upAllStore(false));
   };
 
   const accountCMP = (e) => {
@@ -83,28 +86,26 @@ function AdminHeader() {
           <Typography className="adminGoods-title">حساب کاربری</Typography>{" "}
         </Box>
         <Box onClick={goodsCMP} width="23%">
-        {AllGoodsType===false?
-          <Box className="admin-goods-active">
-            <Typography className="adminGoods-title">کالاها </Typography>{" "}
-            <Box
-              display="flex"
-              className="allGoods"
-            >
-              <Box onClick={orderCMP} width="36%">
-              {AllOrders===false?
-              <Box className="SubGoods-order-active">
-                <Typography className="adminGoods-title-pishkhan">
-                  سفارش ها
-                </Typography>
-              </Box>:
-              <Box className="SubGoods-order">
-                <Typography className="adminGoods-title-pishkhan">
-                  سفارش ها
-                </Typography>
-              </Box>
-              }
-              </Box>
-              <Box onClick={storeCMP} width="36%">
+          {AllGoodsType === false ? (
+            <Box className="admin-goods-active">
+              <Typography className="adminGoods-title">کالاها </Typography>{" "}
+              <Box display="flex" className="allGoods">
+                <Box onClick={orderCMP} width="50%">
+                  {AllOrders === false ? (
+                    <Box className="SubGoods-order-active">
+                      <Typography className="adminGoods-title-pishkhan">
+                        سفارش ها
+                      </Typography>
+                    </Box>
+                  ) : (
+                    <Box className="SubGoods-order">
+                      <Typography className="adminGoods-title-pishkhan">
+                        سفارش ها
+                      </Typography>
+                    </Box>
+                  )}
+                </Box>
+                {/* <Box onClick={storeCMP} width="36%">
               {AllStore===false?
                 <Box className="SubGoods-stores-active">
                 <Typography className="adminGoods-title-pishkhan">
@@ -117,38 +118,39 @@ function AdminHeader() {
                 </Typography>
                 </Box>
               }
-              </Box>
-              {
-                AllGoods===false?
-              <Box onClick={AllgoodsCMP} className=" SubGoods-allGoods-active">
-                <Typography className="adminGoods-title-pishkhan">
-                  همه کالاها
-                </Typography>
-              </Box>:
-              <Box onClick={AllgoodsCMP} className=" SubGoods-allGoods">
-                <Typography className="adminGoods-title-pishkhan">
-                  همه کالاها
-                </Typography>
-              </Box>
-              }
-            </Box>
-          </Box>:
-          <Box className="admin-goods">
-            <Typography className="adminGoods-title">کالاها </Typography>{" "}
-            <Box
-              display="none"
-              className="allGoods"
-            >
-
-
-              <Box onClick={goodsCMP} className=" SubGoods-allGoods">
-                <Typography className="adminGoods-title-pishkhan">
-                  همه کالاها
-                </Typography>
+              </Box> */}
+                <Box onClick={AllgoodsCMP} width="50%">
+                  {AllGoods === false ? (
+                    <Box
+                      
+                      className=" SubGoods-allGoods-active"
+                    >
+                      <Typography className="adminGoods-title-pishkhan">
+                        همه کالاها
+                      </Typography>
+                    </Box>
+                  ) : (
+                    <Box onClick={AllgoodsCMP} className=" SubGoods-allGoods">
+                      <Typography className="adminGoods-title-pishkhan">
+                        همه کالاها
+                      </Typography>
+                    </Box>
+                  )}
+                </Box>
               </Box>
             </Box>
-          </Box>
-        }
+          ) : (
+            <Box className="admin-goods">
+              <Typography className="adminGoods-title">کالاها </Typography>{" "}
+              <Box display="none" className="allGoods">
+                <Box onClick={goodsCMP} className=" SubGoods-allGoods">
+                  <Typography className="adminGoods-title-pishkhan">
+                    همه کالاها
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          )}
         </Box>
         <Box onClick={dashbourdCMP} width="23%">
           {dashbourdType === false ? (

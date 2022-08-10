@@ -11,6 +11,10 @@ import {
   changeType,
   changeTypeConditions,
   changeTypeRegisterPage,
+  upEmail,
+  upLogInSave,
+  upLogInType,
+  upPassword,
   upToDateChangeIcon,
   upToDateChangePersonIcn,
 } from "../../../redux/slice/slice";
@@ -30,68 +34,55 @@ const style = {
 };
 
 export default function BasicModal() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [user, setUser] = useState();
-  const [logInType, setLogInType] = useState("none!important");
+  const { LogInType } = useSelector((state) => state.LogInType);
+  const { LogInSave } = useSelector((state) => state.LogInSave);
+  const { Email } = useSelector((state) => state.Email);
+  const { Password } = useSelector((state) => state.Password);
   const navigate = useNavigate();
   const loginFn = function () {
-    if (email && password) {
-      // setUser(item.filter(user=>user.email===email && user.password===password))
+    if (Email && Password && Email!== "alizadeh30@gmail.com" ) {
       axios
         .get("http://localhost:8000/users")
         .then((res) =>
-          setUser(
-            res.data.filter(
-              (item) => item.email === email && item.passwerd == password
+          disPatch(
+            upLogInSave(
+              res.data.filter(
+                (item) => item.email === Email && item.passwerd == Password
+              )
             )
           )
         );
-      if (user.length > 0 && email!=="alizadeh30@gmail.com") {
-        localStorage.setItem("token", `${user[0].id}`);
+      if (LogInSave.length = 1) {
+        localStorage.setItem("token", `${LogInSave[0].id}`);
         navigate("/Dashboard");
         disPatch(changeType(false));
         disPatch(upToDateChangeIcon("none"));
-        disPatch(upToDateChangePersonIcn("flex"))
-      } else if (user.length === Number(0)) {
-        setLogInType("flex!important");
+        disPatch(upToDateChangePersonIcn("flex!important"));
+      } else if (LogInSave.length === Number(0)) {
+        disPatch(upLogInType("flex"));
       }
     }
 
-
-
-
-
-
-    if (email==="alizadeh30@gmail.com" && password==="admin") {
+    if (Email === "alizadeh30@gmail.com" && Password === "admin") {
       axios
         .get("http://localhost:8000/admin")
         .then((res) =>
-          setUser(
-            res.data.filter(
-              (item) => item.email === email && item.passwerd == password
+          disPatch(
+            upLogInSave(
+              res.data.filter(
+                (item) => item.email === Email && item.passwerd === Password
+              )
             )
           )
         );
-      if (user.length > 0) {
-        localStorage.setItem("Atoken", `${user[0].id}`);
+      if (LogInSave.length = 1) {
+        localStorage.setItem("Atoken", `${LogInSave[0].id}`);
         navigate("/AminLogIn");
         disPatch(changeType(false));
         disPatch(upToDateChangeIcon("none"));
-        disPatch(upToDateChangePersonIcn("flex"))
-      } 
+        disPatch(upToDateChangePersonIcn("flex!important"));
+      }
     }
-
-
-
-
-
-
-
-
-
-
-
   };
   const registerFn = function () {
     disPatch(changeTypeRegisterPage(true));
@@ -105,8 +96,7 @@ export default function BasicModal() {
   const disPatch = useDispatch();
   const handleClose = function () {
     disPatch(changeType(false));
-    setLogInType("none!important");
-
+    disPatch(upLogInType("none!important"));
   };
 
   const { closeLogIn } = useSelector((state) => state.closeLogIn);
@@ -138,7 +128,7 @@ export default function BasicModal() {
               justifyContent="center"
             >
               <input
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => disPatch(upEmail(e.target.value))}
                 className="inputLoginStyles"
                 placeholder="ایمیل"
               />
@@ -149,13 +139,13 @@ export default function BasicModal() {
               justifyContent="center"
             >
               <input
-                type="password"
+                type="Password"
                 className="inputLoginStyles"
                 placeholder=" رمز عبور  "
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => disPatch(upPassword(e.target.value))}
               />
             </Box>
-            <Box display={logInType} justifyContent="flex-end">
+            <Box display={LogInType} justifyContent="flex-end">
               <Typography className="errorLogIn">
                 ایمیل یا رمز ورود اشتباست
               </Typography>
