@@ -7,6 +7,8 @@ import AdminHeader from "./../../../../common/Header/AdminHeader/index";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
+  upAddCardName,
+  upAddCardPrice,
   upAddProductCMD,
   upjsonData,
   upjsonDataPants,
@@ -16,6 +18,7 @@ import {
   upSelectProduct,
   upToDateChangeIcon,
   upToDateChangePersonIcn,
+  upUploadPic,
 } from "../../../../../redux/slice/slice";
 import OpenViewProduct from "./ViewProduct/index";
 import { useEffect, useState } from "react";
@@ -25,6 +28,7 @@ import OpenEditProduct from "./EditGood/index";
 import DeleteModal from "./DeleteGoods/index";
 import AddProduct from './AddProduct/index';
 import { Pagination } from "@mui/material";
+import DemoProduct from "./AddProduct/DemoProduct";
 
 
 function Goods() {
@@ -34,8 +38,6 @@ function Goods() {
   const { jsonDataShirts } = useSelector((state) => state.jsonDataShirts);
   const { SelectProduct } = useSelector((state) => state.SelectProduct);
   const { SelectMath } = useSelector((state) => state.SelectMath);
-  
-//SelectMath
   const [page, setPage] = useState(1);
   // pagination Section
   function paginate(array, page_size, page_number) {
@@ -49,6 +51,11 @@ function Goods() {
   };
   const openModalAdd=()=>{
     disPatch(upAddProductCMD(true))
+    disPatch(upAddCardName(""))
+    disPatch(upAddCardPrice(""))
+    disPatch(upUploadPic(""))
+    // UploadPic
+
   }
 
   useEffect(() => {
@@ -93,6 +100,8 @@ function Goods() {
           flexDirection="column"
           alignItems="center"
         >
+
+          <DemoProduct />
           <Box className="Goods-tyble">
             <Box className="Goods-tyble-row-delete"></Box>
             <Box className="Goods-tyble-row">

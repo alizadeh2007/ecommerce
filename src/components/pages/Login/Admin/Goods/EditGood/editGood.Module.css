@@ -1,12 +1,20 @@
+*{
+  font-family: 'IRANSans'!important;
+
+}
 .modalEye-title {
     text-align: center !important;
     font-size: 1.9rem !important;
+  font-family: 'IRANSans'!important;
+
     background-color: blueviolet;
     color: aliceblue;
   }
   
   .ModalView-price-store-title {
     font-size: 1.4rem !important;
+  font-family: 'IRANSans'!important;
+
   }
   .detail-eyeModal {
       width: 100%;
@@ -25,10 +33,14 @@
       justify-content: flex-end;
       text-align: right;
       font-size: 1.4rem!important;
+  font-family: 'IRANSans'!important;
+
   }
   .Closa-eyeModal{
       font-size: 1.4rem!important;
       margin-top: 1.5rem!important;
+  font-family: 'IRANSans'!important;
+
   
   }
   .edit-input{
@@ -45,4 +57,6 @@
   .edit-input-title::placeholder{
     color: rgb(207, 207, 207)!important;
     font-size: 1.3rem!important;
+  font-family: 'IRANSans'!important;
+
   }

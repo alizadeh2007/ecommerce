@@ -1,0 +1,30 @@
+.Demo-title{
+    font-size: 2.5rem!important;
+    text-align: center!important;
+    direction: rtl!important;
+    font-weight: bold!important;
+}
+.Demeo-img{
+    width: 45rem!important;
+    border-radius: 1rem!important;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+.Demo-modal{
+    z-index: 1;
+    position: absolute!important;
+    /* top:0vh!important; */
+    /* bottom: 100vh!important; */
+}
+.photo-Demeo-Empty{
+    width: 20rem;
+    height: 15rem;
+    background-color: rgba(229, 229, 229, 0.507);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem!important;
+}
+.photo-Demeo-Empty-icon{
+    font-size: 6rem!important;
+    color: #4848486e!important;
+}

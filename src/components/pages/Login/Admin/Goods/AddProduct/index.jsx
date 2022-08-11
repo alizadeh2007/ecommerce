@@ -6,13 +6,24 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { upAddProductCMD } from "../../../../../../redux/slice/slice";
+import {
+  upAddCardName,
+  upAddCardPrice,
+  upAddProductCMD,
+  upDemeoPic,
+  upDemeoPrice,
+  upDemeoTitle,
+  upDemoCMD,
+} from "../../../../../../redux/slice/slice";
 import UploadButtons from "./uploadPic/index";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import SendIcon from "@mui/icons-material/Send";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { useState } from "react";
+import DemoProduct from "./DemoProduct/index";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import axios from 'axios';
 
 const style = {
   position: "absolute",
@@ -27,38 +38,51 @@ const style = {
 };
 
 export default function AddProduct() {
-    const [getProductName,setGetProductName]=useState("")
-    const [getProductPrice,setGetProductPrice]=useState("")
-    const [getProductNum,setGetProductNum]=useState("")
-    const [ NamEror,setNamEror]=useState("none!important")
-    const [ PriceEror,setPriceEror]=useState("none!important")
   const disPatch = useDispatch();
+  const [getProductName, setGetProductName] = useState("");
+  const [getProductPrice, setGetProductPrice] = useState("");
+  const [getProductNum, setGetProductNum] = useState("");
+  const [NamEror, setNamEror] = useState("none!important");
+  const [PriceEror, setPriceEror] = useState("none!important");
+
+  const { jsonData } = useSelector((state) => state.jsonData);
   const { AddProductCMD } = useSelector((state) => state.AddProductCMD);
+  const { AddCardName } = useSelector((state) => state.AddCardName);
+  const { AddCardPrice } = useSelector((state) => state.AddCardPrice);
+  //AddCardPrice
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     disPatch(upAddProductCMD(false));
   };
-  const sendData=()=>{
-    if(getProductName==="" && getProductPrice===""){
-        setNamEror("flex");
-        setPriceEror("flex")
-    }else if(getProductName===""){
-        setNamEror("flex");
-        setPriceEror("none")
+  const sendData = () => {
+    if (getProductName === "" && getProductPrice === "") {
+      setNamEror("flex");
+      setPriceEror("flex");
+    } else if (getProductName === "") {
+      setNamEror("flex");
+      setPriceEror("none");
+    } else if (getProductPrice === "") {
+      setPriceEror("flex");
+      setNamEror("none");
+    } else {
+      disPatch(upDemoCMD(true));
+      disPatch(upAddProductCMD(false));
+      setNamEror("none");
+      setPriceEror("none");
+      setGetProductPrice("");
+      setGetProductName("");
+      //         axios.post(`http://localhost:8000/eyeglasses/`, {
+      //  ...jsonData,
 
-    }else if(getProductPrice===""){
-        setPriceEror("flex")
-        setNamEror("none");
+      // });
 
-    }else{
-        disPatch(upAddProductCMD(false));
-        setNamEror("none");
-        setPriceEror("none");
-        setGetProductPrice("");
-        setGetProductName("")
     }
-
+  };
+  const openDemo = ()=>{
+    disPatch(upDemoCMD(true));
+    disPatch(upDemeoPrice(AddCardPrice))
+    disPatch(upDemeoTitle(AddCardName))
   }
 
   return (
@@ -96,7 +120,13 @@ export default function AddProduct() {
             <Box className="product-Name">
               <Typography className="product-Name-title">نام کالا:</Typography>
               <Box position="relative">
-                <input onChange={(e)=>setGetProductName(e.target.value)} className="product-Name-input" />
+                <input
+                  onChange={(e) => {
+                    disPatch(upAddCardName(e.target.value));
+                    setGetProductName(e.target.value);
+                  }}
+                  className="product-Name-input"
+                />
                 <Typography display={NamEror} className="name-empty">
                   فیلد نمی تواند خالی باشد
                 </Typography>
@@ -110,7 +140,7 @@ export default function AddProduct() {
                 id="quantity"
                 name="quantity"
                 min="1"
-                onChange={(e)=>setGetProductNum(e.target.value)}
+                onChange={(e) => setGetProductNum(e.target.value)}
               />
             </Box>
             <Box className="product-Name">
@@ -118,7 +148,15 @@ export default function AddProduct() {
                 قیمت(تومان):
               </Typography>
               <Box position="relative">
-                <input onChange={(e)=>setGetProductPrice(e.target.value)} type="number" min="10000"  className="product-Name-input" />
+                <input
+                  onChange={(e) => {
+                    disPatch(upAddCardPrice(e.target.value));
+                    setGetProductPrice(e.target.value);
+                  }}
+                  type="number"
+                  min="10000"
+                  className="product-Name-input"
+                />
                 <Typography display={PriceEror} className="name-empty">
                   فیلد نمی تواند خالی باشد
                 </Typography>
@@ -158,7 +196,15 @@ export default function AddProduct() {
                 />
               </div>
             </Box>
-            <Box display="flex" justifyContent="center" marginTop="3rem">
+            <Box display="flex" justifyContent="center" marginTop="3rem" gap="1rem">
+              <Button
+                variant="contained"
+                color="success"
+                endIcon={<VisibilityIcon />}
+                onClick={openDemo}
+              >
+                <Typography className="send-icon">دمو</Typography>
+              </Button>
               <Button
                 variant="contained"
                 endIcon={<SendIcon />}

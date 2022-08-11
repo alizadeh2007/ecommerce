@@ -41,7 +41,14 @@ import Email from "./../slice/slice";
 import Password from "./../slice/slice";
 import SelectProduct from "./../slice/slice";
 import SelectMath from "./../slice/slice";
-// SelectMath
+import AddCardName from "./../slice/slice";
+import AddCardPrice from "./../slice/slice";
+import DemoCMD from "./../slice/slice";
+import UploadPic from "./../slice/slice";
+import DemeoPic from "./../slice/slice";
+import DemeoTitle from "./../slice/slice";
+import DemeoPrice from "./../slice/slice";
+
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -85,6 +92,13 @@ export const store = configureStore({
     Email,
     Password,
     SelectProduct,
-    SelectMath
+    SelectMath,
+    AddCardName,
+    AddCardPrice,
+    DemoCMD,
+    UploadPic,
+    DemeoPic,
+    DemeoTitle,
+    DemeoPrice,
   },
 });

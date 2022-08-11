@@ -44,7 +44,14 @@ export const counterSlice = createSlice({
     Email:"",
     Password:"",
     SelectProduct:"",
-    SelectMath:4
+    SelectMath:4,
+    AddCardName:"",
+    AddCardPrice:"",
+    DemoCMD:false,
+    UploadPic:"",
+    DemeoPic:"",
+    DemeoTitle:"",
+    DemeoPrice:"",
   },
   reducers: {
     changeType: (state,action) => {
@@ -193,8 +200,32 @@ export const counterSlice = createSlice({
       upSelectMath: (state,action) => {
         state.SelectMath =action.payload ;
       },
+      upAddCardName: (state,action) => {
+        state.AddCardName =action.payload ;
+      },
+      upAddCardPrice: (state,action) => {
+        state.AddCardPrice =action.payload ;
+      },
+      upDemoCMD: (state,action) => {
+        state.DemoCMD =action.payload ;
+      },
+      upUploadPic: (state,action) => {
+        state.UploadPic =action.payload ;
+      },
+      upDemeoPic: (state,action) => {
+        state.DemeoPic =action.payload ;
+      },
+      upDemeoTitle: (state,action) => {
+        state.DemeoTitle =action.payload ;
+      },
+      upDemeoPrice: (state,action) => {
+        state.DemeoPrice =action.payload ;
+      },
+
+    // :"",
+    // DemeoPrice:"",
 
   },
 });
-export const {upSelectMath,upSelectProduct,upPassword,upEmail,upLogInSave,upLogInType,upAddProductCMD,upDeleteModalIcon,upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {upDemeoPrice,upDemeoTitle,upDemeoPic,upUploadPic,upDemoCMD,upAddCardPrice,upAddCardName,upSelectMath,upSelectProduct,upPassword,upEmail,upLogInSave,upLogInType,upAddProductCMD,upDeleteModalIcon,upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;
