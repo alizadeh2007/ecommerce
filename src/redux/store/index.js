@@ -48,7 +48,8 @@ import UploadPic from "./../slice/slice";
 import DemeoPic from "./../slice/slice";
 import DemeoTitle from "./../slice/slice";
 import DemeoPrice from "./../slice/slice";
-
+import DeleteIconBtn from "./../slice/slice";
+import EditData from "./../slice/slice";
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -100,5 +101,7 @@ export const store = configureStore({
     DemeoPic,
     DemeoTitle,
     DemeoPrice,
+    DeleteIconBtn,
+    EditData,
   },
 });

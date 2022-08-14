@@ -46,17 +46,35 @@
   .edit-input{
     width: 50%!important;
     border: none!important;
+    padding: .5rem;
   }
   .edit-input-title{
     background-color: blueviolet!important;
     text-align: right;
     direction: rtl;
     border: none!important;
-    width: 30%!important;
+    width: 100%!important;
+  padding: .5rem!important;
+  color: rgb(255, 255, 255)!important;
+
   }
   .edit-input-title::placeholder{
     color: rgb(207, 207, 207)!important;
     font-size: 1.3rem!important;
   font-family: 'IRANSans'!important;
 
+  }
+  .description-modalEye-textarea{
+    width: 100%!important;
+    min-height: 10rem!important;
+    direction: rtl!important;
+    text-align: right;
+    padding: .5rem!important;
+  }
+  .description-modalEye-textarea::placeholder{
+    /* width: 100%!important; */
+    min-height: 10rem!important;
+    direction: rtl!important;
+    text-align: right;
+    padding: .5rem!important;
   }

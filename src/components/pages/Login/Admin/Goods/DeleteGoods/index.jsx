@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector } from 'react-redux';
 import { upDeleteModalIcon } from "../../../../../../redux/slice/slice";
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 const style = {
   position: "absolute",
@@ -22,14 +23,22 @@ const style = {
 };
 
 export default function DeleteModal() {
-    const {DeleteModalIcon}=useSelector(state=>state.DeleteModalIcon)
+    const {DeleteModalIcon}=useSelector(state=>state.DeleteModalIcon);
+    const {DeleteIconBtn}=useSelector(state=>state.DeleteIconBtn)
     const disPatch=useDispatch()
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () =>{
     disPatch(upDeleteModalIcon(false))
   };
+const handleDelete=()=>{
+  if(DeleteIconBtn.category==="eyeglasses"){
+    axios.delete(`http://localhost:8000/eyeglasses/${DeleteIconBtn.id}`)
+    disPatch(upDeleteModalIcon(false))
+    
 
+  }
+}
 
   return (
     <div>
@@ -60,6 +69,7 @@ export default function DeleteModal() {
               <Typography className="Cancel-BTN" onClick={handleClose}>منصرف شدم</Typography>
             </Button>
             <Button
+             onClick={handleDelete}
               variant="outlined"
               color="error"
               startIcon={<DeleteIcon className="DeleteIcon" />}

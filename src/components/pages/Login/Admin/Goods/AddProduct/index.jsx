@@ -14,6 +14,7 @@ import {
   upDemeoPrice,
   upDemeoTitle,
   upDemoCMD,
+  upUploadPic,
 } from "../../../../../../redux/slice/slice";
 import UploadButtons from "./uploadPic/index";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
@@ -31,6 +32,8 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
+  height: 800,
+  overflow: "scroll",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -43,14 +46,19 @@ export default function AddProduct() {
   const [getProductPrice, setGetProductPrice] = useState("");
   const [getProductNum, setGetProductNum] = useState("");
   const [NamEror, setNamEror] = useState("none!important");
+  const [GetProductType, setGetProductType] = useState();
+  const [GetProductLink, setGetProductLink] = useState("");
+  const { DemeoPic } = useSelector((state) => state.DemeoPic);
+  const [GetProductRate, setGetProductRate] = useState();
   const [PriceEror, setPriceEror] = useState("none!important");
-
+  const [GetData, setGetData] = useState();
+  const { UploadPic } = useSelector((state) => state.UploadPic);
   const { jsonData } = useSelector((state) => state.jsonData);
   const { AddProductCMD } = useSelector((state) => state.AddProductCMD);
   const { AddCardName } = useSelector((state) => state.AddCardName);
   const { AddCardPrice } = useSelector((state) => state.AddCardPrice);
-  //AddCardPrice
   const [open, setOpen] = React.useState(false);
+  const [handelSelectOption,setHandelSelectOption]=useState("eye")
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     disPatch(upAddProductCMD(false));
@@ -72,17 +80,65 @@ export default function AddProduct() {
       setPriceEror("none");
       setGetProductPrice("");
       setGetProductName("");
-      //         axios.post(`http://localhost:8000/eyeglasses/`, {
-      //  ...jsonData,
-
-      // });
-
+      if(handelSelectOption==="eye"){
+        axios.post(`http://localhost:8000/eyeglasses/`, {
+  "id":`${Date.now()}`,
+  "title":AddCardName,
+  "category": "eyeglasses",
+  "price":AddCardPrice,
+  "imgURL":GetProductLink,
+  "categories":GetProductType,
+  "number": getProductNum,
+  "star": GetProductRate,
+  "count": "0",
+  "comments": [],
+  "material": " پلاستیکی",
+  "guarantee": "16 ماه گارانتی",
+  "explain":GetData
+  })
+      }else if(handelSelectOption==="pants"){
+        axios.post(`http://localhost:8000/pants/`, {
+          "id":`${Date.now()}`,
+          "title":AddCardName,
+          "category": "pants",
+          "price":AddCardPrice,
+          "imgURL":GetProductLink,
+          "categories":GetProductType,
+          "number": getProductNum,
+          "star": GetProductRate,
+          "count": "0",
+          "comments": [],
+          "material": " پلاستیکی",
+          "guarantee": "16 ماه گارانتی",
+          "explain":GetData
+          })
+      }else if(handelSelectOption==="shirt"){
+        axios.post(`http://localhost:8000/shirts/`, {
+          "id":`${Date.now()}`,
+          "title":AddCardName,
+          "category": "shirts",
+          "price":AddCardPrice,
+          "imgURL":GetProductLink,
+          "categories":GetProductType,
+          "number": getProductNum,
+          "star": GetProductRate,
+          "count": "0",
+          "comments": [],
+          "material": " پلاستیکی",
+          "guarantee": "16 ماه گارانتی",
+          "explain":GetData
+          })
+      }
+    
+    
+      
     }
   };
   const openDemo = ()=>{
     disPatch(upDemoCMD(true));
     disPatch(upDemeoPrice(AddCardPrice))
     disPatch(upDemeoTitle(AddCardName))
+    disPatch(upUploadPic(GetProductLink))
   }
 
   return (
@@ -106,16 +162,30 @@ export default function AddProduct() {
             </Typography>
           </Box>
           <Box className="product-Name-title-pic">
-            <Typography className="product-Name-title" marginTop="3rem">
+            {/* <Typography className="product-Name-title" marginTop="3rem">
               {" "}
               بارگزاری تصویر :
-            </Typography>
-            <Box
+            </Typography> */}
+            {/* <Box
               className="product-upload-section"
               display="flex"
               justifyContent="center"
-            >
-              <UploadButtons />
+            > */}
+              {/* <UploadButtons /> */}
+            {/* </Box> */}
+            <Box className="product-Name">
+              <Typography className="product-Name-title">لینک تصویر:</Typography>
+              <Box position="relative">
+                <input
+                  onChange={(e) => {
+                    setGetProductLink(e.target.value);
+                  }}
+                  className="product-Name-input"
+                />
+                <Typography display={NamEror} className="name-empty">
+                  فیلد نمی تواند خالی باشد
+                </Typography>
+              </Box>
             </Box>
             <Box className="product-Name">
               <Typography className="product-Name-title">نام کالا:</Typography>
@@ -130,6 +200,34 @@ export default function AddProduct() {
                 <Typography display={NamEror} className="name-empty">
                   فیلد نمی تواند خالی باشد
                 </Typography>
+              </Box>
+            </Box>
+            <Box className="product-Name">
+              <Typography className="product-Name-title">امتیاز اولیه:</Typography>
+              <Box position="relative">
+                <input
+                type="number"
+                min="0"
+                max="5"
+                  onChange={(e) => {
+                    setGetProductRate(e.target.value);
+                  }}
+                  className="product-Name-input"
+                />
+                <Typography display={NamEror} className="name-empty">
+                  فیلد نمی تواند خالی باشد
+                </Typography>
+              </Box>
+            </Box>
+            <Box className="product-Name">
+              <Typography className="product-Name-title">مدل:</Typography>
+              <Box position="relative">
+                <input
+                  onChange={(e) => {
+                    setGetProductType(e.target.value);
+                  }}
+                  className="product-Name-input"
+                />
               </Box>
             </Box>
             <Box className="product-Name">
@@ -167,7 +265,7 @@ export default function AddProduct() {
                 {" "}
                 دسته بندی:
               </Typography>
-              <select className="product-Name-input">
+              <select onChange={(e)=>setHandelSelectOption(e.target.value)} className="product-Name-input">
                 <option value="eye">عینک</option>
                 <option value="pants">شلوار</option>
                 <option value="shirt">پیراهن</option>
@@ -175,25 +273,16 @@ export default function AddProduct() {
             </Box>
             <Box className="product-Name" marginTop="5rem">
               <div className="App explain">
-                <CKEditor
-                  className="explain"
-                  editor={ClassicEditor}
-                  data="<p>توضیحات محصول</p>"
-                  onReady={(editor) => {
-                    // You can store the "editor" and use when it is needed.
-                    console.log("Editor is ready to use!", editor);
+
+
+
+<textarea
+className="textarea-style"
+placeholder="توضیحات کالا"
+                  onChange={(e) => {
+                    setGetData(e.target.value)
                   }}
-                  onChange={(event, editor) => {
-                    const data = editor.getData();
-                    console.log({ event, editor, data });
-                  }}
-                  onBlur={(event, editor) => {
-                    console.log("Blur.", editor);
-                  }}
-                  onFocus={(event, editor) => {
-                    console.log("Focus.", editor);
-                  }}
-                />
+></textarea>
               </div>
             </Box>
             <Box display="flex" justifyContent="center" marginTop="3rem" gap="1rem">

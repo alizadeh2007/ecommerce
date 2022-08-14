@@ -6,9 +6,6 @@ import { useSelector } from "react-redux";
 function CheckProduct() {
   const { PaymentCMP } = useSelector((state) => state.PaymentCMP);
   const { totalCost } = useSelector((state) => state.totalCost);
-
-  console.log("totalCost", totalCost);
-  console.log("PaymentCMP=", PaymentCMP);
   return (
     <Box className="check-Product">
       <Box className="check-Product-items">

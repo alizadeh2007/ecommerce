@@ -130,3 +130,11 @@
     position:absolute;
     bottom: -2rem;
 }
+.textarea-style{
+    width: 100%;
+    padding: .5rem;
+}
+.textarea-style::placeholder{
+    font-size: 1.3rem!important;
+    padding: .5rem!important;
+}
