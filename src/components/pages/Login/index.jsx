@@ -40,7 +40,7 @@ export default function BasicModal() {
   const { Password } = useSelector((state) => state.Password);
   const navigate = useNavigate();
   const loginFn = function () {
-    if (Email && Password && Email!== "alizadeh30@gmail.com" ) {
+    if (Email && Password && Email !== "alizadeh@gmail.com") {
       axios
         .get("http://localhost:8000/users")
         .then((res) =>
@@ -52,18 +52,18 @@ export default function BasicModal() {
             )
           )
         );
-      if (LogInSave.length = 1) {
+      if ((LogInSave.length>0)) {
         localStorage.setItem("token", `${LogInSave[0].id}`);
         navigate("/Dashboard");
         disPatch(changeType(false));
         disPatch(upToDateChangeIcon("none"));
         disPatch(upToDateChangePersonIcn("flex!important"));
-      } else if (LogInSave.length === Number(0)) {
+      } else if (LogInSave.length == +0) {
         disPatch(upLogInType("flex"));
       }
     }
 
-    if (Email === "alizadeh30@gmail.com" && Password === "admin") {
+    if (Email == "alizadeh@gmail.com" && Password === "admin") {
       axios
         .get("http://localhost:8000/admin")
         .then((res) =>
@@ -75,7 +75,8 @@ export default function BasicModal() {
             )
           )
         );
-      if (LogInSave.length = 1) {
+      if ((LogInSave.length>0)) {
+
         localStorage.setItem("Atoken", `${LogInSave[0].id}`);
         navigate("/AminLogIn");
         disPatch(changeType(false));

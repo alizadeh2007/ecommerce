@@ -50,6 +50,7 @@ import DemeoTitle from "./../slice/slice";
 import DemeoPrice from "./../slice/slice";
 import DeleteIconBtn from "./../slice/slice";
 import EditData from "./../slice/slice";
+import OrderAdmin from "./../slice/slice";
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -103,5 +104,6 @@ export const store = configureStore({
     DemeoPrice,
     DeleteIconBtn,
     EditData,
+    OrderAdmin,
   },
 });

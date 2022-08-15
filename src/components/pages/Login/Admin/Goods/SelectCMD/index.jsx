@@ -25,7 +25,6 @@ const {DeleteIconBtn}=useSelector(state=>state.DeleteIconBtn)
     disPatch(upDeleteIconBtn(item))
     // setDeleteIconBtn(item)
   }
-  console.log("DeleteIcon",DeleteIconBtn)
   return (
     <Box width="100%" display="flex" justifyContent="center">
 

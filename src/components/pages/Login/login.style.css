@@ -10,6 +10,9 @@
   font-size: 1.6rem !important;
   display: flex;
   justify-content: flex-end;
+  font-family: unset!important;
+  font-family: 'Shabnam'!important;
+  
 }
 .loginbuttonStyles {
   width: 31.6rem !important;

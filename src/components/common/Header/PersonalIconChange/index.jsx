@@ -28,7 +28,6 @@ export default function PersonalIconChange() {
       navigate("/Dashboard")
     }else if(localStorage.getItem("Atoken")){
       navigate("/AminLogIn")
-
     }
   }
   const closeProfileBTN=function(){

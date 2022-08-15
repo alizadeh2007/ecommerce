@@ -4,13 +4,231 @@
       "id": 1659632585045,
       "email": "alizadeh3054@gmail.com",
       "passwerd": "123456"
+    },
+    {
+      "id": 1660593644382,
+      "email": "alizadeh123@gmail.com",
+      "passwerd": "123"
     }
   ],
   "admin": [
     {
       "id": 123456789,
-      "email": "alizadeh30@gmail.com",
+      "email": "alizadeh@gmail.com",
       "passwerd": "admin"
+    }
+  ],
+  "orderList": [
+    {
+      "id": 1660590364060,
+      "card": [
+        {
+          "id": "1",
+          "count": 3,
+          "category": "eyeglasses",
+          "categories": "بولگاری ",
+          "number": "21",
+          "title": "عینک آفتابی",
+          "explain": "باز هم یک مدل دیگر از این برند با دسته تزئین شده و زیبا. اگر به مدل‌های ظریف و زنانه علاقه دارید، این مدل هم فریم بسیار زیبایی دارد و هم دسته شیک و جذابی!",
+          "comments": [
+            {
+              "comment": " قیمت مناسب کیفیت عالی.",
+              "name": "رامین شریفی",
+              "rate": "2.1"
+            },
+            {
+              "name": "plom,kp",
+              "comment": "kjnk",
+              "rate": 2
+            }
+          ],
+          "guarantee": "ندارد",
+          "imgURL": "https://dkstatics-public.digikala.com/digikala-products/eade2e87494352b166045375e0bc0deb0c23bcf7_1597843082.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+          "price": "110000 ",
+          "inventory": "10",
+          "star": "4.1",
+          "property": {
+            "material": "پلاستیک",
+            "color": "دودی",
+            "size": [
+              ""
+            ],
+            "style": "مستطیلی",
+            "crotch": "",
+            "HowToClose": ""
+          }
+        }
+      ],
+      "userInfo": [
+        {
+          "name": "محسن",
+          "family": "فلاح",
+          "idCard": "4460049005",
+          "cardnum": "4460049005",
+          "location": "یزد-مهریز-مدوار-شهرک ولیعصر-پلاک 3"
+        }
+      ]
+    },
+    {
+      "id": 1660593728542,
+      "card": [
+        {
+          "id": "4",
+          "count": 4,
+          "category": "eyeglasses",
+          "categories": "ریوندی ",
+          "number": "13",
+          "title": "عینک آفتابی",
+          "explain": "رای خانم‌هایی که سلیقه خاص و متفاوتی دارند و اهل فشن و مد هستند، عینک آفتابی برند بولگاری یک هدیه جذاب و عالی است. رنگ متضاد و مدل چشم گربه ای این عینک، حتما استایل متفاوتی را برایتان رقم می‌زند.",
+          "guarantee": "ندارد",
+          "imgURL": "https://dkstatics-public-2.digikala.com/digikala-products/111246159.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+          "price": "69500",
+          "inventory": "10",
+          "star": "4.5",
+          "property": {
+            "material": "پلاستیکی",
+            "color": "دودی",
+            "size": [
+              ""
+            ],
+            "style": "گرد، گربه ای",
+            "crotch": "",
+            "HowToClose": ""
+          },
+          "comments": [
+            {
+              "comment": " نمره رد.",
+              "name": "علی فلاح",
+              "rate": "1"
+            },
+            {
+              "comment": "افتضاح .",
+              "name": "مهدی زارع",
+              "rate": "2"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "count": 1,
+          "category": "eyeglasses",
+          "categories": "بولگاری ",
+          "number": "14",
+          "title": "عینک آفتابی",
+          "explain": "باز هم یک مدل دیگر از این برند با دسته تزئین شده و زیبا. اگر به مدل‌های ظریف و زنانه علاقه دارید، این مدل هم فریم بسیار زیبایی دارد و هم دسته شیک و جذابی!",
+          "comments": [
+            {
+              "comment": " قیمت مناسب کیفیت عالی.",
+              "name": "رامین شریفی",
+              "rate": "2.1"
+            },
+            {
+              "comment": "پسند نبود.",
+              "name": "محمدرضا زارع",
+              "rate": "1.1"
+            }
+          ],
+          "guarantee": "ندارد",
+          "imgURL": "https://dkstatics-public.digikala.com/digikala-products/a73fa758e5efa71d23feb6850b6c8af125bbbd96_1642260346.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+          "price": "263000",
+          "inventory": "10",
+          "star": "4.1",
+          "property": {
+            "material": "پلاستیک",
+            "color": "دودی",
+            "size": [
+              ""
+            ],
+            "style": "مستطیلی",
+            "crotch": "",
+            "HowToClose": ""
+          }
+        }
+      ],
+      "userInfo": [
+        {
+          "name": "علی",
+          "family": "دایی",
+          "idCard": "486",
+          "cardnum": "123",
+          "location": "تهران-میدان ازادی"
+        }
+      ]
+    },
+    {
+      "id": "2022-08-15T20:59:28.880Z",
+      "card": [
+        {
+          "id": "3",
+          "count": 6,
+          "category": "eyeglasses",
+          "categories": "ریوندی ",
+          "number": "3",
+          "title": "عینک آفتابی",
+          "explain": "رای خانم‌هایی که سلیقه خاص و متفاوتی دارند و اهل فشن و مد هستند، عینک آفتابی برند بولگاری یک هدیه جذاب و عالی است. رنگ متضاد و مدل چشم گربه ای این عینک، حتما استایل متفاوتی را برایتان رقم می‌زند.",
+          "guarantee": "10 ماه گارانتی",
+          "comments": [
+            {
+              "comment": " کیفیتش سال به سال داره افت می کنه.",
+              "name": "علیرضا زارع بیدکی",
+              "rate": "2.1"
+            },
+            {
+              "name": "رضا",
+              "comment": "خیلی خوب بود کیفیت عالییی",
+              "rate": 2
+            },
+            {
+              "name": "محمد علی",
+              "comment": "سلام چرا عکسش اینقدر خوشگله ولی کیفیت افتضاح",
+              "rate": 2
+            },
+            {
+              "name": "محمد",
+              "comment": "بد نبود",
+              "rate": 2
+            },
+            {
+              "name": "رضا",
+              "comment": "خوب بود",
+              "rate": 3.5
+            },
+            {
+              "name": "حسین",
+              "comment": "بی نظیر",
+              "rate": 2
+            },
+            {
+              "name": "علیرضا",
+              "comment": "چی بگم",
+              "rate": 2
+            }
+          ],
+          "imgURL": "https://dkstatics-public.digikala.com/digikala-products/121620286.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
+          "price": "69500",
+          "inventory": "10",
+          "star": "3.8",
+          "property": {
+            "material": "استیل",
+            "color": "سبز",
+            "size": [
+              ""
+            ],
+            "style": "گرد",
+            "crotch": "",
+            "HowToClose": ""
+          }
+        }
+      ],
+      "userInfo": [
+        {
+          "name": "ابراهیم",
+          "family": "هاشمی",
+          "idCard": "65",
+          "cardnum": "789",
+          "location": "گلشهر-کوچه اقاقی-پلاک 12"
+        }
+      ]
     }
   ],
   "pants": [
@@ -1533,8 +1751,9 @@
         }
       ],
       "explain": "برند بولگاری سال‌هاست در کنار تولید جواهرات، اقدام به طراحی و ساخت عینک‌های بسیار خاص و منحصربه‌فرد کرده است. طراحی مدرن در کنار متریال بسیار مرغوب و ظرافت بالا از جمله ویژگی‎‌های بارز عینک مارک بولگاری است. کالکشن‌های این برند عموما بر اساس مد و ترند روز دنیا طراحی می‌شوند. قیمت عینک بولگاری اصل در برخی موارد زیاد است و همین موضوع باعث شده مخاطبان خاص‌تری داشته باشد که عینک‌ها را با دقت بسیار زیاد و نکته‌بینانه انتخاب می‌کنند. بولگاری توانسته در سال‌های گذشته رضایت سخت‌پسند",
+      "title": "عینک آفتابی  ",
       "imgURL": "https://dkstatics-public.digikala.com/digikala-products/3751617.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90",
-      "price": "460000",
+      "price": "430000",
       "inventory": "10",
       "star": "4.1",
       "property": {
@@ -1546,8 +1765,7 @@
         "crotch": "",
         "color": "بنفش",
         "HowToClose": ""
-      },
-      "title": "189"
+      }
     }
   ]
 }

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./payment.Module.css";
+import axios from 'axios';
 import {
   upToDateTotalCost,
   uptodatPaymentCMP,
@@ -13,8 +14,6 @@ import {
 } from "../../../../redux/slice/slice";
 function Payment({ propspayments }) {
   const dispatch = useDispatch();
-  const navigate=useNavigate()
-
   const minus = function () {
       dispatch(uptodatTotalPaymentCost(propspayments));
   };
@@ -62,6 +61,8 @@ function Payment({ propspayments }) {
       <Box className="ShoppingCart-rigth-box-col-child" gap=".5rem">
         {totalPrice} <Typography fontSize="1.4rem!important">تومان</Typography>
       </Box>
+
+
 
     </Box>
   );
