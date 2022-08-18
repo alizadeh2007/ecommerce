@@ -28,6 +28,7 @@ import Goods from './../components/pages/Login/Admin/Goods/index';
 import OrderGood from "../components/pages/Login/Admin/Goods/OrderGood";
 import StoreGood from './../components/pages/Login/Admin/Goods/StoreGood/index';
 import AdminHeader from './../components/common/Header/AdminHeader/index';
+import AccountAdmin from './../components/pages/Login/Admin/Goods/AccountAdmin/index';
 
 function App() {
   return (
@@ -56,7 +57,7 @@ function App() {
         <Route path="OrderGood" element={<OrderGood />} />
         <Route path="StoreGood" element={<StoreGood />} />
         <Route path="AdminHeader" element={<AdminHeader />} />
-
+        <Route path="AccountAdmin" element={<AccountAdmin />} />
         
 
 

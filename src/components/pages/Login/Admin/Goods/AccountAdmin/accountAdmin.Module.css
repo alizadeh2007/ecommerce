@@ -1,0 +1,15 @@
+.account-name{
+    font-size: 1.4rem!important;
+    direction: rtl;
+    text-align: right;
+    font-weight: bold!important;
+    margin-bottom: 1rem!important;
+}
+.account-input{
+    direction: rtl;
+    text-align: right;
+    padding: .5rem!important;
+}
+.sendInfo{
+    font-size: 1.4rem!important;
+}

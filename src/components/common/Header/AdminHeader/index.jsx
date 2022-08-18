@@ -75,6 +75,11 @@ function AdminHeader() {
 
   const accountCMP = (e) => {
     e.stopPropagation();
+    navigate("/AccountAdmin");
+    dispatch(upToDateDashbourdType(true));
+    dispatch(upToDateAllGoodsType(true));
+    dispatch(upAllStore(true));
+    dispatch(upAllGoods(true));
   };
   return (
     <Box>

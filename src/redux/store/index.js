@@ -53,7 +53,9 @@ import EditData from "./../slice/slice";
 import OrderAdmin from "./../slice/slice";
 import DetailsOrders from "./../slice/slice";
 import DetailsOrdersStore from "./../slice/slice";
-//DetailsOrdersStore
+import SelectOp from "./../slice/slice";
+import storeOrderAdmin from "./../slice/slice";
+//storeOrderAdmin
 export const store = configureStore({
   reducer: {
     closeLogIn,
@@ -110,5 +112,7 @@ export const store = configureStore({
     OrderAdmin,
     DetailsOrders,
     DetailsOrdersStore,
+    SelectOp,
+    storeOrderAdmin,
   },
 });

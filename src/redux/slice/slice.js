@@ -56,7 +56,9 @@ export const counterSlice = createSlice({
     EditData:[],
     OrderAdmin:[],
     DetailsOrders:false,
-    DetailsOrdersStore:[]
+    DetailsOrdersStore:[],
+    SelectOp:"",
+    storeOrderAdmin:[]
   },
   reducers: {
     changeType: (state,action) => {
@@ -242,8 +244,14 @@ export const counterSlice = createSlice({
       upDetailsOrdersStore: (state,action) => {
         state.DetailsOrdersStore =action.payload ;
       },
+      upSelectOp: (state,action) => {
+        state.SelectOp =action.payload ;
+      },
+      upStoreOrderAdmin: (state,action) => {
+        state.storeOrderAdmin =action.payload ;
+      },
 
   },
 });
-export const {upDetailsOrdersStore,upDetailsOrders,upOrderAdmin,upEditData,upDeleteIconBtn,upDemeoPrice,upDemeoTitle,upDemeoPic,upUploadPic,upDemoCMD,upAddCardPrice,upAddCardName,upSelectMath,upSelectProduct,upPassword,upEmail,upLogInSave,upLogInType,upAddProductCMD,upDeleteModalIcon,upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
+export const {upStoreOrderAdmin,upSelectOp,upDetailsOrdersStore,upDetailsOrders,upOrderAdmin,upEditData,upDeleteIconBtn,upDemeoPrice,upDemeoTitle,upDemeoPic,upUploadPic,upDemoCMD,upAddCardPrice,upAddCardName,upSelectMath,upSelectProduct,upPassword,upEmail,upLogInSave,upLogInType,upAddProductCMD,upDeleteModalIcon,upModalEdit,upeditCard,upviewCard,upjsonDataShirts,upjsonDataPants,upjsonData,upModalView,upAllOrders,upAllGoods,upAllStore,upToDateAllGoodsType,upToDateDashbourdType,upToDateCloseModalPersonIcon,upToDateChangePersonIcn,upToDateChangeIcon,upToDateTotalCost,upToDateUsersSource,uptodatRaitingStore,uptodatTotalPaymentCost,uptodatPaymentCMP,uptodatOpenHereReportModal,uptodatOpenReportModal,uptodateopenSingleProduct, uptodateSearchEyesGlass,uptodateNewSort, uptodateSortData, storageInformationPantsJson,storageInformationShoesJson, changeType,changeTypeMiniPic, changeTypeConditions,changeTypeFilterPage,changeTypeRegisterPage,storageInformationJson } = counterSlice.actions;
 export default counterSlice.reducer;

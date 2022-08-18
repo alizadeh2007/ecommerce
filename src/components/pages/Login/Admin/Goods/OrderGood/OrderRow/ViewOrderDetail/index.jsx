@@ -7,12 +7,16 @@ import Button from "@mui/material/Button";
 import "./ViewDetails.Module.css";
 import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
-import { upDetailsOrders, upDetailsOrdersStore } from "../../../../../../../../redux/slice/slice";
+import { useNavigate } from "react-router-dom";
+import {
+  upDetailsOrders,
+  upDetailsOrdersStore,
+} from "../../../../../../../../redux/slice/slice";
 import ViewBody from "./ViewBody/index";
-import './ViewDetails.Module.css'
-import { Alert } from '@mui/material';
+import "./ViewDetails.Module.css";
+import { Alert } from "@mui/material";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -25,12 +29,13 @@ const style = {
   boxShadow: 24,
   p: 4,
   height: "80vh",
-  overflow: "scroll"
+  overflow: "scroll",
 };
 
 export default function DetailsOrder() {
-  const [deliver,setDeliver]=useState("none!important")
-  const [deliverBtn,setDeliverBtn]=useState("flex!important")
+  const navigate=useNavigate()
+  const [deliver, setDeliver] = useState("none!important");
+  const [deliverBtn, setDeliverBtn] = useState("flex!important");
 
   const disPatch = useDispatch();
   const { DetailsOrders } = useSelector((state) => state.DetailsOrders);
@@ -40,17 +45,16 @@ export default function DetailsOrder() {
   const handleClose = () => {
     disPatch(upDetailsOrders(false));
   };
-  const handlerDelivered=()=>{
+  const handlerDelivered = () => {
     setDeliver("flex!important");
-    setDeliverBtn("none!important")
-    if(DetailsOrdersStore){
-      axios.put(`http://localhost:8000/orderList/${DetailsOrdersStore.id}`,{
-...DetailsOrdersStore,
-  deliver:"1",
-      })
+    setDeliverBtn("none!important");
+    if (DetailsOrdersStore) {
+      axios.put(`http://localhost:8000/orderList/${DetailsOrdersStore.id}`, {
+        ...DetailsOrdersStore,
+        deliver: "1",
+      });
     }
-      
-  }
+  };
   return (
     <div>
       <Modal
@@ -66,18 +70,33 @@ export default function DetailsOrder() {
       >
         <Fade in={DetailsOrders}>
           <Box sx={style}>
-          <Box display={deliverBtn}>
-          <Button variant="contained"  onClick={handlerDelivered} className="deliver-btn" color="success">
-          <Typography className="deliver-btn-font">
-          تحویل داده شد
-          </Typography>
-          
-          </Button>
-          </Box>
-          <Box width="100%" display={deliver}>
-          <Alert className="alert-delivered"  severity="success">اطلاعات تحویل به روز شد</Alert>
-          </Box>
-          {DetailsOrdersStore.card.map((item)=><ViewBody item={item}/>)}
+            <Box ></Box>
+            <Box width="100%">
+              {DetailsOrdersStore.deliver === "1" || deliverBtn==="none!important" ? (
+                <Alert className="alert-delivered" severity="success">
+
+
+                  {" "}
+                  تحویل داده شد
+                </Alert>
+              ) : <Box  display={deliverBtn}>
+                <Button
+               
+                  variant="contained"
+                  onClick={handlerDelivered}
+                  className="deliver-btn"
+                  color="success"
+                >
+                  <Typography className="deliver-btn-font">
+                    تحویل داده شد
+                  </Typography>
+                </Button>
+              </Box>
+              }
+            </Box>
+            {DetailsOrdersStore.card.map((item) => (
+              <ViewBody item={item} />
+            ))}
           </Box>
         </Fade>
       </Modal>
