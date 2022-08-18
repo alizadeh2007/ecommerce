@@ -24,7 +24,7 @@ function CheckOut() {
     }
   },[])
   const payCMD=()=>{
-    alert("hg")
+    alert("خرید شما با موفقیت ثبت شد")
     axios.post(`http://localhost:8000/orderList/`,{
       "id":new Date(),
       "card":PaymentCMP,

@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { styled } from '@mui/material/styles';
+import Badge from '@mui/material/Badge';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
 import { Box, Typography } from "@mui/material";
 import "./header.style.css";
 import PersonIcon from "@mui/icons-material/Person";
@@ -15,6 +19,42 @@ import DirectionSensitive from "../../../assets/Rtl";
 import PersonalIconChange from "./PersonalIconChange/index";
 import DensityMediumRoundedIcon from "@mui/icons-material/DensityMediumRounded";
 import PrimarySearchAppBar from "./MenuBarMobile/index";
+
+
+
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    backgroundColor: '#44b700',
+    color: '#44b700',
+    boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+    '&::after': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      borderRadius: '50%',
+      animation: 'ripple 1.2s infinite ease-in-out',
+      border: '1px solid currentColor',
+      content: '""',
+    },
+  },
+  '@keyframes ripple': {
+    '0%': {
+      transform: 'scale(.8)',
+      opacity: 1,
+    },
+    '100%': {
+      transform: 'scale(2.4)',
+      opacity: 0,
+    },
+  },
+}));
+
+
+
+
 function Header() {
   const { PaymentCMP } = useSelector((state) => state.PaymentCMP);
   const { changeIcon } = useSelector((state) => state.changeIcon);
@@ -81,10 +121,29 @@ function Header() {
             </Box>
 
             <Box display={changePersonIcn}>
-              <PersonalIconChange />
+
+
+
+
+
+              <StyledBadge
+        overlap="circular"
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        variant="dot"
+      >
+        {/* <Avatar  /> */}
+              <PersonalIconChange alt="Remy Sharp" src="./../../../assets/pic/b5e501216f7d50205a01b89c3d12370a3c20c114_1658557717.jpg" />
+      </StyledBadge>
+
+
+
+
+
+
             </Box>
           </Box>
           <DensityMediumRoundedIcon className="styleHeader-Parent" />
+          
         </Box>
       </Box>
       <Box className="bgHeaderMiddle">
