@@ -9,6 +9,10 @@ import Typography from "@mui/material/Typography";
 import { useSelector, useDispatch } from "react-redux";
 import { upDetailsOrders, upDetailsOrdersStore } from "../../../../../../../../redux/slice/slice";
 import ViewBody from "./ViewBody/index";
+import './ViewDetails.Module.css'
+import { Alert } from '@mui/material';
+import { useState } from "react";
+import axios from 'axios';
 
 const style = {
   position: "absolute",
@@ -25,15 +29,28 @@ const style = {
 };
 
 export default function DetailsOrder() {
+  const [deliver,setDeliver]=useState("none!important")
+  const [deliverBtn,setDeliverBtn]=useState("flex!important")
+
   const disPatch = useDispatch();
   const { DetailsOrders } = useSelector((state) => state.DetailsOrders);
   const { DetailsOrdersStore } = useSelector(
     (state) => state.DetailsOrdersStore
   );
-  console.log("DetailsOrdersStore=",DetailsOrdersStore.card[0].title)
   const handleClose = () => {
     disPatch(upDetailsOrders(false));
   };
+  const handlerDelivered=()=>{
+    setDeliver("flex!important");
+    setDeliverBtn("none!important")
+    if(DetailsOrdersStore){
+      axios.put(`http://localhost:8000/orderList/${DetailsOrdersStore.id}`,{
+...DetailsOrdersStore,
+  deliver:"1",
+      })
+    }
+      
+  }
   return (
     <div>
       <Modal
@@ -49,6 +66,17 @@ export default function DetailsOrder() {
       >
         <Fade in={DetailsOrders}>
           <Box sx={style}>
+          <Box display={deliverBtn}>
+          <Button variant="contained"  onClick={handlerDelivered} className="deliver-btn" color="success">
+          <Typography className="deliver-btn-font">
+          تحویل داده شد
+          </Typography>
+          
+          </Button>
+          </Box>
+          <Box width="100%" display={deliver}>
+          <Alert className="alert-delivered"  severity="success">اطلاعات تحویل به روز شد</Alert>
+          </Box>
           {DetailsOrdersStore.card.map((item)=><ViewBody item={item}/>)}
           </Box>
         </Fade>

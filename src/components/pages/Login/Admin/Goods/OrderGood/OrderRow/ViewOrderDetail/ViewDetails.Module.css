@@ -2,3 +2,23 @@
     direction: rtl;
     text-align: right;
 }
+.deliver-btn{
+    margin-bottom: 1rem!important;
+}
+.deliver-btn-font{
+    font-size: 4!important;
+
+}
+.alert-delivered{
+    direction: rtl!important;
+    font-size: 1.4rem!important;
+    width: 100%!important;
+}
+.LocalShippingIcon{
+    color: rgb(206, 72, 0)!important;
+    font-size: 2rem!important;
+}
+.VerifiedUserIcon{
+    color: rgb(6, 143, 17)!important;
+    font-size: 2rem!important;
+}

@@ -31,6 +31,13 @@ axios.get("http://localhost:8000/orderList").then(item=>disPatch(upOrderAdmin(it
         
       <Box display="flex" flexDirection="column" alignItems="center">
         <Box className="tayble-order">
+          <Box className="order-tayble-order-status">
+          <select className="Select-OrderList" name="cars" id="cars">
+  <option value="volvo">همه موارد</option>
+  <option value="saab">تحویل داده شده ها</option>
+  <option value="mercedes">ارسال شده ها</option>
+</select>
+          </Box>
           <Box className="order-tayble-order">نمایش</Box>
           <Box className="order-tayble-order">تاریخ سفارش</Box>
           <Box className="order-tayble-order">تعداد کالا</Box>

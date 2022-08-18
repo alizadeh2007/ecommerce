@@ -3,19 +3,14 @@ import SourceIcon from "@mui/icons-material/Source";
 import Box from "@mui/material/Box";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import {
   upDetailsOrders,
   upDetailsOrdersStore,
 } from "../../../../../../../redux/slice/slice";
 
-
-
 function OrderRow({ item }) {
-
-
-
-
 
   const { DetailsOrdersStore } = useSelector(
     (state) => state.DetailsOrdersStore
@@ -30,6 +25,10 @@ function OrderRow({ item }) {
   return (
     <Box width="100%" display="flex" justifyContent="center">
       <Box className="tayble-order-rows">
+      <Box className="order-tayble-order-status">
+
+                {item.deliver!=="1"?<LocalShippingIcon className="LocalShippingIcon"/>:<VerifiedUserIcon className="VerifiedUserIcon"/>}
+      </Box>
         <Box className="order-tayble-order">
           <SourceIcon
             onClick={handerDetails}
