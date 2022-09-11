@@ -4,26 +4,66 @@ import Box from "@mui/material/Box";
 // import Typography from "@mui/material/Typography";
 // import { useNavigate } from "react-router";
 import AdminHeader from "./../../../../common/Header/AdminHeader/index";
-import DeleteIcon from "@mui/icons-material/Delete";
-import BorderColorIcon from "@mui/icons-material/BorderColor";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  upAddCardName,
+  upAddCardPrice,
+  upAddProductCMD,
   upjsonData,
   upjsonDataPants,
   upjsonDataShirts,
   upModalView,
+  upSelectMath,
+  upSelectProduct,
+  upToDateChangeIcon,
+  upToDateChangePersonIcn,
+  upUploadPic,
 } from "../../../../../redux/slice/slice";
 import OpenViewProduct from "./ViewProduct/index";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import SelectCMD from "./SelectCMD/index";
-import OpenEditProduct from './EditGood/index';
+import OpenEditProduct from "./EditGood/index";
+import DeleteModal from "./DeleteGoods/index";
+import AddProduct from './AddProduct/index';
+import { Pagination } from "@mui/material";
+import DemoProduct from "./AddProduct/DemoProduct";
+
+
 function Goods() {
-  const [selection, setSelect] = useState("");
   const disPatch = useDispatch();
-  console.log("selection=", selection);
+  const { jsonData } = useSelector((state) => state.jsonData);
+  const { jsonDataPants } = useSelector((state) => state.jsonDataPants);
+  const { jsonDataShirts } = useSelector((state) => state.jsonDataShirts);
+  const { SelectProduct } = useSelector((state) => state.SelectProduct);
+  const { SelectMath } = useSelector((state) => state.SelectMath);
+  const [page, setPage] = useState(1);
+  // pagination Section
+  function paginate(array, page_size, page_number) {
+    return array.slice((page_number - 1) * page_size, page_number * page_size);
+  }
+  const handlePaginate=(e,p)=>{
+    setPage(p);
+  }
+  const selectFn = (e) => {
+    disPatch(upSelectProduct(e.target.value));
+  };
+  const openModalAdd=()=>{
+    disPatch(upAddProductCMD(true))
+    disPatch(upAddCardName(""))
+    disPatch(upAddCardPrice(""))
+    disPatch(upUploadPic(""))
+    // UploadPic
+
+  }
+
   useEffect(() => {
+    if(localStorage.getItem("Atoken")){
+      disPatch(upToDateChangePersonIcn("flex"))
+      disPatch(upToDateChangeIcon("none"))
+          }else(
+            disPatch(upToDateChangePersonIcn("none"))
+          )
     axios
       .get("http://localhost:8000/eyeglasses")
       .then((res) => disPatch(upjsonData(res.data)));
@@ -34,17 +74,12 @@ function Goods() {
       .get("http://localhost:8000/shirts")
       .then((res) => disPatch(upjsonDataShirts(res.data)));
   }, []);
-  const { jsonData } = useSelector((state) => state.jsonData);
-  const { jsonDataPants } = useSelector((state) => state.jsonDataPants);
-  const { jsonDataShirts } = useSelector((state) => state.jsonDataShirts);
-  // jsonDataShirts
-  // const navigate = useNavigate();
+
   const openModalView = () => {
     disPatch(upModalView(true));
   };
-  const selectFn = (e) => {
-    setSelect(e.target.value);
-  };
+
+
   return (
     <Box>
       <Box>
@@ -53,7 +88,6 @@ function Goods() {
       <Box
         padding="3rem"
         width="100%"
-        // height="30vh"
         display="flex"
         marginTop="4rem"
         justifyContent="center"
@@ -65,6 +99,8 @@ function Goods() {
           flexDirection="column"
           alignItems="center"
         >
+
+          <DemoProduct />
           <Box className="Goods-tyble">
             <Box className="Goods-tyble-row-delete"></Box>
             <Box className="Goods-tyble-row">
@@ -86,22 +122,31 @@ function Goods() {
             <Box className="Goods-tyble-row-pic">تصویر</Box>
           </Box>
           <OpenViewProduct />
-<OpenEditProduct/>
-          {selection === "eye"
-            ? jsonData.map((item) => {
+          <OpenEditProduct />
+          <DeleteModal />
+          <AddProduct/>
+          {SelectProduct === "eye"
+            ?disPatch(upSelectMath(Math.ceil(jsonData.length/6))) && paginate(jsonData, 6, page)?.map((item) => {
                 return <SelectCMD item={item} />;
               })
-            : selection === "pan"
-            ? jsonDataPants.map((item) => {
-                return <SelectCMD item={item} />;
-              })
-            : selection === "shirt"
-            ? jsonDataShirts.map((item) => {
-                return <SelectCMD item={item} />;
-              })
-            : ""}
+            : SelectProduct === "pan"
 
-          <Box className="goods-add"> + افزودن</Box>
+            //jsonDataPants
+            ?disPatch(upSelectMath(Math.ceil(jsonDataPants.length/6))) && paginate(jsonDataPants, 6, page)?.map((item) => {
+                return <SelectCMD item={item} />;
+              })
+            : SelectProduct === "shirt"
+            ? disPatch(upSelectMath(Math.ceil(jsonDataShirts.length/6))) && paginate(jsonDataShirts, 6, page)?.map((item) => {
+                return <SelectCMD item={item} />;
+              })
+            :disPatch(upSelectMath(Math.ceil(jsonData.length/6))) && paginate(jsonData, 6, page)?.map((item) => {
+                return <SelectCMD item={item} />;
+              })}
+
+          <Box onClick={openModalAdd} className="goods-add"> + افزودن</Box>
+              <Box marginTop="2rem" marginBottom="2rem">
+              <Pagination color="primary" page={page} onChange={handlePaginate}  defaultPage={1}  count={SelectMath} variant="outlined" shape="rounded" />
+              </Box>
         </Box>
       </Box>
     </Box>

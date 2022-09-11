@@ -156,7 +156,10 @@
 .MuiBox-root{
   background-color: none!important;
 }
-
+.myImage{
+  width: 4rem!important;
+  height: 3.5rem!important;
+}
 @media screen and  (max-width: 768px) {
   .bgHeaderFinally{
     font-size: .6rem !important;

@@ -5,9 +5,11 @@ import "./editGood.Module.css";
 import Typography from "@mui/material/Typography";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { upModalEdit, upModalView } from "../../../../../../redux/slice/slice";
-import pic from "./../../../../../../assets/pic/deliver3.svg";
+import { upEditData, upModalEdit, upModalView } from "../../../../../../redux/slice/slice";
 import { Button } from "@mui/material";
+import axios from 'axios';
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: "absolute",
@@ -25,11 +27,50 @@ export default function OpenEditProduct() {
   const disPatch = useDispatch();
   const { ModalEdit } = useSelector((state) => state.ModalEdit);
   const { editCard } = useSelector((state) => state.editCard);
-  //upeditCard
   const [open, setOpen] = React.useState(false);
+  const [inputEditTitle,setInputEditTitle]=useState()
+  const [inputEditPrice,setInputEditPrice]=useState()
+  const [inputEditExplain,setInputEditExplain]=useState()
+  const [inputEditNumber,setInputEditNumber]=useState()
+  //setInputEditNumber
+  const [name,setName]=useState()
   const handleClose = () => {
     disPatch(upModalEdit(false));
   };
+  const EditBTN=()=>{
+
+    if(editCard.category==="eyeglasses"){
+      axios
+        .put(`http://localhost:8000/eyeglasses/${editCard.id}`,{
+  ...editCard,
+  "title":inputEditTitle?inputEditTitle:editCard.title,
+  "price":inputEditPrice?inputEditPrice:editCard.price,
+  "explain":inputEditExplain?inputEditExplain:editCard.explain,
+  "number":inputEditNumber?inputEditNumber:editCard.number,
+        })
+        disPatch(upModalEdit(false))
+      }else if(editCard.category==="shirts"){
+        axios
+          .put(`http://localhost:8000/shirts/${editCard.id}`,{
+    ...editCard,
+    "title":inputEditTitle?inputEditTitle:editCard.title,
+    "price":inputEditPrice?inputEditPrice:editCard.price,
+    "explain":inputEditExplain?inputEditExplain:editCard.explain,
+    "number":inputEditNumber?inputEditNumber:editCard.number,
+          })
+          disPatch(upModalEdit(false))
+        }else if(editCard.category==="pants"){
+          axios
+            .put(`http://localhost:8000/pants/${editCard.id}`,{
+      ...editCard,
+      "title":inputEditTitle?inputEditTitle:editCard.title,
+      "price":inputEditPrice?inputEditPrice:editCard.price,
+      "explain":inputEditExplain?inputEditExplain:editCard.explain,
+      "number":inputEditNumber?inputEditNumber:editCard.number,
+            })
+            disPatch(upModalEdit(false))
+          }
+  }
 
   return (
     <Box>
@@ -47,19 +88,27 @@ export default function OpenEditProduct() {
             variant="h6"
             component="h2"
           >
-           <input className="edit-input-title" placeholder={editCard.title}/>
+            <input onChange={(e)=>setInputEditTitle(e.target.value)} className="edit-input-title" placeholder={editCard.title} />
           </Typography>
           {/* price section */}
           <Box className="detail-eyeModal">
             <Box className="detail-eyeModal-row">
-              <Box  >
-
-                <Typography className="ModalView-price-store-title" display="flex" justifyContent="flex-end" gap="1rem">
-                <Typography className="ModalView-price-store-title">
-                  تومان
-                </Typography>
-                  <input className="edit-input" placeholder={editCard.price}/>
-                  
+              <Box>
+                <Typography
+                  className="ModalView-price-store-title"
+                  display="flex"
+                  justifyContent="flex-end"
+                  gap="1rem"
+                >
+                  <Typography className="ModalView-price-store-title">
+                    تومان
+                  </Typography>
+                  <input
+                    type="number"
+                    className="edit-input"
+                    onChange={(e)=>setInputEditPrice(e.target.value)}
+                    placeholder={editCard.price}
+                  />
                 </Typography>
               </Box>
             </Box>
@@ -73,15 +122,22 @@ export default function OpenEditProduct() {
           {/* the Number of Goods section */}
           <Box className="detail-eyeModal">
             <Box className="detail-eyeModal-row" display="flex" gap="1rem">
-
-              <Typography className="ModalView-price-store-title" display="flex" justifyContent="flex-end" gap="1rem">
-              <Typography className="ModalView-price-store-title">
-                عدد
+              <Typography
+                className="ModalView-price-store-title"
+                display="flex"
+                justifyContent="flex-end"
+                gap="1rem"
+              >
+                <Typography className="ModalView-price-store-title">
+                  عدد
+                </Typography>
+                <input
+                  type="number"
+                  onChange={(e)=>setInputEditNumber(e.target.value)}
+                  className="edit-input"
+                  placeholder={editCard.number}
+                />
               </Typography>
-                <input className="edit-input" placeholder={editCard.number}/>
-              </Typography>
-
-
             </Box>
             <Box className="detail-eyeModal-row">
               <Typography className="ModalView-price-store-title">
@@ -89,20 +145,20 @@ export default function OpenEditProduct() {
               </Typography>
             </Box>
           </Box>
-          <Typography
-            className="description-modalEye"
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
-          >
-            {editCard.explain}
-          </Typography>
+          <Box className="description-modalEye" sx={{ mt: 2 }}>
+            <textarea
+            onChange={(e)=>setInputEditExplain(e.target.value)}
+              className="description-modalEye-textarea"
+              placeholder={editCard.explain}
+            />
+          </Box>
           <Box display="flex" justifyContent="center">
             <Button
-              onClick={handleClose}
+              onClick={EditBTN}
               variant="outlined"
               className="Closa-eyeModal"
             >
-              بستن
+              اصلاح{" "}
             </Button>
           </Box>
         </Box>

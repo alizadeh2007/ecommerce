@@ -15,7 +15,8 @@
 .check-Product-items{
     height: 20rem!important;
 overflow-y: scroll;
-background-color:rgba(0, 109, 121, 0.31) ;
+background-color:rgba(111, 111, 111, 0.002) ;
+border-bottom: .1rem solid rgba(71, 71, 71, 0.087);
 }
 .font-calculate-price{
     font-size: 1.6rem!important;

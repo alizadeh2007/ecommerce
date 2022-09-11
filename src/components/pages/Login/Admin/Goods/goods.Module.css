@@ -24,6 +24,8 @@
     font-size: 1.4rem!important;
     font-weight: bold!important;
     padding: 1rem;
+    font-family: 'Shabnam'!important;
+
 }
 .Goods-tyble-row-delete{
     width: 8%;
@@ -32,6 +34,8 @@
     font-size: 1.4rem!important;
     font-weight: bold!important;
     padding: 1rem;
+    font-family: 'Shabnam'!important;
+
 }
 .Goods-tyble-row-pic{
     width: 15%;
@@ -40,6 +44,8 @@
     font-size: 1.4rem!important;
     font-weight: bold!important;
     padding: 1rem;
+    font-family: 'Shabnam'!important;
+
 }
 .Goods-tyble-rows{
     width: 8%;
@@ -50,6 +56,8 @@
     font-size: 1.4rem!important;
     /* border-bottom: .1rem solid rgba(0, 0, 0, 0.413); */
     padding: 1rem;
+    font-family: 'Shabnam'!important;
+
 }
 .Goods-tyble-rows-delete{
     width: 8%;
@@ -58,6 +66,8 @@
     font-size: 1.4rem!important;
     /* border-bottom: .1rem solid rgba(0, 0, 0, 0.413); */
     padding: 1rem;
+    font-family: 'Shabnam'!important;
+
 }
 .Goods-tyble-rows-pic{
     width: 15%;

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import closeLogIn from "./../slice/slice";
+import closeLogIn, { counterSlice } from "./../slice/slice";
 import openModalConditions from "./../slice/slice";
 import openModalShowMiniPic from "./../slice/slice";
 import openModalFilterPage from "./../slice/slice";
@@ -33,42 +33,103 @@ import jsonDataShirts from "./../slice/slice";
 import viewCard from "./../slice/slice";
 import editCard from "./../slice/slice";
 import ModalEdit from "./../slice/slice";
-// ModalEdit
+import DeleteModalIcon from "./../slice/slice";
+import AddProductCMD from "./../slice/slice";
+import LogInType from "./../slice/slice";
+import LogInSave from "./../slice/slice";
+import Email from "./../slice/slice";
+import Password from "./../slice/slice";
+import SelectProduct from "./../slice/slice";
+import SelectMath from "./../slice/slice";
+import AddCardName from "./../slice/slice";
+import AddCardPrice from "./../slice/slice";
+import DemoCMD from "./../slice/slice";
+import UploadPic from "./../slice/slice";
+import DemeoPic from "./../slice/slice";
+import DemeoTitle from "./../slice/slice";
+import DemeoPrice from "./../slice/slice";
+import DeleteIconBtn from "./../slice/slice";
+import EditData from "./../slice/slice";
+import OrderAdmin from "./../slice/slice";
+import DetailsOrders from "./../slice/slice";
+import DetailsOrdersStore from "./../slice/slice";
+import SelectOp from "./../slice/slice";
+import storeOrderAdmin from "./../slice/slice";
+import thunk from 'redux-thunk';
+import {combineReducers} from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
+//storeOrderAdmin
+const rootReducer = combineReducers({
+  closeLogIn,
+  openModalConditions,
+  openModalShowMiniPic,
+  openModalFilterPage,
+  openModalRegisterPage,
+  storeInfoJsonServer,
+  storeInfoPantsJsonServer,
+  storeInfoShoesJsonServer,
+  searchEyesGlass,
+  sortData,
+  newSort,
+  openSingleProduct,
+  openReportModal,
+  openHereReportModal,
+  PaymentCMP,
+  totalPaymentCost,
+  raitingStore,
+  usersSource,
+  totalCost,
+  changeIcon,
+  changePersonIcn,
+  closeModalPersonIcon,
+  dashbourdType,
+  AllGoodsType,
+  AllStore,
+  AllGoods,
+  AllOrders,
+  ModalView,
+  jsonData,
+  jsonDataPants,
+  jsonDataShirts,
+  viewCard,
+  editCard,
+  ModalEdit,
+  DeleteModalIcon,
+  AddProductCMD,
+  LogInType,
+  LogInSave,
+  Email,
+  Password,
+  SelectProduct,
+  SelectMath,
+  AddCardName,
+  AddCardPrice,
+  DemoCMD,
+  UploadPic,
+  DemeoPic,
+  DemeoTitle,
+  DemeoPrice,
+  DeleteIconBtn,
+  EditData,
+  OrderAdmin,
+  DetailsOrders,
+  DetailsOrdersStore,
+  SelectOp,
+  storeOrderAdmin,
+  })
+  export const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 export const store = configureStore({
-  reducer: {
-    closeLogIn,
-    openModalConditions,
-    openModalShowMiniPic,
-    openModalFilterPage,
-    openModalRegisterPage,
-    storeInfoJsonServer,
-    storeInfoPantsJsonServer,
-    storeInfoShoesJsonServer,
-    searchEyesGlass,
-    sortData,
-    newSort,
-    openSingleProduct,
-    openReportModal,
-    openHereReportModal,
-    PaymentCMP,
-    totalPaymentCost,
-    raitingStore,
-    usersSource,
-    totalCost,
-    changeIcon,
-    changePersonIcn,
-    closeModalPersonIcon,
-    dashbourdType,
-    AllGoodsType,
-    AllStore,
-    AllGoods,
-    AllOrders,
-    ModalView,
-    jsonData,
-    jsonDataPants,
-    jsonDataShirts,
-    viewCard,
-    editCard,
-    ModalEdit
-  },
+  reducer: 
+    persistedReducer,
+  
+  middleware: [thunk]
 });
+export const persistor = persistStore(store);
+

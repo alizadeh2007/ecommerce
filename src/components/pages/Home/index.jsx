@@ -10,16 +10,18 @@ import MyCard from "./../../customs/MyCard/index";
 import { useDispatch } from "react-redux";
 import bannerFooter from "./../../../assets/pic/footer-banner.jpg";
 import {
+  changeType,
   changeTypeFilterPage,
   storageInformationJson,
   storageInformationPantsJson,
   storageInformationShoesJson,
+  upToDateChangeIcon,
+  upToDateChangePersonIcn,
   uptodateNewSort,
 } from "../../../redux/slice/slice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
-
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,8 +31,20 @@ function Home() {
   const { storeInfoJsonServer } = useSelector(
     (state) => state.storeInfoJsonServer
   );
-  console.log("kioko",storeInfoJsonServer)
+
   useEffect(() => {
+
+    if(localStorage.getItem("Atoken")){
+dispatch(upToDateChangePersonIcn("flex"))
+dispatch(upToDateChangeIcon("none"))
+    }else if(localStorage.getItem('token')){
+      dispatch(changeType(false));
+      dispatch(upToDateChangeIcon("none"));
+      dispatch(upToDateChangePersonIcn("flex!important"));
+    }else{
+      dispatch(upToDateChangePersonIcn("none"))
+    }
+    
     axios
       .get("http://localhost:8000/eyeglasses/")
       .then((res) => dispatch(storageInformationJson(res.data)));

@@ -12,6 +12,15 @@ function Admin() {
   const OrderFn = function () {
     navigate("/Order");
   };
+  // useEffect(()=>{
+  //   if(localStorage.getItem("token")){
+      // disPatch(upToDateChangePersonIcn("flex"))
+      // disPatch(upToDateChangeIcon("none"))
+          // }
+          // else(
+      // disPatch(upToDateChangePersonIcn("none"))
+          // )
+  // },[])
   return (
     <Box>
       <Box className="Admin">

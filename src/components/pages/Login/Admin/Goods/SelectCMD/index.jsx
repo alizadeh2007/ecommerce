@@ -4,11 +4,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { useDispatch } from 'react-redux';
-import { upeditCard, upModalEdit, upModalView, upviewCard } from "../../../../../../redux/slice/slice";
+import { upDeleteIconBtn, upDeleteModalIcon, upeditCard, upModalEdit, upModalView, upviewCard } from "../../../../../../redux/slice/slice";
 import OpenViewProduct from './../ViewProduct/index';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 function SelectCMD({item}) {
   const disPatch=useDispatch()
-
+const {DeleteIconBtn}=useSelector(state=>state.DeleteIconBtn)
   const openModalView = () => {
     disPatch(upModalView(true));
     disPatch(upviewCard(item))
@@ -16,14 +18,20 @@ function SelectCMD({item}) {
   const openModalEdit=()=>{
     disPatch(upModalEdit(true));
     disPatch(upeditCard(item))
-  };
+    
+  }
+  const openModalDelete=()=>{
+    disPatch(upDeleteModalIcon(true))
+    disPatch(upDeleteIconBtn(item))
+    // setDeleteIconBtn(item)
+  }
   return (
     <Box width="100%" display="flex" justifyContent="center">
 
                 <Box className="Goods-sub-tyble">
             <Box className="Goods-tyble-rows-delete">
               <Box>
-                <DeleteIcon className="icon-goods-delete" />
+                <DeleteIcon onClick={()=>{openModalDelete()}} className="icon-goods-delete" />
               </Box>
               <Box onClick={openModalEdit}>
                 <BorderColorIcon className="icon-goods-edit" />

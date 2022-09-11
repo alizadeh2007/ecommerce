@@ -14,7 +14,7 @@ import { useDispatch } from 'react-redux';
 import CloseModalChangeIcon from './CloseModalChangeIcon/index';
 import imgIcon from './../../../../assets/pic/bag.svg';
 import {upToDateCloseModalPersonIcon } from "../../../../redux/slice/slice";
-
+import myImage from './../../../../assets/pic/myPhoto.JPG'
 export default function PersonalIconChange() {
     const { closeModalPersonIcon } = useSelector(
         (state) => state.closeModalPersonIcon
@@ -28,7 +28,6 @@ export default function PersonalIconChange() {
       navigate("/Dashboard")
     }else if(localStorage.getItem("Atoken")){
       navigate("/AminLogIn")
-
     }
   }
   const closeProfileBTN=function(){
@@ -55,8 +54,8 @@ export default function PersonalIconChange() {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 25, height: 25 }}>
-                <img src={imgIcon}/>
+            <Avatar sx={{ width: 26, height: 26 }}>
+                <img className="myImage" src={myImage}/>
             </Avatar>
           </IconButton>
         </Tooltip>

@@ -29,8 +29,6 @@ function SingleProduct() {
   const miniPicShows = function () {
     disPatch(changeTypeMiniPic(true));
   };
-
-
   // navigate to shop card and up to date my purches
   const OpenShoppingCart=function(){
     navigate("/ShoppingCart")

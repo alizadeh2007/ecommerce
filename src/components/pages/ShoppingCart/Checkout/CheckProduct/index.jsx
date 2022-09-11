@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import "./checkProduct.Module.css";
 import { Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeType, upToDateChangeIcon, upToDateChangePersonIcn } from "../../../../../redux/slice/slice";
 function CheckProduct() {
+  const disPatch=useDispatch()
   const { PaymentCMP } = useSelector((state) => state.PaymentCMP);
   const { totalCost } = useSelector((state) => state.totalCost);
-
-  console.log("totalCost", totalCost);
-  console.log("PaymentCMP=", PaymentCMP);
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      disPatch(changeType(false));
+      disPatch(upToDateChangeIcon("none"));
+      disPatch(upToDateChangePersonIcn("flex!important"));
+    }
+  },[])
   return (
     <Box className="check-Product">
       <Box className="check-Product-items">

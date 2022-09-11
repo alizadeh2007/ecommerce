@@ -52,7 +52,7 @@ export default function OpenViewProduct() {
           {/* price section */}
           <Box className="detail-eyeModal">
             <Box className="detail-eyeModal-row">
-              <Box display="flex">
+              <Box display="flex" gap=".4rem">
                 <Typography className="ModalView-price-store-title">
                   {" "}
                   تومان
