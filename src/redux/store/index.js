@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import closeLogIn from "./../slice/slice";
+import closeLogIn, { counterSlice } from "./../slice/slice";
 import openModalConditions from "./../slice/slice";
 import openModalShowMiniPic from "./../slice/slice";
 import openModalFilterPage from "./../slice/slice";
@@ -55,64 +55,81 @@ import DetailsOrders from "./../slice/slice";
 import DetailsOrdersStore from "./../slice/slice";
 import SelectOp from "./../slice/slice";
 import storeOrderAdmin from "./../slice/slice";
+import thunk from 'redux-thunk';
+import {combineReducers} from 'redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+
 //storeOrderAdmin
+const rootReducer = combineReducers({
+  closeLogIn,
+  openModalConditions,
+  openModalShowMiniPic,
+  openModalFilterPage,
+  openModalRegisterPage,
+  storeInfoJsonServer,
+  storeInfoPantsJsonServer,
+  storeInfoShoesJsonServer,
+  searchEyesGlass,
+  sortData,
+  newSort,
+  openSingleProduct,
+  openReportModal,
+  openHereReportModal,
+  PaymentCMP,
+  totalPaymentCost,
+  raitingStore,
+  usersSource,
+  totalCost,
+  changeIcon,
+  changePersonIcn,
+  closeModalPersonIcon,
+  dashbourdType,
+  AllGoodsType,
+  AllStore,
+  AllGoods,
+  AllOrders,
+  ModalView,
+  jsonData,
+  jsonDataPants,
+  jsonDataShirts,
+  viewCard,
+  editCard,
+  ModalEdit,
+  DeleteModalIcon,
+  AddProductCMD,
+  LogInType,
+  LogInSave,
+  Email,
+  Password,
+  SelectProduct,
+  SelectMath,
+  AddCardName,
+  AddCardPrice,
+  DemoCMD,
+  UploadPic,
+  DemeoPic,
+  DemeoTitle,
+  DemeoPrice,
+  DeleteIconBtn,
+  EditData,
+  OrderAdmin,
+  DetailsOrders,
+  DetailsOrdersStore,
+  SelectOp,
+  storeOrderAdmin,
+  })
+  export const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 export const store = configureStore({
-  reducer: {
-    closeLogIn,
-    openModalConditions,
-    openModalShowMiniPic,
-    openModalFilterPage,
-    openModalRegisterPage,
-    storeInfoJsonServer,
-    storeInfoPantsJsonServer,
-    storeInfoShoesJsonServer,
-    searchEyesGlass,
-    sortData,
-    newSort,
-    openSingleProduct,
-    openReportModal,
-    openHereReportModal,
-    PaymentCMP,
-    totalPaymentCost,
-    raitingStore,
-    usersSource,
-    totalCost,
-    changeIcon,
-    changePersonIcn,
-    closeModalPersonIcon,
-    dashbourdType,
-    AllGoodsType,
-    AllStore,
-    AllGoods,
-    AllOrders,
-    ModalView,
-    jsonData,
-    jsonDataPants,
-    jsonDataShirts,
-    viewCard,
-    editCard,
-    ModalEdit,
-    DeleteModalIcon,
-    AddProductCMD,
-    LogInType,
-    LogInSave,
-    Email,
-    Password,
-    SelectProduct,
-    SelectMath,
-    AddCardName,
-    AddCardPrice,
-    DemoCMD,
-    UploadPic,
-    DemeoPic,
-    DemeoTitle,
-    DemeoPrice,
-    DeleteIconBtn,
-    EditData,
-    OrderAdmin,
-    DetailsOrders,
-    DetailsOrdersStore,
-    SelectOp,
-    storeOrderAdmin,
-  },
+  reducer: 
+    persistedReducer,
+  
+  middleware: [thunk]
 });
+export const persistor = persistStore(store);
+

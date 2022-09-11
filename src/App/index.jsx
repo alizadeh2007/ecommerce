@@ -58,10 +58,6 @@ function App() {
         <Route path="StoreGood" element={<StoreGood />} />
         <Route path="AdminHeader" element={<AdminHeader />} />
         <Route path="AccountAdmin" element={<AccountAdmin />} />
-        
-
-
-{/* StoreGood */}
       </Routes>
       <RegisterModal></RegisterModal>
       <Login></Login>
